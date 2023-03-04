@@ -6,6 +6,10 @@
 //
 
 import UIKit
+import NaverThirdPartyLogin
+import KakaoSDKCommon
+import KakaoSDKAuth
+import GoogleSignIn
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -13,9 +17,43 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
+          if error != nil || user == nil {
+            // Show the app's signed-out state.
+          } else {
+            // Show the app's signed-in state.
+          }
+        }
+
         // Override point for customization after application launch.
+        let instance = NaverThirdPartyLoginConnection.getSharedInstance()
+                //네이버 앱으로 인증하는 방식 활성화
+                instance?.isNaverAppOauthEnable = true
+                //SafariViewController에서 인증하는 방식 활성화
+                instance?.isInAppOauthEnable = true
+                //인증 화면을 아이폰의 세로모드에서만 적용
+                instance?.isOnlyPortraitSupportedInIphone()
+                
+                instance?.serviceUrlScheme = "naverlogin"
+                instance?.consumerKey = "qKkNxsymAfgEFZlJFY0t"
+                instance?.consumerSecret = "CiJ3Ho9U6j"
+                instance?.appName = "rising"
+        
+        KakaoSDK.initSDK(appKey: "f1e1d77c066b35bc584bd86059cad666")
+
         return true
     }
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        if GIDSignIn.sharedInstance.handle(url){
+            return true
+        }
+        NaverThirdPartyLoginConnection.getSharedInstance()?.application(app, open: url, options: options)
+        if (AuthApi.isKakaoTalkLoginUrl(url)) {
+                return AuthController.handleOpenUrl(url: url)
+            }
+        return true
+}
 
     // MARK: UISceneSession Lifecycle
 
