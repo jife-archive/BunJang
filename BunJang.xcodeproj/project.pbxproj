@@ -7,15 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0938CC8329B38300000BE7CA /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0938CC8229B38300000BE7CA /* TextField.swift */; };
+		0938CC8729B38706000BE7CA /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0938CC8629B38706000BE7CA /* NavigationBar.swift */; };
+		0938CC8929B390DE000BE7CA /* phoneComViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0938CC8829B390DE000BE7CA /* phoneComViewController.swift */; };
 		09A0339529B31EF700F291FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A0339429B31EF700F291FF /* AppDelegate.swift */; };
 		09A0339729B31EF700F291FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A0339629B31EF700F291FF /* SceneDelegate.swift */; };
 		09A0339929B31EF700F291FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A0339829B31EF700F291FF /* ViewController.swift */; };
 		09A0339C29B31EF700F291FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09A0339A29B31EF700F291FF /* Main.storyboard */; };
 		09A0339E29B31EF800F291FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09A0339D29B31EF800F291FF /* Assets.xcassets */; };
 		09A033A129B31EF800F291FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09A0339F29B31EF800F291FF /* LaunchScreen.storyboard */; };
+		09A033AA29B31FC400F291FF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A033A929B31FC400F291FF /* LoginViewController.swift */; };
+		09A033AF29B3206C00F291FF /* 로그인배너1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09A033AC29B3206C00F291FF /* 로그인배너1.jpg */; };
+		09A033B029B3206C00F291FF /* 로그인배너2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09A033AD29B3206C00F291FF /* 로그인배너2.jpg */; };
+		09A033B129B3206C00F291FF /* 로그인배너3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09A033AE29B3206C00F291FF /* 로그인배너3.jpg */; };
+		09A033B529B3235400F291FF /* 스플래시 이미지.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09A033B429B3235300F291FF /* 스플래시 이미지.jpg */; };
+		09A033B929B3248300F291FF /* EtcLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A033B829B3248300F291FF /* EtcLoginViewController.swift */; };
+		09A033C129B32B1A00F291FF /* images.png in Resources */ = {isa = PBXBuildFile; fileRef = 09A033C029B32B1A00F291FF /* images.png */; };
+		09A033C429B36D8000F291FF /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A033C329B36D8000F291FF /* model.swift */; };
+		09A033C629B36DB000F291FF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A033C529B36DB000F291FF /* HomeViewController.swift */; };
+		09A033C829B36FFA00F291FF /* SelfLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A033C729B36FFA00F291FF /* SelfLoginViewController.swift */; };
+		B2C1D2A352BBA183B00EA60E /* Pods_BunJang.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A68A26EDF914E0F82DC7887F /* Pods_BunJang.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0938CC8229B38300000BE7CA /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		0938CC8629B38706000BE7CA /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
+		0938CC8829B390DE000BE7CA /* phoneComViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = phoneComViewController.swift; sourceTree = "<group>"; };
 		09A0339129B31EF700F291FF /* BunJang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BunJang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09A0339429B31EF700F291FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09A0339629B31EF700F291FF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +41,20 @@
 		09A0339D29B31EF800F291FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09A033A029B31EF800F291FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		09A033A229B31EF800F291FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09A033A929B31FC400F291FF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		09A033AC29B3206C00F291FF /* 로그인배너1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "로그인배너1.jpg"; path = "../../../../Downloads/로그인배너1.jpg"; sourceTree = "<group>"; };
+		09A033AD29B3206C00F291FF /* 로그인배너2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "로그인배너2.jpg"; path = "../../../../Downloads/로그인배너2.jpg"; sourceTree = "<group>"; };
+		09A033AE29B3206C00F291FF /* 로그인배너3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "로그인배너3.jpg"; path = "../../../../Downloads/로그인배너3.jpg"; sourceTree = "<group>"; };
+		09A033B429B3235300F291FF /* 스플래시 이미지.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "스플래시 이미지.jpg"; path = "../../../../Downloads/스플래시 이미지.jpg"; sourceTree = "<group>"; };
+		09A033B829B3248300F291FF /* EtcLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtcLoginViewController.swift; sourceTree = "<group>"; };
+		09A033C029B32B1A00F291FF /* images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = images.png; path = ../../../../Downloads/images.png; sourceTree = "<group>"; };
+		09A033C229B3346900F291FF /* BunJang.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BunJang.entitlements; sourceTree = "<group>"; };
+		09A033C329B36D8000F291FF /* model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
+		09A033C529B36DB000F291FF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		09A033C729B36FFA00F291FF /* SelfLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfLoginViewController.swift; sourceTree = "<group>"; };
+		A349ADF302BAC63A7B6941C0 /* Pods-BunJang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BunJang.debug.xcconfig"; path = "Target Support Files/Pods-BunJang/Pods-BunJang.debug.xcconfig"; sourceTree = "<group>"; };
+		A68A26EDF914E0F82DC7887F /* Pods_BunJang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BunJang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA292E1A06D6CEAC39F69DD5 /* Pods-BunJang.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BunJang.release.xcconfig"; path = "Target Support Files/Pods-BunJang/Pods-BunJang.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2C1D2A352BBA183B00EA60E /* Pods_BunJang.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +74,8 @@
 			children = (
 				09A0339329B31EF700F291FF /* BunJang */,
 				09A0339229B31EF700F291FF /* Products */,
+				211A69D540B835C788D3CA5B /* Pods */,
+				7D0BF97506D3F1F1FBD9A0FD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +90,11 @@
 		09A0339329B31EF700F291FF /* BunJang */ = {
 			isa = PBXGroup;
 			children = (
+				09A033AB29B3206200F291FF /* Img */,
+				09A033C229B3346900F291FF /* BunJang.entitlements */,
+				09A033B729B3246800F291FF /* Model */,
+				09A033B629B3246200F291FF /* Controller */,
+				09A033A829B31FB900F291FF /* View */,
 				09A0339429B31EF700F291FF /* AppDelegate.swift */,
 				09A0339629B31EF700F291FF /* SceneDelegate.swift */,
 				09A0339829B31EF700F291FF /* ViewController.swift */,
@@ -67,6 +106,64 @@
 			path = BunJang;
 			sourceTree = "<group>";
 		};
+		09A033A829B31FB900F291FF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				09A033A929B31FC400F291FF /* LoginViewController.swift */,
+				09A033C529B36DB000F291FF /* HomeViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		09A033AB29B3206200F291FF /* Img */ = {
+			isa = PBXGroup;
+			children = (
+				09A033C029B32B1A00F291FF /* images.png */,
+				09A033AC29B3206C00F291FF /* 로그인배너1.jpg */,
+				09A033AD29B3206C00F291FF /* 로그인배너2.jpg */,
+				09A033AE29B3206C00F291FF /* 로그인배너3.jpg */,
+				09A033B429B3235300F291FF /* 스플래시 이미지.jpg */,
+			);
+			path = Img;
+			sourceTree = "<group>";
+		};
+		09A033B629B3246200F291FF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				09A033B829B3248300F291FF /* EtcLoginViewController.swift */,
+				09A033C729B36FFA00F291FF /* SelfLoginViewController.swift */,
+				0938CC8829B390DE000BE7CA /* phoneComViewController.swift */,
+				0938CC8229B38300000BE7CA /* TextField.swift */,
+				0938CC8629B38706000BE7CA /* NavigationBar.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		09A033B729B3246800F291FF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				09A033C329B36D8000F291FF /* model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		211A69D540B835C788D3CA5B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A349ADF302BAC63A7B6941C0 /* Pods-BunJang.debug.xcconfig */,
+				BA292E1A06D6CEAC39F69DD5 /* Pods-BunJang.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7D0BF97506D3F1F1FBD9A0FD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A68A26EDF914E0F82DC7887F /* Pods_BunJang.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +171,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 09A033A529B31EF800F291FF /* Build configuration list for PBXNativeTarget "BunJang" */;
 			buildPhases = (
+				BFAFE8705B88E64724079D67 /* [CP] Check Pods Manifest.lock */,
 				09A0338D29B31EF700F291FF /* Sources */,
 				09A0338E29B31EF700F291FF /* Frameworks */,
 				09A0338F29B31EF700F291FF /* Resources */,
+				BA1F7FAD0B230303513C1A6F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,7 +224,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09A033B129B3206C00F291FF /* 로그인배너3.jpg in Resources */,
+				09A033AF29B3206C00F291FF /* 로그인배너1.jpg in Resources */,
 				09A033A129B31EF800F291FF /* LaunchScreen.storyboard in Resources */,
+				09A033C129B32B1A00F291FF /* images.png in Resources */,
+				09A033B529B3235400F291FF /* 스플래시 이미지.jpg in Resources */,
+				09A033B029B3206C00F291FF /* 로그인배너2.jpg in Resources */,
 				09A0339E29B31EF800F291FF /* Assets.xcassets in Resources */,
 				09A0339C29B31EF700F291FF /* Main.storyboard in Resources */,
 			);
@@ -133,13 +237,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		BA1F7FAD0B230303513C1A6F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BunJang/Pods-BunJang-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BunJang/Pods-BunJang-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BunJang/Pods-BunJang-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BFAFE8705B88E64724079D67 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BunJang-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		09A0338D29B31EF700F291FF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09A033AA29B31FC400F291FF /* LoginViewController.swift in Sources */,
+				09A033C429B36D8000F291FF /* model.swift in Sources */,
+				09A033C829B36FFA00F291FF /* SelfLoginViewController.swift in Sources */,
+				0938CC8929B390DE000BE7CA /* phoneComViewController.swift in Sources */,
 				09A0339929B31EF700F291FF /* ViewController.swift in Sources */,
+				09A033B929B3248300F291FF /* EtcLoginViewController.swift in Sources */,
+				0938CC8729B38706000BE7CA /* NavigationBar.swift in Sources */,
 				09A0339529B31EF700F291FF /* AppDelegate.swift in Sources */,
+				0938CC8329B38300000BE7CA /* TextField.swift in Sources */,
+				09A033C629B36DB000F291FF /* HomeViewController.swift in Sources */,
 				09A0339729B31EF700F291FF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,9 +436,11 @@
 		};
 		09A033A629B31EF800F291FF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A349ADF302BAC63A7B6941C0 /* Pods-BunJang.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BunJang/BunJang.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JA7UDVTQBU;
@@ -310,9 +466,11 @@
 		};
 		09A033A729B31EF800F291FF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA292E1A06D6CEAC39F69DD5 /* Pods-BunJang.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BunJang/BunJang.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JA7UDVTQBU;
