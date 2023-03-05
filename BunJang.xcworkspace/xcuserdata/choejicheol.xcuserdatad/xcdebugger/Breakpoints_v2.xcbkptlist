@@ -14,8 +14,8 @@
             filePath = "BunJang/Controller/SelfLoginViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,8 +30,8 @@
             filePath = "BunJang/Controller/phoneComViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -46,10 +46,197 @@
             filePath = "BunJang/Controller/phoneComViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "11"
-            endingLineNumber = "11"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
             landmarkName = "ModalViewControllerDelegate"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DE3273C2-462C-4DF8-9CF0-D20BF805B734"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BunJang/View/HomeViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "HomeViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "DE3273C2-462C-4DF8-9CF0-D20BF805B734 - 9d6eb72f555a890e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BunJang.HomeViewController.homeCatregoryData.getter : BunJang.homeCategorydata"
+                  moduleName = "BunJang"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/choejicheol/Desktop/BunJang/BunJang/View/HomeViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "45">
+               </Location>
+               <Location
+                  uuid = "DE3273C2-462C-4DF8-9CF0-D20BF805B734 - 1ccac4a4f345dbcf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BunJang.HomeViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; BunJang.HomeViewController"
+                  moduleName = "BunJang"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/choejicheol/Desktop/BunJang/BunJang/View/HomeViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "402">
+               </Location>
+               <Location
+                  uuid = "DE3273C2-462C-4DF8-9CF0-D20BF805B734 - 15532d9f2f5447e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BunJang.HomeViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;BunJang.HomeViewController&gt;"
+                  moduleName = "BunJang"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/choejicheol/Desktop/BunJang/BunJang/View/HomeViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "350">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D91C013E-568C-48F5-81AD-9FBC652641FA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BunJang/View/HomeViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "HomeViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4501AFBD-406C-4737-8311-0BDD2E3B248C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BunJang/View/HomeViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "HomeViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "4501AFBD-406C-4737-8311-0BDD2E3B248C - decbbc6307dd04f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BunJang.HomeViewController.backgroundScrollView.getter : Swift.Optional&lt;__C.UIScrollView&gt;"
+                  moduleName = "BunJang"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/choejicheol/Desktop/BunJang/BunJang/View/HomeViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "85">
+               </Location>
+               <Location
+                  uuid = "4501AFBD-406C-4737-8311-0BDD2E3B248C - b4a38afa93c3f043"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BunJang.HomeViewController.backgroundScrollView.setter : Swift.Optional&lt;__C.UIScrollView&gt;"
+                  moduleName = "BunJang"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/choejicheol/Desktop/BunJang/BunJang/View/HomeViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "136">
+               </Location>
+               <Location
+                  uuid = "4501AFBD-406C-4737-8311-0BDD2E3B248C - 19a49450f1963850"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BunJang.HomeViewController.backgroundScrollView.modify : Swift.Optional&lt;__C.UIScrollView&gt;"
+                  moduleName = "BunJang"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/choejicheol/Desktop/BunJang/BunJang/View/HomeViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "4501AFBD-406C-4737-8311-0BDD2E3B248C - c140bffe42e81fc1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BunJang.HomeViewController.backgroundScrollView.modify : Swift.Optional&lt;__C.UIScrollView&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "BunJang"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/choejicheol/Desktop/BunJang/BunJang/View/HomeViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "26">
+               </Location>
+               <Location
+                  uuid = "4501AFBD-406C-4737-8311-0BDD2E3B248C - 1ccac4a4f345dbae"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BunJang.HomeViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; BunJang.HomeViewController"
+                  moduleName = "BunJang"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/choejicheol/Desktop/BunJang/BunJang/View/HomeViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "363">
+               </Location>
+               <Location
+                  uuid = "4501AFBD-406C-4737-8311-0BDD2E3B248C - 15532d9f2f5441f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BunJang.HomeViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;BunJang.HomeViewController&gt;"
+                  moduleName = "BunJang"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/choejicheol/Desktop/BunJang/BunJang/View/HomeViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "311">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

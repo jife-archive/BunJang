@@ -12,16 +12,18 @@ enum Text{
     case name
     case birth
     case phone
+    case complete
 }
-class SelfLoginViewController: UIViewController, UITextFieldDelegate, UISheetPresentationControllerDelegate, ModalViewControllerDelegate {
+class SelfLoginViewController: UIViewController, UITextFieldDelegate, UISheetPresentationControllerDelegate {
     var state: Text = .name
     let modalViewController = phoneComViewController()
 
     @IBOutlet weak var nametextfield: UITextField!
     
+    @IBOutlet weak var comLabel: UILabel!
     @IBOutlet weak var phoneComBtb: UIButton!
     @IBOutlet weak var phoneSV: UIStackView!
-    @IBOutlet weak var comSV: UIStackView!
+    @IBOutlet weak var ComView: UIView!
     @IBOutlet weak var birthSV: UIStackView!
     @IBOutlet weak var nextBtn: UIButton!
     @IBOutlet weak var phone: UITextField!
@@ -89,31 +91,32 @@ class SelfLoginViewController: UIViewController, UITextFieldDelegate, UISheetPre
         }
         //self.present(vc, animated: true, completion: nil)
     }
-    func updateUI() {
-        // 전달받은 데이터를 사용하여 UI 업데이트
-        self.phoneComBtb.setTitle("SKT                                                   ", for: .normal)
-        print("update")
-        self.modalViewController.dismiss(animated: true, completion: nil)
 
-    }
     @IBAction func birthChange(_ sender: Any) {
-        comSV.isHidden = false
-        
-        modalViewController.delegate = self
-
-        self.phoneComBtb.setTitle("SKT                                                       ", for: .normal)
+        ComView.isHidden = false
         state = .phone
         phoneSV.isHidden = false
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "phoneComViewController") as! phoneComViewController
+        vc.delegate = self
+        self.presentPanModal(vc)
     }
+    @IBAction func PhonenumChanged(_ sender: Any) {
+        state = .complete
+        print("폰번호적음")
+    }
+
     @IBAction func NextClick(_ sender: Any) {
         
         switch state {
         case .name:
             birthSV.isHidden = false
         case .birth:
-            comSV.isHidden = false
+            ComView.isHidden = false
         case .phone:
             phoneSV.isHidden = false
+        case .complete:
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "AgreeViewController") as! AgreeViewController
+            self.presentPanModal(vc)
         }
     }
     @IBAction func ChangeName(_ sender: Any) {
@@ -127,7 +130,7 @@ class SelfLoginViewController: UIViewController, UITextFieldDelegate, UISheetPre
         super.viewDidLoad()
         setTextfield()
         birthSV.isHidden = true
-        comSV.isHidden = true
+        ComView.isHidden = true
         phoneSV.isHidden = true
  
         nextBtn.alpha = 0.5
@@ -140,6 +143,15 @@ class SelfLoginViewController: UIViewController, UITextFieldDelegate, UISheetPre
             rootViewController.dismiss(animated: true, completion: nil)
             
         }
+    }
+    
+
+}
+extension SelfLoginViewController: ModalViewControllerDelegate {
+    func updateUI(_ data: com) {
+        print("!")
+        self.comLabel.text = data.rawValue
+        self.comLabel.textColor = .black
     }
     
 

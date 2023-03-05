@@ -7,13 +7,23 @@
 
 import UIKit
 import DLRadioButton
+import PanModal
+
+enum com: String {
+    case SKT = "SKT"
+    case KT = "KT"
+    case LG = "LG U+"
+    case SKTA = "SKT 알뜰폰"
+    case KTA = "KT 알뜰폰"
+    case LGA = "LG U+ 알뜰폰"
+}
 
 protocol ModalViewControllerDelegate {
-    func updateUI()
+    func updateUI(_ data: com)
 }
 class phoneComViewController: UIViewController {
      var delegate: ModalViewControllerDelegate?
-    
+    var Com: com = .SKT
     @IBOutlet weak var sktBtn: DLRadioButton!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,44 +31,67 @@ class phoneComViewController: UIViewController {
     }
     
     @IBAction func SKT(_ sender: Any) {
-             let data = "SKT"
-        delegate?.updateUI()
+        self.Com = .SKT
+        delegate?.updateUI(self.Com)
+        dismiss(animated: true, completion: nil)
+
     }
     
     @IBAction func KT(_ sender: Any) {
-        print("go")
-        let data = "KT"
-             dismiss(animated: true, completion: nil)
-        print("go")
+        self.Com = .KT
+        delegate?.updateUI(self.Com)
+
+        dismiss(animated: true, completion: nil)
 
     }
     
     @IBAction func LGU(_ sender: Any) {
-        let data = "LG U+"
-             dismiss(animated: true, completion: nil)
+        self.Com = .LG
+        delegate?.updateUI(self.Com)
+
+        dismiss(animated: true, completion: nil)
         print("go")
 
     }
     
     @IBAction func SKTA(_ sender: Any) {
-        let data = "SKT 알뜰폰"
-             dismiss(animated: true, completion: nil)
+        self.Com = .SKTA
+        delegate?.updateUI(self.Com)
+
+     dismiss(animated: true, completion: nil)
         print("go")
 
         
     }
     @IBAction func KTA(_ sender: Any) {
-        let data = "KT 알뜰폰"
-             dismiss(animated: true, completion: nil)
+        self.Com = .KTA
+        delegate?.updateUI(self.Com)
+
+     dismiss(animated: true, completion: nil)
         print("go")
 
         
     }
     @IBAction func LGA(_ sender: Any) {
-        let data = "LG U+ 알뜰폰"
-             dismiss(animated: true, completion: nil)
+        self.Com = .LGA
+        delegate?.updateUI(self.Com)
+
+       dismiss(animated: true, completion: nil)
         print("go")
 
     }
 
+}
+extension phoneComViewController: PanModalPresentable {
+    var panScrollable: UIScrollView? {
+        return nil
+    }
+
+    var shortFormHeight: PanModalHeight {
+        return .contentHeight(350)
+    }
+
+    var longFormHeight: PanModalHeight {
+        return .maxHeightWithTopInset(0)
+    }
 }

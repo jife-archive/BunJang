@@ -1,6 +1,9 @@
 PODS:
   - Alamofire (5.6.4)
   - DLRadioButton (1.4.12)
+  - ImageSlideshow (1.9.2):
+    - ImageSlideshow/Core (= 1.9.2)
+  - ImageSlideshow/Core (1.9.2)
   - KakaoSDKAuth (2.14.0):
     - KakaoSDKCommon (= 2.14.0)
   - KakaoSDKCommon (2.14.0):
@@ -13,32 +16,39 @@ PODS:
   - KakaoSDKUser (2.14.0):
     - KakaoSDKAuth (= 2.14.0)
   - naveridlogin-sdk-ios (4.1.5)
+  - PanModal (1.2.7)
 
 DEPENDENCIES:
   - Alamofire (~> 5.1)
   - DLRadioButton (~> 1.4)
+  - ImageSlideshow (~> 1.9.0)
   - KakaoSDKAuth
   - KakaoSDKCommon
   - KakaoSDKUser
   - naveridlogin-sdk-ios
+  - PanModal
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - DLRadioButton
+    - ImageSlideshow
     - KakaoSDKAuth
     - KakaoSDKCommon
     - KakaoSDKUser
     - naveridlogin-sdk-ios
+    - PanModal
 
 SPEC CHECKSUMS:
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
   DLRadioButton: d7c4e225ed0e8013cef7be61455230c7557ad7c1
+  ImageSlideshow: be305b54eaf2b2cfc7a7141c7c734605d44dc07d
   KakaoSDKAuth: 8fca87815de22062a23297983f327613b087b8bb
   KakaoSDKCommon: 0ce638f7a2e49704943c0b74a087a9f8067bba1c
   KakaoSDKUser: 2ca18314ce72e6690f76cb1f6f9fbc771d31a803
   naveridlogin-sdk-ios: 4351fe7162cd6b8b6dbb37bd7cc205304fa1d889
+  PanModal: 3e16ead1a907fb06f4df3f13492fd00149fa4974
 
-PODFILE CHECKSUM: a5345e484213d47dd1227573caa2677bf02172da
+PODFILE CHECKSUM: f8fdac85a1edd27edf81296f353ba881bb849e28
 
 COCOAPODS: 1.11.3

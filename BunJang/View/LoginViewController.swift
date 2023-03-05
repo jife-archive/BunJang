@@ -10,6 +10,7 @@ import KakaoSDKCommon
 import KakaoSDKAuth
 import KakaoSDKUser
 import AuthenticationServices
+import Alamofire
 
 class LoginViewController: UIViewController, UIScrollViewDelegate, UISheetPresentationControllerDelegate, ASAuthorizationControllerPresentationContextProviding, ASAuthorizationControllerDelegate {
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
@@ -28,7 +29,9 @@ class LoginViewController: UIViewController, UIScrollViewDelegate, UISheetPresen
             print("User ID : \(userIdentifier)")
             print("User Email : \(email ?? "")")
             print("User Name : \((fullName?.givenName ?? "") + (fullName?.familyName ?? ""))")
-
+            let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "mainTabbar")
+            self.navigationController?.pushViewController(pushVC!, animated: true)
+            
         default:
             break
         }
@@ -64,6 +67,10 @@ class LoginViewController: UIViewController, UIScrollViewDelegate, UISheetPresen
                let data = try? Data(contentsOf: url) {
              //   self.profileImageView.image = UIImage(data: data)
                 print(data)
+                let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "mainTabbar")
+                self.navigationController?.pushViewController(pushVC!, animated: true)
+                
+                
             }
         }
     }
@@ -97,12 +104,12 @@ class LoginViewController: UIViewController, UIScrollViewDelegate, UISheetPresen
     var images: [UIImage] = [UIImage(named: "로그인배너1")!, UIImage(named: "로그인배너2")!, UIImage(named: "로그인배너3")!]
 
     @IBAction func OtherLoginClick(_ sender: Any) {
-        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "EtcLoginViewController") else {return}
+       /* guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "EtcLoginViewController") else {return}*/
 
-    
       //  vc.modalPresentationStyle = .pageSheet
-
-        if let sheet = vc.sheetPresentationController {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "EtcLoginViewController") as! EtcLoginViewController
+        self.presentPanModal(vc)
+      /*  if let sheet = vc.sheetPresentationController {
             //지원할 크기 지정
             sheet.detents = [.medium(), .large()]
             //크기 변하는거 감지
@@ -117,8 +124,8 @@ class LoginViewController: UIViewController, UIScrollViewDelegate, UISheetPresen
             //뒤 배경 흐리게 제거 (기본 값은 모든 크기에서 배경 흐리게 됨)
             //sheet.largestUndimmedDetentIdentifier = .medium
            // present(vc, animated: true, completion: nil)
-        }
-        self.present(vc, animated: true, completion: nil)
+        }*/
+       // self.present(vc, animated: true, completion: nil)
         
     }
     

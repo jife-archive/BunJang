@@ -12,5 +12,6 @@ pod 'KakaoSDKUser'  # 사용자 관리
   pod 'naveridlogin-sdk-ios'
   pod 'Alamofire', '~> 5.1'
 pod 'DLRadioButton', '~> 1.4'
-
+pod 'ImageSlideshow', '~> 1.9.0'
+pod 'PanModal'
 end

@@ -8,8 +8,18 @@
 import UIKit
 import NaverThirdPartyLogin
 import Alamofire
+import PanModal
 
-class EtcLoginViewController: UIViewController {
+class EtcLoginViewController: UIViewController,PanModalPresentable {
+    var panScrollable: UIScrollView?{
+        return nil
+    }
+    var shortFormHeight: PanModalHeight {
+        return .contentHeight(300)
+    }
+    var longFormHeight: PanModalHeight{
+        return .maxHeightWithTopInset(0)
+    }
     let naverLoginInstance = NaverThirdPartyLoginConnection.getSharedInstance()
 
     func naverLoginPaser() {
@@ -57,6 +67,10 @@ class EtcLoginViewController: UIViewController {
                         print("네이버 로그인 프로필사진 ",profile)
                         print("네이버 로그인 이메일 ",email)
                         print("네이버 로그인 닉네임 ",nickName)
+    
+                        let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "mainTabbar")
+                        pushVC?.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+                        self.present(pushVC!, animated: true, completion: nil)
                         
                     } else {
                         // handle failure response
@@ -74,7 +88,10 @@ class EtcLoginViewController: UIViewController {
     
     
     @IBAction func facebookClick(_ sender: Any) {
-        naverLoginInstance?.requestDeleteToken()
+      //  naverLoginInstance?.requestDeleteToken()
+        let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "mainTabbar")
+        pushVC?.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+        self.present(pushVC!, animated: true, completion: nil)
     }
     @IBAction func selfClick(_ sender: Any) {
         let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "SelfLoginViewController")
