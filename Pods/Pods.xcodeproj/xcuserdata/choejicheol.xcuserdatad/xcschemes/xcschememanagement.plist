@@ -46,19 +46,33 @@
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>
-		<key>PanModal.xcscheme</key>
+		<key>Pageboy.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>7</integer>
 		</dict>
-		<key>Pods-BunJang.xcscheme</key>
+		<key>PanModal.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>8</integer>
+		</dict>
+		<key>Pods-BunJang.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>9</integer>
+		</dict>
+		<key>Tabman.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>10</integer>
 		</dict>
 		<key>naveridlogin-sdk-ios.xcscheme</key>
 		<dict>

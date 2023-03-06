@@ -18,6 +18,7 @@ class SelfLoginViewController: UIViewController, UITextFieldDelegate, UISheetPre
     var state: Text = .name
     let modalViewController = phoneComViewController()
 
+    @IBOutlet weak var nabiBar: NavigationBar!
     @IBOutlet weak var nametextfield: UITextField!
     
     @IBOutlet weak var comLabel: UILabel!
@@ -128,6 +129,7 @@ class SelfLoginViewController: UIViewController, UITextFieldDelegate, UISheetPre
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        nabiBar.shadowImage = UIImage()
         setTextfield()
         birthSV.isHidden = true
         ComView.isHidden = true

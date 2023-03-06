@@ -5,5 +5,7 @@ ${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework
 ${BUILT_PRODUCTS_DIR}/KakaoSDKAuth/KakaoSDKAuth.framework
 ${BUILT_PRODUCTS_DIR}/KakaoSDKCommon/KakaoSDKCommon.framework
 ${BUILT_PRODUCTS_DIR}/KakaoSDKUser/KakaoSDKUser.framework
+${BUILT_PRODUCTS_DIR}/Pageboy/Pageboy.framework
 ${BUILT_PRODUCTS_DIR}/PanModal/PanModal.framework
+${BUILT_PRODUCTS_DIR}/Tabman/Tabman.framework
 ${PODS_XCFRAMEWORKS_BUILD_DIR}/naveridlogin-sdk-ios/NaverThirdPartyLogin.framework/NaverThirdPartyLogin

@@ -9,6 +9,24 @@ import UIKit
 import ImageSlideshow
 
 class HomeViewController: UIViewController, UIScrollViewDelegate, ImageSlideshowDelegate {
+    
+    
+    @IBAction func GoSearch(_ sender: Any) {
+        let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "SearchViewController")
+        pushVC?.hidesBottomBarWhenPushed = true
+
+        self.navigationController?.pushViewController(pushVC!, animated: true)
+    }
+    
+    @IBAction func GoCategory(_ sender: Any) {
+        let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "MenuViewController")
+        pushVC?.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+        self.present(pushVC!, animated: true, completion: nil)
+    }
+    
+    
+    
+    
     @IBOutlet weak var bellBar: UIBarButtonItem!
     @IBOutlet weak var menuBar: UIBarButtonItem!
     @IBOutlet weak var AdIndicatorView: UIView!
