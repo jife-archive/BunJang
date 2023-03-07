@@ -11,6 +11,23 @@ struct Category {
     var imgName: String
     var Name: String
 }
+struct fresearch {
+    var Name: String
+}
+class fresearchdata {
+    var fresearchData = [
+    fresearch(Name: "레드벨벳"),
+    fresearch(Name: "미닛뮤트"),
+    fresearch(Name: "찌청명"),
+    fresearch(Name: "스투시 후드집업"),
+    fresearch(Name: "오지타"),
+    fresearch(Name: "보스 qc45"),
+    fresearch(Name: "와코마리아"),
+    fresearch(Name: "베트멍"),
+    fresearch(Name: "에어팟 프로 미개봉"),
+    fresearch(Name: "리오버"),
+    ]
+}//"레드벨벳","미닛뮤트","찌청명","스투시 후드집업","오지타","보스 qc45","와코마리아","베트멍","에어팟 프로 미개봉","리오버"
 
 class homeCategorydata {
     var homeCategory = [  //14개

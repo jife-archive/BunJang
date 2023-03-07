@@ -77,8 +77,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, ImageSlideshow
         let height = HomeCategoryCollectionView.frame.height / 2
         secondFlowLayout.itemSize = CGSize(width: width, height: height)
         HomeCategoryCollectionView.collectionViewLayout = secondFlowLayout
-        
-      
+    
     }
     private func configureView() {
         navigationController?.navigationBar.shadowImage = UIImage()
@@ -112,6 +111,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, ImageSlideshow
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tabBarController?.delegate = self
         self.configureView()
         self.setCollectionView()
         self.setItemCollectionView()
@@ -149,4 +149,26 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     
+}
+extension HomeViewController: UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        if viewController.tabBarItem.title == "검색"{
+            let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "SearchViewController")
+            pushVC?.hidesBottomBarWhenPushed = true
+
+            self.navigationController?.pushViewController(pushVC!, animated: true)
+            return false
+            
+        }
+        else if viewController.tabBarItem.title == "등록"{
+            let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "SaleViewController")
+            pushVC?.hidesBottomBarWhenPushed = true
+            pushVC?.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+            self.present(pushVC!, animated: true, completion: nil)
+
+            return false
+            
+        }
+        return true
+    }
 }

@@ -17,6 +17,7 @@
 		09448C5529B609290072FA73 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09448C5429B609290072FA73 /* SearchViewController.swift */; };
 		0945B58829B780B20079EAE7 /* FrequencyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0945B58629B780B20079EAE7 /* FrequencyCollectionViewCell.swift */; };
 		0945B58929B780B20079EAE7 /* FrequencyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0945B58729B780B20079EAE7 /* FrequencyCollectionViewCell.xib */; };
+		0945B58D29B79A300079EAE7 /* SaleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0945B58C29B79A300079EAE7 /* SaleViewController.swift */; };
 		09A0339529B31EF700F291FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A0339429B31EF700F291FF /* AppDelegate.swift */; };
 		09A0339729B31EF700F291FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A0339629B31EF700F291FF /* SceneDelegate.swift */; };
 		09A0339929B31EF700F291FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A0339829B31EF700F291FF /* ViewController.swift */; };
@@ -69,6 +70,7 @@
 		09448C5429B609290072FA73 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		0945B58629B780B20079EAE7 /* FrequencyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyCollectionViewCell.swift; sourceTree = "<group>"; };
 		0945B58729B780B20079EAE7 /* FrequencyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FrequencyCollectionViewCell.xib; sourceTree = "<group>"; };
+		0945B58C29B79A300079EAE7 /* SaleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleViewController.swift; sourceTree = "<group>"; };
 		09A0339129B31EF700F291FF /* BunJang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BunJang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09A0339429B31EF700F291FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09A0339629B31EF700F291FF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -159,9 +161,9 @@
 		09A0339329B31EF700F291FF /* BunJang */ = {
 			isa = PBXGroup;
 			children = (
-				09F2C86029B4F05E00CC6B39 /* Network */,
-				09A033AB29B3206200F291FF /* Img */,
 				09A033C229B3346900F291FF /* BunJang.entitlements */,
+				09A033AB29B3206200F291FF /* Img */,
+				09F2C86029B4F05E00CC6B39 /* Network */,
 				09A033B729B3246800F291FF /* Model */,
 				09A033B629B3246200F291FF /* Controller */,
 				09A033A829B31FB900F291FF /* View */,
@@ -182,6 +184,7 @@
 				09A033A929B31FC400F291FF /* LoginViewController.swift */,
 				09A033C529B36DB000F291FF /* HomeViewController.swift */,
 				09448C5429B609290072FA73 /* SearchViewController.swift */,
+				0945B58C29B79A300079EAE7 /* SaleViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				093A960129B70778007102BC /* RecentSearchCollectionViewCell.swift in Sources */,
 				09A0339729B31EF700F291FF /* SceneDelegate.swift in Sources */,
 				09CBF40A29B4D2A200D261B6 /* ItemCollectionViewCell.swift in Sources */,
+				0945B58D29B79A300079EAE7 /* SaleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

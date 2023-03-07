@@ -17,7 +17,11 @@ class SearchViewController: UIViewController {
     //   var recentSearchList: [String] = []
     
     let searchList = reascherData()
+    let freData = fresearchdata()
     
+    @IBAction func GoHome(_ sender: Any) {
+        self.navigationController?.popToRootViewController(animated: true)
+    }
     @IBAction func GoBack(_ sender: Any) {
         
         self.navigationController?.popToRootViewController(animated: true)
@@ -70,7 +74,13 @@ class SearchViewController: UIViewController {
         secondFlowLayout.minimumLineSpacing = 0
         secondFlowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         CategoryCollectionVIew.collectionViewLayout = secondFlowLayout
-        freSearch.collectionViewLayout = secondFlowLayout
+        
+        let third = UICollectionViewFlowLayout()
+        third.scrollDirection = .horizontal
+        third.minimumInteritemSpacing = 10
+        third.minimumLineSpacing = 10
+        freSearch.collectionViewLayout = third
+        
     }
     
     func dismissKeyboard() {
@@ -121,6 +131,9 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
         else if collectionView == CategoryCollectionVIew {
             return 12
         }
+        else if collectionView == freSearch {
+            return 10
+        }
         return 0
 
     }
@@ -139,6 +152,12 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
             guard let cell = self.CategoryCollectionVIew.dequeueReusableCell(withReuseIdentifier: "HomeCategoryCollectionViewCell", for: indexPath) as? HomeCategoryCollectionViewCell else {return UICollectionViewCell()}
             cell.img.image = UIImage(named: CategoryData.habbitCategory[indexPath.row].imgName)
             cell.label.text = CategoryData.habbitCategory[indexPath.row].Name
+            return cell
+        }
+        else if collectionView == freSearch {
+            guard let cell = self.freSearch.dequeueReusableCell(withReuseIdentifier: "FrequencyCollectionViewCell", for: indexPath) as? FrequencyCollectionViewCell else {return UICollectionViewCell()}
+            cell.idxNum.text = String(indexPath.row + 1)
+            cell.nameLabel.text = reascherData.shared.fresearchData[indexPath.item].Name
             return cell
         }
         
@@ -169,9 +188,17 @@ extension SearchViewController: UICollectionViewDelegateFlowLayout {
            return CGSize(width: width, height: height)
        }
        else if collectionView == freSearch {
-           let width = CategoryCollectionVIew.frame.width / 1
-           let height = CategoryCollectionVIew.frame.height / 1
-           return CGSize(width: width, height: height)
+           
+           let label = UILabel(frame: CGRect.zero)
+           label.text =  reascherData.shared.fresearchData[indexPath.item].Name
+           label.sizeToFit()
+       
+
+           let cellWidth = label.frame.width + 50
+
+          // let width = freSearch.frame.width/3
+
+           return CGSize(width: cellWidth, height: 50)
            
        }
         return CGSize.zero

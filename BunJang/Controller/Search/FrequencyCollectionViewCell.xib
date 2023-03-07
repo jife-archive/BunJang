@@ -22,34 +22,39 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6gQ-zc-teP">
-                        <rect key="frame" x="31.000000000000004" y="15" width="43.333333333333343" height="21"/>
-                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="검색어" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gq6-ht-dmv">
+                        <rect key="frame" x="31" y="17" width="37" height="17"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bfz-sD-V9O">
-                        <rect key="frame" x="162" y="10" width="28" height="30"/>
-                        <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain">
-                            <backgroundConfiguration key="background" image="검색벨"/>
-                        </buttonConfiguration>
-                    </button>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="검색벨" translatesAutoresizingMaskIntoConstraints="NO" id="xwf-mS-Bng">
+                        <rect key="frame" x="169" y="15" width="23" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="23" id="Cug-bh-uju"/>
+                            <constraint firstAttribute="height" constant="21" id="e5x-Zr-K5W"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="6gQ-zc-teP" firstAttribute="leading" secondItem="RtG-gY-44T" secondAttribute="trailing" constant="7" id="6FJ-TE-mha"/>
+                <constraint firstAttribute="bottom" secondItem="xwf-mS-Bng" secondAttribute="bottom" constant="14" id="0Cb-fO-QbS"/>
+                <constraint firstItem="gq6-ht-dmv" firstAttribute="leading" secondItem="RtG-gY-44T" secondAttribute="trailing" constant="7" id="2u7-YF-aMB"/>
+                <constraint firstAttribute="bottom" secondItem="gq6-ht-dmv" secondAttribute="bottom" constant="16" id="3qh-iH-eiU"/>
                 <constraint firstAttribute="bottom" secondItem="RtG-gY-44T" secondAttribute="bottom" constant="16" id="7U7-3E-ucH"/>
-                <constraint firstItem="6gQ-zc-teP" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="JAO-Sm-HJq"/>
-                <constraint firstAttribute="bottom" secondItem="bfz-sD-V9O" secondAttribute="bottom" constant="10" id="NXA-Zh-Ac1"/>
-                <constraint firstAttribute="trailing" secondItem="bfz-sD-V9O" secondAttribute="trailing" constant="10" id="SxZ-wX-RDP"/>
+                <constraint firstItem="gq6-ht-dmv" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="17" id="FgY-gy-nwH"/>
                 <constraint firstItem="RtG-gY-44T" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="16" id="fzO-Gi-Szp"/>
                 <constraint firstItem="RtG-gY-44T" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="7" id="gkJ-iO-1PE"/>
-                <constraint firstItem="bfz-sD-V9O" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="pgy-26-R8n"/>
+                <constraint firstAttribute="trailing" secondItem="xwf-mS-Bng" secondAttribute="trailing" constant="8" id="sai-rm-HzG"/>
+                <constraint firstItem="xwf-mS-Bng" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="xY3-Bs-6qR"/>
             </constraints>
             <size key="customSize" width="200" height="50"/>
-            <point key="canvasLocation" x="189.31297709923663" y="-11.971830985915494"/>
+            <connections>
+                <outlet property="idxNum" destination="RtG-gY-44T" id="gTY-GF-9bP"/>
+                <outlet property="nameLabel" destination="gq6-ht-dmv" id="V8q-lk-JyH"/>
+            </connections>
+            <point key="canvasLocation" x="189" y="-15"/>
         </collectionViewCell>
     </objects>
     <resources>
