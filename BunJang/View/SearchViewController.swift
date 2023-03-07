@@ -8,12 +8,79 @@
 import UIKit
 
 class SearchViewController: UIViewController {
+    
+    @IBOutlet weak var RecentSearch: UICollectionView!
+    @IBOutlet weak var freSearch: UICollectionView!
+    @IBOutlet weak var CategoryCollectionVIew: UICollectionView!
+    let CategoryData = habbitCategorydata()
+
+    //   var recentSearchList: [String] = []
+    
+    let searchList = reascherData()
+    
+    @IBAction func GoBack(_ sender: Any) {
+        
+        self.navigationController?.popToRootViewController(animated: true)
+        
+        //let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController")
+        //self.navigationController?.pushViewController(pushVC!, animated: true)
+    }
+    func setupHideKeyboardOnTap() {
+        self.view.addGestureRecognizer(self.endEditingRecognizer())
+        self.navigationController?.navigationBar.addGestureRecognizer(self.endEditingRecognizer())
+    }
+    
+    // 다른곳에서는 쓸 일이 없으므로 private
+    private func endEditingRecognizer() -> UIGestureRecognizer {
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(self.view.endEditing(_:)))
+        tap.cancelsTouchesInView = false
+        return tap
+    }
+
     let searchBar = UISearchBar()
 
+    func setCollectionView()
+    {
+        self.RecentSearch.delegate = self
+        self.RecentSearch.dataSource = self
+        self.RecentSearch.register(UINib(nibName: "RecentSearchCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "RecentSearchCollectionViewCell")
+
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.scrollDirection = .horizontal
+        flowLayout.minimumLineSpacing = 2
+        flowLayout.minimumInteritemSpacing = 2
+        self.RecentSearch.collectionViewLayout = flowLayout
+        
+        
+        self.CategoryCollectionVIew.delegate = self
+        self.CategoryCollectionVIew.dataSource = self
+        CategoryCollectionVIew.scrollIndicatorInsets = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
+        CategoryCollectionVIew.horizontalScrollIndicatorInsets = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
+        CategoryCollectionVIew.indicatorStyle = .black
+        self.CategoryCollectionVIew.register(UINib(nibName: "HomeCategoryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "HomeCategoryCollectionViewCell")
+        
+        self.freSearch.delegate = self
+        self.freSearch.dataSource = self
+        self.freSearch.register(UINib(nibName: "FrequencyCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "FrequencyCollectionViewCell")
+
+        
+        let secondFlowLayout = UICollectionViewFlowLayout()
+        secondFlowLayout.scrollDirection = .horizontal
+        secondFlowLayout.minimumInteritemSpacing = 0
+        secondFlowLayout.minimumLineSpacing = 0
+        secondFlowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        CategoryCollectionVIew.collectionViewLayout = secondFlowLayout
+        freSearch.collectionViewLayout = secondFlowLayout
+    }
+    
+    func dismissKeyboard() {
+        searchBar.resignFirstResponder()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+            setCollectionView()
             configureSearchBar()
+           setupHideKeyboardOnTap()
         }
     
     private func configureSearchBar() {
@@ -26,22 +93,97 @@ class SearchViewController: UIViewController {
         searchBar.searchTextField.font = .systemFont(ofSize: 15, weight: .semibold)
         searchBar.searchTextField.tintColor =  UIColor(red: 203/255, green: 204/255, blue: 203/255, alpha: 1.0)
         self.navigationItem.titleView = searchBar
-        
-        //서치 탭에 들어왔을 때 자동으로 focus 되도록
         searchBar.becomeFirstResponder()
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 extension SearchViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let searchText = self.searchBar.text else {return}
+        reascherData.shared.recentSearchList.append(searchText)
+        print( reascherData.shared.recentSearchList)
+        RecentSearch.reloadData()
+        self.searchBar.text = ""
+        print("!")
+        dismissKeyboard()
+    }
     
+    
+}
+extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource
+{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if collectionView == RecentSearch{
+            return  reascherData.shared.recentSearchList.count
+
+        }
+        else if collectionView == CategoryCollectionVIew {
+            return 12
+        }
+        return 0
+
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        
+        if collectionView == RecentSearch {
+            guard let cell = self.RecentSearch.dequeueReusableCell(withReuseIdentifier: "RecentSearchCollectionViewCell", for: indexPath) as? RecentSearchCollectionViewCell else {return UICollectionViewCell()}
+            
+            cell.RecentLabel.text =  reascherData.shared.recentSearchList[indexPath.row]
+
+            return cell
+        }
+        else if collectionView == CategoryCollectionVIew {
+            guard let cell = self.CategoryCollectionVIew.dequeueReusableCell(withReuseIdentifier: "HomeCategoryCollectionViewCell", for: indexPath) as? HomeCategoryCollectionViewCell else {return UICollectionViewCell()}
+            cell.img.image = UIImage(named: CategoryData.habbitCategory[indexPath.row].imgName)
+            cell.label.text = CategoryData.habbitCategory[indexPath.row].Name
+            return cell
+        }
+        
+        return UICollectionViewCell()
+        
+    }
+
+}
+extension SearchViewController: UICollectionViewDelegateFlowLayout {
+   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        if collectionView == RecentSearch{
+            let label = UILabel(frame: CGRect.zero)
+            label.text =  reascherData.shared.recentSearchList[indexPath.item]
+            label.sizeToFit()
+        
+
+            let cellWidth = label.frame.width + 40
+            
+            return CGSize(width: cellWidth, height: 40)
+            
+        }
+       else if collectionView == CategoryCollectionVIew {
+           
+           let width = CategoryCollectionVIew.frame.width / 4
+           let height = CategoryCollectionVIew.frame.height / 3
+           
+           return CGSize(width: width, height: height)
+       }
+       else if collectionView == freSearch {
+           let width = CategoryCollectionVIew.frame.width / 1
+           let height = CategoryCollectionVIew.frame.height / 1
+           return CGSize(width: width, height: height)
+           
+       }
+        return CGSize.zero
+        
+    }
+    
+    
+}
+extension SearchViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y > 0 {
+            dismissKeyboard()
+        }
+    }
 }

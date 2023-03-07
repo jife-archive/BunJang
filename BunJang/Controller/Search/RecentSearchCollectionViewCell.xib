@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="RecentSearchCollectionViewCell" reuseIdentifier="RecentSearchCollectionViewCell" id="gTV-IL-0wX" customClass="RecentSearchCollectionViewCell" customModule="BunJang" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="141" height="45"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="141" height="45"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yGU-yH-hXo">
+                        <rect key="frame" x="94.666666666666671" y="5" width="46.333333333333329" height="35"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="xmark" catalog="system">
+                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </buttonConfiguration>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="최근검색어" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mVg-hC-lQa">
+                        <rect key="frame" x="6" y="14" width="92" height="17"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="yGU-yH-hXo" firstAttribute="leading" secondItem="mVg-hC-lQa" secondAttribute="trailing" constant="-3.3333333333333286" id="1TB-48-HUO"/>
+                <constraint firstItem="mVg-hC-lQa" firstAttribute="centerY" secondItem="yGU-yH-hXo" secondAttribute="centerY" id="eRf-hd-lEe"/>
+                <constraint firstAttribute="bottom" secondItem="yGU-yH-hXo" secondAttribute="bottom" constant="5" id="gpG-Wk-m7R"/>
+                <constraint firstItem="yGU-yH-hXo" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="qDf-mp-l1e"/>
+                <constraint firstItem="mVg-hC-lQa" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="14" id="x1T-Ru-ikV"/>
+                <constraint firstAttribute="trailing" secondItem="yGU-yH-hXo" secondAttribute="trailing" id="ytj-cF-sUs"/>
+            </constraints>
+            <size key="customSize" width="141" height="45"/>
+            <connections>
+                <outlet property="RecentLabel" destination="mVg-hC-lQa" id="hDd-w8-ap9"/>
+            </connections>
+            <point key="canvasLocation" x="197.70992366412213" y="-14.43661971830986"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+    </resources>
+</document>
