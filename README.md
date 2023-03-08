@@ -81,3 +81,20 @@ https://user-images.githubusercontent.com/114370871/222976257-1ae6de9c-a591-4102
 </div>
 </details>
 
+<details>
+<summary>3월8일(수)</summary>
+<div markdown="1">
+
+
+최종목표: 검색화면 완료 및 상품상세페이지
+
+:sunglasses:완료
+  -검색페이지 하위 UI 완료
+
+:rage:미구현 목표
+ - 상품상세페이지 
+ - 상품등록 UI 세부사하 데이터 전달등
+ 
+ 느낀점: 학교생활과 병행이 힘들지만, 끝까지 최선을 다해야한다. 하루 만에 우수수료는 포기일수도..?ㅎ
+</div>
+</details>
