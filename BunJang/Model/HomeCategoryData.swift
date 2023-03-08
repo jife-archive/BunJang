@@ -14,6 +14,54 @@ struct Category {
 struct fresearch {
     var Name: String
 }
+struct saleCategory {
+    var Name: String
+}
+class saleCategorydata {
+    var saleCate = [
+                         saleCategory(Name: "여성의류"),
+                         saleCategory(Name: "남성의류"),
+                         saleCategory(Name: "신발"),
+                         saleCategory(Name: "가방"),
+                         saleCategory(Name: "시계/쥬얼리"),
+                         saleCategory(Name: "패션 액세서리"),
+                         saleCategory(Name: "디지털/가전"),
+                         saleCategory(Name: "스포츠/레저"),
+                         saleCategory(Name: "차량/오토바이"),
+                         saleCategory(Name: "스타굿즈"),
+                         saleCategory(Name: "키덜트"),
+                         saleCategory(Name: "예술/희귀/수집품"),
+                         saleCategory(Name: "음반/악기"),
+                         saleCategory(Name: "도서/티켓/문구"),
+                         saleCategory(Name: "뷰티/미용"),
+                         saleCategory(Name: "가구/인테리어"),
+                         saleCategory(Name: "생활/주방용품"),
+                         saleCategory(Name: "공구/산업용품"),
+                         saleCategory(Name: "식품"),
+                         saleCategory(Name: "유아동/출산"),
+                         saleCategory(Name: "반려동물용품"),
+                         saleCategory(Name: "기타"),
+    ]
+    var subCate = [
+                   "자켓",
+                   "셔츠",
+                   "청바지",
+                   "정장",
+                   "조끼/베스트",
+                   "패딩/점퍼",
+                   "바지",
+                   "반바지",
+                   "트레이닝",
+                   "티셔츠",
+                   "코트",
+                   "맨투맨",
+                   "후드티/후드집업",
+                   "가디건",
+                   "니트/스웨터",
+                   "언더웨어/홈웨어",
+                   "테마/이벤트",
+    ]
+}
 class fresearchdata {
     var fresearchData = [
     fresearch(Name: "레드벨벳"),
@@ -90,7 +138,7 @@ class habbitCategorydata {
         Category(imgName: "유아동출산", Name: "유아동/출산"),
         Category(imgName: "커뮤니티", Name: "커뮤니티"),
     ]
-    var lifeCategory = [  //12개
+    var lifeCategory = [  //4개
         Category(imgName: "지역서비스", Name: "지역서비스"),
         Category(imgName: "원룸함께살아요", Name: "원룸/함께살아요"),
         Category(imgName: "구인구직", Name: "구인구직"),

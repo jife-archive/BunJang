@@ -13,26 +13,56 @@ class SaleViewController: UIViewController {
     @IBOutlet weak var WonSIgn: UIImageView!
     @IBOutlet weak var naviBar: NavigationBar!
     
+    @IBOutlet weak var TagView: UIView!
+    @IBOutlet weak var CategoryLabel: UILabel!
+    @IBOutlet weak var categoryView: UIView!
     @IBOutlet weak var DetailBG: UIImageView!
     @IBOutlet weak var DetailTextField: UITextField!
     @IBOutlet weak var ShipPriceSV: UIStackView!
     @IBOutlet weak var PriceTextField: UITextField!
     @IBOutlet weak var PhotoCountLabel: UILabel!
-    @objc func dismissKeyboard() {
-        DetailTextField.resignFirstResponder()
-        PriceTextField.resignFirstResponder()
+    let categoryData = saleCategorydata()
 
-      }
-    func dismissKeyboardWhenTappedAround() {
-        let tap: UITapGestureRecognizer =
-            UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
-//        tap.cancelsTouchesInView = false
-        self.view.addGestureRecognizer(tap)
+    var Index1: Int?
+    var Index2: Int?
+
+    @IBAction func showOption(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "OptionViewController") as! OptionViewController
+        self.presentPanModal(vc)
+
     }
+    let navController = UINavigationController()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if Index1 != nil {
+            CategoryLabel.text = categoryData.saleCate[Index1!].Name + " > " + categoryData.subCate[Index2!]
+        }
+        
+    }
+    @objc func tapCategoryView() {
+        print("!")
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "CategoryViewController") as! CategoryViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    func setTap() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapCategoryView))
+        self.categoryView.addGestureRecognizer(tapGesture)
+    }
+    @objc func tapTagView() {
+        print("!")
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "TagViewController") as! TagViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    func setTag() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapTagView))
+        self.TagView.addGestureRecognizer(tapGesture)
+    }
+    
     var isCheck = false
     
     @IBAction func GoBack(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     @IBAction func GoSale(_ sender: Any) {
@@ -79,19 +109,10 @@ class SaleViewController: UIViewController {
         setTextField()
         PriceTextField.delegate = self
         DetailTextField.delegate = self
-        // Do any additional setup after loading the view.
+        setTap()
+        setTag()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 extension SaleViewController: UITextFieldDelegate {

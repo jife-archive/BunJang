@@ -6,7 +6,18 @@
 //
 
 import Foundation
+struct saleInfo {
+    var Category: String
+    var ItemName: String
+    var Price: String
+    var option: String
+}
 
+class saleData{
+    static let shared = saleData()
+    
+    
+}
 
 
 class reascherData {

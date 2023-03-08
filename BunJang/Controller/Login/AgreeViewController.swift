@@ -66,7 +66,7 @@ class AgreeViewController: UIViewController, PanModalPresentable {
             self.nextBtn.backgroundColor = .red
         }
         self.tableView.reloadData()
-        let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "mainTabbar")
+        let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "TabBar_ViewController")
         pushVC?.modalPresentationStyle = UIModalPresentationStyle.fullScreen
         self.present(pushVC!, animated: true, completion: nil)
     }

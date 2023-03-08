@@ -29,7 +29,7 @@ class LoginViewController: UIViewController, UIScrollViewDelegate, UISheetPresen
             print("User ID : \(userIdentifier)")
             print("User Email : \(email ?? "")")
             print("User Name : \((fullName?.givenName ?? "") + (fullName?.familyName ?? ""))")
-            let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "mainTabbar")
+            let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "TabBar_ViewController")
             self.navigationController?.pushViewController(pushVC!, animated: true)
             
         default:
@@ -67,7 +67,7 @@ class LoginViewController: UIViewController, UIScrollViewDelegate, UISheetPresen
                let data = try? Data(contentsOf: url) {
              //   self.profileImageView.image = UIImage(data: data)
                 print(data)
-                let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "mainTabbar")
+                let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "TabBar_ViewController")
                 self.navigationController?.pushViewController(pushVC!, animated: true)
                 
                 

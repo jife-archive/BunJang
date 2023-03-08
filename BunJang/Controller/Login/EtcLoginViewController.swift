@@ -68,7 +68,7 @@ class EtcLoginViewController: UIViewController,PanModalPresentable {
                         print("네이버 로그인 이메일 ",email)
                         print("네이버 로그인 닉네임 ",nickName)
     
-                        let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "mainTabbar")
+                        let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "TabBar_ViewController")
                         pushVC?.modalPresentationStyle = UIModalPresentationStyle.fullScreen
                         self.present(pushVC!, animated: true, completion: nil)
                         
@@ -89,7 +89,7 @@ class EtcLoginViewController: UIViewController,PanModalPresentable {
     
     @IBAction func facebookClick(_ sender: Any) {
       //  naverLoginInstance?.requestDeleteToken()
-        let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "mainTabbar")
+        let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "TabBar_ViewController")
         pushVC?.modalPresentationStyle = UIModalPresentationStyle.fullScreen
         self.present(pushVC!, animated: true, completion: nil)
     }

@@ -161,10 +161,9 @@ extension HomeViewController: UITabBarControllerDelegate {
             
         }
         else if viewController.tabBarItem.title == "등록"{
-            let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "SaleViewController")
-            pushVC?.hidesBottomBarWhenPushed = true
-            pushVC?.modalPresentationStyle = UIModalPresentationStyle.fullScreen
-            self.present(pushVC!, animated: true, completion: nil)
+            let pushVC =  self.storyboard?.instantiateViewController(withIdentifier: "SaleNavigationController") as! SaleNavigationController
+            pushVC.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+            self.present(pushVC, animated: true, completion: nil)
 
             return false
             

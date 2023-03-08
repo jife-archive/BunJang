@@ -17,7 +17,6 @@ enum com: String {
     case KTA = "KT 알뜰폰"
     case LGA = "LG U+ 알뜰폰"
 }
-
 protocol ModalViewControllerDelegate {
     func updateUI(_ data: com)
 }
