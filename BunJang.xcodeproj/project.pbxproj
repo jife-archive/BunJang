@@ -68,10 +68,11 @@
 		09F2C86A29B4FF7500CC6B39 /* AgreeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F2C86829B4FF7500CC6B39 /* AgreeTableViewCell.xib */; };
 		09F66B9E29B9D295008B1FD9 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F66B9D29B9D295008B1FD9 /* MapViewController.swift */; };
 		09F66BA029B9D302008B1FD9 /* MapAPi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F66B9F29B9D302008B1FD9 /* MapAPi.swift */; };
-		09F66BA229B9D945008B1FD9 /* OptionnaVigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F66BA129B9D945008B1FD9 /* OptionnaVigationController.swift */; };
 		09F66BA429B9F096008B1FD9 /* SearchAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F66BA329B9F096008B1FD9 /* SearchAddressViewController.swift */; };
 		09F66BA729BA038A008B1FD9 /* SearchAddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F66BA529BA038A008B1FD9 /* SearchAddressTableViewCell.swift */; };
 		09F66BA829BA038A008B1FD9 /* SearchAddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F66BA629BA038A008B1FD9 /* SearchAddressTableViewCell.xib */; };
+		09F66BAB29BA293B008B1FD9 /* SetImgCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F66BA929BA293B008B1FD9 /* SetImgCollectionViewCell.swift */; };
+		09F66BAC29BA293B008B1FD9 /* SetImgCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F66BAA29BA293B008B1FD9 /* SetImgCollectionViewCell.xib */; };
 		B2C1D2A352BBA183B00EA60E /* Pods_BunJang.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A68A26EDF914E0F82DC7887F /* Pods_BunJang.framework */; };
 /* End PBXBuildFile section */
 
@@ -140,10 +141,11 @@
 		09F2C86829B4FF7500CC6B39 /* AgreeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AgreeTableViewCell.xib; sourceTree = "<group>"; };
 		09F66B9D29B9D295008B1FD9 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		09F66B9F29B9D302008B1FD9 /* MapAPi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAPi.swift; sourceTree = "<group>"; };
-		09F66BA129B9D945008B1FD9 /* OptionnaVigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionnaVigationController.swift; sourceTree = "<group>"; };
 		09F66BA329B9F096008B1FD9 /* SearchAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAddressViewController.swift; sourceTree = "<group>"; };
 		09F66BA529BA038A008B1FD9 /* SearchAddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAddressTableViewCell.swift; sourceTree = "<group>"; };
 		09F66BA629BA038A008B1FD9 /* SearchAddressTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchAddressTableViewCell.xib; sourceTree = "<group>"; };
+		09F66BA929BA293B008B1FD9 /* SetImgCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetImgCollectionViewCell.swift; sourceTree = "<group>"; };
+		09F66BAA29BA293B008B1FD9 /* SetImgCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetImgCollectionViewCell.xib; sourceTree = "<group>"; };
 		A349ADF302BAC63A7B6941C0 /* Pods-BunJang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BunJang.debug.xcconfig"; path = "Target Support Files/Pods-BunJang/Pods-BunJang.debug.xcconfig"; sourceTree = "<group>"; };
 		A68A26EDF914E0F82DC7887F /* Pods_BunJang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BunJang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA292E1A06D6CEAC39F69DD5 /* Pods-BunJang.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BunJang.release.xcconfig"; path = "Target Support Files/Pods-BunJang/Pods-BunJang.release.xcconfig"; sourceTree = "<group>"; };
@@ -183,10 +185,11 @@
 				093A90D429B9A7DF00D8D8B5 /* TagCollectionViewCell.swift */,
 				093A90D529B9A7DF00D8D8B5 /* TagCollectionViewCell.xib */,
 				09F66B9D29B9D295008B1FD9 /* MapViewController.swift */,
-				09F66BA129B9D945008B1FD9 /* OptionnaVigationController.swift */,
 				09F66BA329B9F096008B1FD9 /* SearchAddressViewController.swift */,
 				09F66BA529BA038A008B1FD9 /* SearchAddressTableViewCell.swift */,
 				09F66BA629BA038A008B1FD9 /* SearchAddressTableViewCell.xib */,
+				09F66BA929BA293B008B1FD9 /* SetImgCollectionViewCell.swift */,
+				09F66BAA29BA293B008B1FD9 /* SetImgCollectionViewCell.xib */,
 			);
 			path = Sale;
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 				09F66BA829BA038A008B1FD9 /* SearchAddressTableViewCell.xib in Resources */,
 				09A033B529B3235400F291FF /* 스플래시 이미지.jpg in Resources */,
 				09A033B029B3206C00F291FF /* 로그인배너2.jpg in Resources */,
+				09F66BAC29BA293B008B1FD9 /* SetImgCollectionViewCell.xib in Resources */,
 				09DA36FC29B4668C00687F10 /* 광고배너7.jpg in Resources */,
 				09DA36F529B4668C00687F10 /* 광고배너2.jpg in Resources */,
 				09DA36F729B4668C00687F10 /* 광고배너8.jpg in Resources */,
@@ -508,7 +512,6 @@
 				09998EFE29B85F67007F1C45 /* SaleNavigationController.swift in Sources */,
 				09A033B929B3248300F291FF /* EtcLoginViewController.swift in Sources */,
 				09F2C86629B4FDA600CC6B39 /* AgreeViewController.swift in Sources */,
-				09F66BA229B9D945008B1FD9 /* OptionnaVigationController.swift in Sources */,
 				0938CC8729B38706000BE7CA /* NavigationBar.swift in Sources */,
 				09F66B9E29B9D295008B1FD9 /* MapViewController.swift in Sources */,
 				09A0339529B31EF700F291FF /* AppDelegate.swift in Sources */,
@@ -531,6 +534,7 @@
 				09A8FDEC29B877E000728CE1 /* SaleCategoryTableViewCell.swift in Sources */,
 				09F2C86429B4F07D00CC6B39 /* APIConstants.swift in Sources */,
 				09A033C629B36DB000F291FF /* HomeViewController.swift in Sources */,
+				09F66BAB29BA293B008B1FD9 /* SetImgCollectionViewCell.swift in Sources */,
 				093A960129B70778007102BC /* RecentSearchCollectionViewCell.swift in Sources */,
 				09A0339729B31EF700F291FF /* SceneDelegate.swift in Sources */,
 				09CBF40A29B4D2A200D261B6 /* ItemCollectionViewCell.swift in Sources */,

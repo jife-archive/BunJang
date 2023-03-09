@@ -7,12 +7,13 @@
 
 import UIKit
 
-class SaleViewController: UIViewController, UISheetPresentationControllerDelegate {
+class SaleViewController: UIViewController, UISheetPresentationControllerDelegate, UINavigationControllerDelegate {
 
+    @IBOutlet weak var payView: UIView!
     @IBOutlet weak var ShipPriceCheckBtn: UIButton!
     @IBOutlet weak var WonSIgn: UIImageView!
     @IBOutlet weak var naviBar: NavigationBar!
-    
+    let imagePicker = UIImagePickerController()
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var usedLabel: UILabel!
     @IBOutlet weak var exchangeLabel: UILabel!
@@ -28,6 +29,14 @@ class SaleViewController: UIViewController, UISheetPresentationControllerDelegat
     @IBOutlet weak var PriceTextField: UITextField!
     @IBOutlet weak var PhotoCountLabel: UILabel!
     let categoryData = saleCategorydata()
+    @IBOutlet weak var SelectImgView: UIView!
+    @IBOutlet weak var imgCollectionView: UICollectionView!
+    
+    @IBOutlet weak var payWaring: UILabel!
+    @IBOutlet weak var payCheckImg: UIImageView!
+    @IBOutlet weak var imgCountLabel: UILabel!
+    
+    var imgName: [UIImage] = []
     var tags: [String] = []
     var Index1: Int?
     var Index2: Int?
@@ -62,6 +71,14 @@ class SaleViewController: UIViewController, UISheetPresentationControllerDelegat
         }
         
     }
+    @objc func tapAlbumView() {
+        imagePicker.modalPresentationStyle = .fullScreen
+        self.present(imagePicker, animated: true, completion: nil)
+    }
+    func setImgTap(){
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapAlbumView))
+        self.SelectImgView.addGestureRecognizer(tapGesture)
+    }
     @objc func tapCategoryView() {
         print("!")
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "CategoryViewController") as! CategoryViewController
@@ -80,15 +97,36 @@ class SaleViewController: UIViewController, UISheetPresentationControllerDelegat
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapTagView))
         self.TagView.addGestureRecognizer(tapGesture)
     }
-    
+    @objc func tappay() {
+        if isPay == true {
+            isPay = false
+            self.payView.layer.borderColor = UIColor.systemGray3.cgColor
+            payCheckImg.tintColor = .lightGray
+            payWaring.text = "내 상품에 안전결제 배지가 표시돼요"
+            payWaring.textColor = .black
+        }
+        else{
+            isPay = true
+            self.payView.layer.borderColor = UIColor.red.cgColor
+            payCheckImg.tintColor = .red
+            payWaring.text = "⛔︎안전결제를 거부하면 주의 안내가 표시돼요"
+            payWaring.textColor = .red
+        }
+    }
+    func setPay() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tappay))
+        self.payView.addGestureRecognizer(tapGesture)
+    }
+    var isPay = false
     var isCheck = false
     
     @IBAction func GoBack(_ sender: Any) {
-        self.navigationController?.popToRootViewController(animated: true)
+        self.dismiss(animated: true)
     }
     
     @IBAction func GoSale(_ sender: Any) {
-        
+        self.dismiss(animated: true)
+
     }
     
     @IBAction func ShipPriceClick(_ sender: Any) {
@@ -124,7 +162,22 @@ class SaleViewController: UIViewController, UISheetPresentationControllerDelegat
         PriceTextField.rightViewMode = .always
         DetailTextField.borderStyle = .none
     }
-    
+    func setItemCollectionView()
+    {
+        self.imgCollectionView.delegate = self
+        self.imgCollectionView.dataSource = self
+        self.imgCollectionView.register(UINib(nibName: "SetImgCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "SetImgCollectionViewCell")
+        
+        let thirdFlowLayout = UICollectionViewFlowLayout()
+        thirdFlowLayout.scrollDirection = .horizontal
+        thirdFlowLayout.minimumInteritemSpacing = 0
+        thirdFlowLayout.minimumLineSpacing = 0
+        thirdFlowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right:0 )
+        let width2 = imgCollectionView.frame.width / 5
+        let height2 = imgCollectionView.frame.height / 1
+        thirdFlowLayout.itemSize = CGSize(width: width2, height: height2)
+        self.imgCollectionView.collectionViewLayout = thirdFlowLayout
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         naviBar.shadowImage = UIImage()
@@ -133,6 +186,16 @@ class SaleViewController: UIViewController, UISheetPresentationControllerDelegat
         DetailTextField.delegate = self
         setTap()
         setTag()
+        setImgTap()
+        setItemCollectionView()
+        self.imagePicker.delegate = self
+        self.imagePicker.allowsEditing = true
+        self.imagePicker.sourceType = .photoLibrary
+        self.payView.layer.borderColor = UIColor.systemGray3.cgColor
+        self.payView.layer.borderWidth = 1
+        self.payView.layer.cornerRadius = 8
+        payCheckImg.tintColor = .lightGray
+        setPay()
     }
     
 
@@ -187,4 +250,34 @@ extension SaleViewController: TagViewDelegate, OptionViewDelegate {
     }
 
     }
+extension SaleViewController: UIImagePickerControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let newImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
+        self.imgName.append(newImage!)
+        self.imgCollectionView.reloadData()
+        print(imgName)
+        print("이미지저장1")
+        self.imgCountLabel.text = String(imgName.count)
+        self.imagePicker.dismiss(animated: true)
+
+    }
+}
+extension SaleViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return imgName.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = self.imgCollectionView.dequeueReusableCell(withReuseIdentifier: "SetImgCollectionViewCell", for: indexPath) as? SetImgCollectionViewCell else {return UICollectionViewCell()}
+        cell.img.image = imgName[indexPath.row]
+        return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        imgName.remove(at: indexPath.row)
+        self.imgCountLabel.text = String(imgName.count)
+        imgCollectionView.reloadData()
+    }
+    
+    
+}
 
