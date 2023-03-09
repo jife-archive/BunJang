@@ -16,8 +16,12 @@ PODS:
   - KakaoSDKUser (2.14.0):
     - KakaoSDKAuth (= 2.14.0)
   - naveridlogin-sdk-ios (4.1.5)
+  - NMapsGeometry (1.0.1)
+  - NMapsMap (3.16.2):
+    - NMapsGeometry
   - Pageboy (4.0.2)
   - PanModal (1.2.7)
+  - SwiftyJSON (4.3.0)
   - Tabman (3.0.1):
     - Pageboy (~> 4.0.2)
 
@@ -29,7 +33,9 @@ DEPENDENCIES:
   - KakaoSDKCommon
   - KakaoSDKUser
   - naveridlogin-sdk-ios
+  - NMapsMap
   - PanModal
+  - SwiftyJSON (~> 4.0)
   - Tabman (~> 3.0)
 
 SPEC REPOS:
@@ -41,8 +47,11 @@ SPEC REPOS:
     - KakaoSDKCommon
     - KakaoSDKUser
     - naveridlogin-sdk-ios
+    - NMapsGeometry
+    - NMapsMap
     - Pageboy
     - PanModal
+    - SwiftyJSON
     - Tabman
 
 SPEC CHECKSUMS:
@@ -53,10 +62,13 @@ SPEC CHECKSUMS:
   KakaoSDKCommon: 0ce638f7a2e49704943c0b74a087a9f8067bba1c
   KakaoSDKUser: 2ca18314ce72e6690f76cb1f6f9fbc771d31a803
   naveridlogin-sdk-ios: 4351fe7162cd6b8b6dbb37bd7cc205304fa1d889
+  NMapsGeometry: 53c573ead66466681cf123f99f698dc8071a4b83
+  NMapsMap: aaa64717249b06ae82c3a3addb3a01f0e33100ab
   Pageboy: 34ff11e8d1041b81769d5bcde9b19a0cb7218bd9
   PanModal: 3e16ead1a907fb06f4df3f13492fd00149fa4974
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
   Tabman: a5880789298f81d3f2cdd6510b54ae637cfd8e09
 
-PODFILE CHECKSUM: 984eade7fb68de8043488023c40516f7606b98db
+PODFILE CHECKSUM: 25d43730e974665a85c3d21747ec3e7d779d9c38
 
 COCOAPODS: 1.11.3

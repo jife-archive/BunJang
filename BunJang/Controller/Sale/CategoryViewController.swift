@@ -7,9 +7,13 @@
 
 import UIKit
 
+protocol CategoryViewDelegate {
+    func sendCate(_ cate: [String])
 
+}
 class CategoryViewController: UIViewController {
     
+    var cate: [String] = []
     
     let categoryData = saleCategorydata()
     

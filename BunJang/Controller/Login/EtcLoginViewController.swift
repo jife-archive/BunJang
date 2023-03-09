@@ -37,7 +37,6 @@ class EtcLoginViewController: UIViewController,PanModalPresentable {
               
               let authorization = "\(tokenType) \(accessToken)"
         let req = AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: ["Authorization": authorization])
-
         req.response { response in
             guard let data = response.data else {
                 // handle error

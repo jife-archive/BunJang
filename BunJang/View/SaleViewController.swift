@@ -7,12 +7,18 @@
 
 import UIKit
 
-class SaleViewController: UIViewController {
+class SaleViewController: UIViewController, UISheetPresentationControllerDelegate {
 
     @IBOutlet weak var ShipPriceCheckBtn: UIButton!
     @IBOutlet weak var WonSIgn: UIImageView!
     @IBOutlet weak var naviBar: NavigationBar!
     
+    @IBOutlet weak var countLabel: UILabel!
+    @IBOutlet weak var usedLabel: UILabel!
+    @IBOutlet weak var exchangeLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var tagImg: UIImageView!
+    @IBOutlet weak var tagLabel: UILabel!
     @IBOutlet weak var TagView: UIView!
     @IBOutlet weak var CategoryLabel: UILabel!
     @IBOutlet weak var categoryView: UIView!
@@ -22,13 +28,29 @@ class SaleViewController: UIViewController {
     @IBOutlet weak var PriceTextField: UITextField!
     @IBOutlet weak var PhotoCountLabel: UILabel!
     let categoryData = saleCategorydata()
-
+    var tags: [String] = []
     var Index1: Int?
     var Index2: Int?
 
     @IBAction func showOption(_ sender: Any) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "OptionViewController") as! OptionViewController
-        self.presentPanModal(vc)
+        vc.delegate = self
+         if let sheet = vc.sheetPresentationController {
+              //지원할 크기 지정
+              sheet.detents = [.medium(), .large()]
+              //크기 변하는거 감지
+              sheet.delegate = self
+             
+              //시트 상단에 그래버 표시 (기본 값은 false)
+              sheet.prefersGrabberVisible = true
+              
+              //처음 크기 지정 (기본 값은 가장 작은 크기)
+              //sheet.selectedDetentIdentifier = .large
+              
+              //뒤 배경 흐리게 제거 (기본 값은 모든 크기에서 배경 흐리게 됨)
+              //sheet.largestUndimmedDetentIdentifier = .medium
+               present(vc, animated: true, completion: nil)
+          }
 
     }
     let navController = UINavigationController()
@@ -50,8 +72,8 @@ class SaleViewController: UIViewController {
         self.categoryView.addGestureRecognizer(tapGesture)
     }
     @objc func tapTagView() {
-        print("!")
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "TagViewController") as! TagViewController
+        vc.delegate = self
         self.navigationController?.pushViewController(vc, animated: true)
     }
     func setTag() {
@@ -140,3 +162,29 @@ extension SaleViewController: UITextFieldDelegate {
         DetailBG.isHidden = true
     }
 }
+extension SaleViewController: TagViewDelegate, OptionViewDelegate {
+    func SendOption(_ data: [String]) {
+        print("옵션받음")
+        usedLabel.text = data[0]
+        exchangeLabel.text = data[1]
+        addressLabel.text = data[2]
+    }
+    
+    func sendTags(_ tags: [String]) {
+        print("태그받음")
+        tagImg.isHidden = true
+        self.tags = tags
+        var tagList = ""
+        for i in 0..<tags.count {
+            if i == tags.count - 1 {
+                tagList = tagList + "# \(tags[i])"
+            } else {
+                tagList = tagList + "# \(tags[i]) | "
+            }
+        }
+        self.tagLabel.text = tagList
+        self.tagLabel.textColor = .black
+    }
+
+    }
+

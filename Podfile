@@ -15,4 +15,6 @@ pod 'DLRadioButton', '~> 1.4'
 pod 'ImageSlideshow', '~> 1.9.0'
 pod 'PanModal'
 pod 'Tabman', '~> 3.0'
+pod 'NMapsMap'
+pod 'SwiftyJSON', '~> 4.0'
 end
