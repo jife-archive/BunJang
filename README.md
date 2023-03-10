@@ -98,3 +98,22 @@ https://user-images.githubusercontent.com/114370871/222976257-1ae6de9c-a591-4102
  느낀점: 학교생활과 병행이 힘들지만, 끝까지 최선을 다해야한다. 하루 만에 우수수료는 포기일수도..?ㅎ
 </div>
 </details>
+
+<details>
+<summary>3월9일(목)</summary>
+<div markdown="1">
+
+
+최종목표: 등록화면 완료 및 상품상세페이지
+
+:sunglasses:완료
+  -등록화면100%구현완료!!
+  ![스크린샷 2023-03-10 오전 1 02 00](https://user-images.githubusercontent.com/114370871/224223615-a37feb8b-7fda-40d4-849b-6481848f74ee.png)
+
+
+:rage:미구현 목표
+ - 상품상세페이지 
+ 
+ 느낀점: 큰 페이지 하나만드는데에 이틀을 쏟으니.. 상당한 힘이 빠진다. 허나 화이팅!! 수료 할 수 있겠지...?
+</div>
+</details>
