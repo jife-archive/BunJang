@@ -89,7 +89,7 @@ class LoginViewController: UIViewController, UIScrollViewDelegate, UISheetPresen
                 _ = oauthToken
                 // 어세스토큰 (서버분들 한테 드릴 토큰)
                 let accessToken = oauthToken?.accessToken
-                
+                // accessToken
                 //카카오 로그인을 통해 사용자 토큰을 발급 받은 후 사용자 관리 API 호출
                 self.kakaoLoginPaser()
             }
@@ -104,29 +104,10 @@ class LoginViewController: UIViewController, UIScrollViewDelegate, UISheetPresen
     var images: [UIImage] = [UIImage(named: "로그인배너1")!, UIImage(named: "로그인배너2")!, UIImage(named: "로그인배너3")!]
 
     @IBAction func OtherLoginClick(_ sender: Any) {
-       /* guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "EtcLoginViewController") else {return}*/
 
-      //  vc.modalPresentationStyle = .pageSheet
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "EtcLoginViewController") as! EtcLoginViewController
         self.presentPanModal(vc)
-      /*  if let sheet = vc.sheetPresentationController {
-            //지원할 크기 지정
-            sheet.detents = [.medium(), .large()]
-            //크기 변하는거 감지
-            sheet.delegate = self
-           
-            //시트 상단에 그래버 표시 (기본 값은 false)
-            sheet.prefersGrabberVisible = true
-            
-            //처음 크기 지정 (기본 값은 가장 작은 크기)
-            //sheet.selectedDetentIdentifier = .large
-            
-            //뒤 배경 흐리게 제거 (기본 값은 모든 크기에서 배경 흐리게 됨)
-            //sheet.largestUndimmedDetentIdentifier = .medium
-           // present(vc, animated: true, completion: nil)
-        }*/
-       // self.present(vc, animated: true, completion: nil)
-        
+
     }
     
     

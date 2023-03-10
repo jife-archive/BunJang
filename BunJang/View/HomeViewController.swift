@@ -10,6 +10,8 @@ import ImageSlideshow
 
 class HomeViewController: UIViewController, UIScrollViewDelegate, ImageSlideshowDelegate {
     
+    let getApi = GetAPI()
+    var itemList: [ItemListResult] = []
     
     @IBAction func GoSearch(_ sender: Any) {
         let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "SearchViewController")
@@ -24,7 +26,17 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, ImageSlideshow
         self.present(pushVC!, animated: true, completion: nil)
     }
     
-    
+    func fetchData(){
+        getApi.getData { response in
+            self.itemList = response
+            print("11111")
+            print(self.itemList)
+
+            DispatchQueue.main.async {
+                self.RecentItemCollectionView.reloadData()
+            }
+        }
+    }
     
     
     @IBOutlet weak var bellBar: UIBarButtonItem!
@@ -111,11 +123,13 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, ImageSlideshow
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchData()
         self.tabBarController?.delegate = self
         self.configureView()
         self.setCollectionView()
         self.setItemCollectionView()
         AdIndicatorView.layer.backgroundColor = (UIColor.black.cgColor).copy(alpha: 0.1)
+        
     }
     
 }
@@ -127,7 +141,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             return 14
         }
         else if collectionView == RecentItemCollectionView {
-            return 6
+            return self.itemList.count
         }
         return 0
     }
@@ -142,12 +156,19 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         }
         else if collectionView == RecentItemCollectionView {
             guard let cell = self.RecentItemCollectionView.dequeueReusableCell(withReuseIdentifier: "ItemCollectionViewCell", for: indexPath) as? ItemCollectionViewCell else {return UICollectionViewCell()}
-            
+            cell.ItemNameLabel.text = self.itemList[indexPath.row].productName
+            cell.PriceLabel.text = String(self.itemList[indexPath.row].price)
             return cell
         }
         return UICollectionViewCell()
     }
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView ==  RecentItemCollectionView {
+            let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "DetailItemViewController")
+            pushVC?.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(pushVC!, animated: true)
+        }
+    }
     
 }
 extension HomeViewController: UITabBarControllerDelegate {

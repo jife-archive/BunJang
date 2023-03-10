@@ -6,9 +6,32 @@
 //
 
 import Foundation
+import Alamofire
 
 struct APIConstants {
-    static let baseURL = "http://172.31.11.13"
+    static let baseURL = "http://13.125.67.222"
     static let loginURL = baseURL + "/users/:userIdx"
     static let kakaoLogunURL = baseURL + "/kapi.kakao.com/v2/user/me"
+}
+class GetAPI {
+    
+    func getData(onCompletion: @escaping ([ItemListResult])->Void) {
+        let url = APIConstants.baseURL + "/products/home"
+        AF.request(url,
+                   method: .get,
+                   parameters: nil,
+                   headers: nil)
+        .responseDecodable(of: ItemListResponse.self) { response in
+            switch response.result {
+                
+            case .success(let response):
+                //print("\(response) ")
+                onCompletion(response.result)
+            case .failure(let error):
+                print("Get Error : \(error.localizedDescription)")
+                
+            }
+        }
+    }
+    
 }
