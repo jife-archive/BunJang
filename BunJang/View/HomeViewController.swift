@@ -10,7 +10,7 @@ import ImageSlideshow
 
 class HomeViewController: UIViewController, UIScrollViewDelegate, ImageSlideshowDelegate {
     
-    let getApi = GetAPI()
+    let getApi = HomeItemList()
     var itemList: [ItemListResult] = []
     
     @IBAction func GoSearch(_ sender: Any) {
@@ -141,7 +141,11 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             return 14
         }
         else if collectionView == RecentItemCollectionView {
-            return self.itemList.count
+            if self.itemList.count != 0 {
+                return self.itemList.count
+
+            }
+            return 6
         }
         return 0
     }
@@ -156,8 +160,11 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         }
         else if collectionView == RecentItemCollectionView {
             guard let cell = self.RecentItemCollectionView.dequeueReusableCell(withReuseIdentifier: "ItemCollectionViewCell", for: indexPath) as? ItemCollectionViewCell else {return UICollectionViewCell()}
-            cell.ItemNameLabel.text = self.itemList[indexPath.row].productName
-            cell.PriceLabel.text = String(self.itemList[indexPath.row].price)
+            
+            if self.itemList.count != 0 {
+                cell.ItemNameLabel.text = self.itemList[indexPath.row].productName
+                cell.PriceLabel.text = String(self.itemList[indexPath.row].price)
+            }
             return cell
         }
         return UICollectionViewCell()

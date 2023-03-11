@@ -9,11 +9,11 @@ import Foundation
 import Alamofire
 
 struct APIConstants {
-    static let baseURL = "http://13.125.67.222"
+    static let baseURL = "http://dev.rising-bunjang.store:9000"
     static let loginURL = baseURL + "/users/:userIdx"
     static let kakaoLogunURL = baseURL + "/kapi.kakao.com/v2/user/me"
 }
-class GetAPI {
+class HomeItemList {
     
     func getData(onCompletion: @escaping ([ItemListResult])->Void) {
         let url = APIConstants.baseURL + "/products/home"
@@ -35,3 +35,4 @@ class GetAPI {
     }
     
 }
+
