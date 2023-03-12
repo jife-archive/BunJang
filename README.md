@@ -117,3 +117,40 @@ https://user-images.githubusercontent.com/114370871/222976257-1ae6de9c-a591-4102
  느낀점: 큰 페이지 하나만드는데에 이틀을 쏟으니.. 상당한 힘이 빠진다. 허나 화이팅!! 수료 할 수 있겠지...?
 </div>
 </details>
+
+<details>
+<summary>3월10일(금)</summary>
+<div markdown="1">
+
+
+최종목표: 등록화면 완료 및 상품상세페이지
+
+:sunglasses:완료
+  -메인 화면 상품리스트 API완료!
+![스크린샷 2023-03-12 오전 1 01 06](https://user-images.githubusercontent.com/114370871/224494646-4efd9837-1275-4f15-a1ad-dff4f8fa76be.png)
+
+
+:rage:미구현 목표
+ - 결제페이지UI 
+ 
+ 느낀점: 오늘 처음 서버분들과 합을 맞추어 API를 연동 했다. 약간 두려웠지만 막상하니 별거없구만!
+</div>
+</details>
+<details>
+<summary>3월11일(토)</summary>
+<div markdown="1">
+
+
+최종목표: 등록화면 완료 및 상품상세페이지
+
+:sunglasses:완료
+  -결제페이지 하위 UI 및 모든 UI완료
+![스크린샷 2023-03-12 오전 1 01 55](https://user-images.githubusercontent.com/114370871/224494676-30ede12c-2b6f-415c-8d6c-8757608dadd1.png)
+
+
+:rage:미구현 목표
+ - 없음 
+ 
+ 느낀점: 하다보니 12시가 넘어간걸 모르고 진행했다... 이제 커밋을 미리 한번해놓아야겠다.. 내 감점...
+</div>
+</details>
