@@ -6,12 +6,21 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class DetailItemViewController: UIViewController, UISheetPresentationControllerDelegate {
-
+// "http://dev.rising-bunjang.store:9000"
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var ShopItemCollectionView: UICollectionView!
-    
+    let getApi = HomeItemList()
+
+    func fetch(){
+        getApi.getDetail(productIdx: 10) { response in
+            print("1")
+        }
+    }
+   
     
     @IBAction func GoPay(_ sender: Any) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "PayOptionViewController") as! PayOptionViewController
@@ -57,7 +66,7 @@ class DetailItemViewController: UIViewController, UISheetPresentationControllerD
     override func viewDidLoad() {
         super.viewDidLoad()
         setCollectionView()
-        
+        fetch()
     }
     
 

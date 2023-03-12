@@ -33,6 +33,19 @@ class HomeItemList {
             }
         }
     }
-    
+    func getDetail(productIdx: Int, onCompletion: @escaping (DetailItem) -> Void) {
+        AF.request(APIConstants.baseURL + "/products/\(productIdx)", method: .get, parameters: nil, headers: nil)
+            .validate()
+            .responseDecodable(of: DetailItem.self) { response in
+                switch response.result {
+                case .success(let data):
+                    print(data)
+                    onCompletion(data)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+        }
+    }
+
 }
 

@@ -63,6 +63,8 @@ class LoginViewController: UIViewController, UIScrollViewDelegate, UISheetPresen
             _ = user
            // self.infoLabel.text = user?.kakaoAccount?.profile?.nickname
             print(user?.kakaoAccount?.profile?.nickname as Any)
+            print(user?.kakaoAccount?.profile?.profileImageUrl as Any)
+
             if let url = user?.kakaoAccount?.profile?.profileImageUrl,
                let data = try? Data(contentsOf: url) {
              //   self.profileImageView.image = UIImage(data: data)
@@ -90,6 +92,7 @@ class LoginViewController: UIViewController, UIScrollViewDelegate, UISheetPresen
                 // 어세스토큰 (서버분들 한테 드릴 토큰)
                 let accessToken = oauthToken?.accessToken
                 // accessToken
+                print(accessToken)
                 //카카오 로그인을 통해 사용자 토큰을 발급 받은 후 사용자 관리 API 호출
                 self.kakaoLoginPaser()
             }
