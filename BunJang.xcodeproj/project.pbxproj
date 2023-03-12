@@ -23,7 +23,6 @@
 		0945B58D29B79A300079EAE7 /* SaleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0945B58C29B79A300079EAE7 /* SaleViewController.swift */; };
 		095FAA2B29BB471200A447AF /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095FAA2929BB471200A447AF /* ReviewTableViewCell.swift */; };
 		095FAA2C29BB471200A447AF /* ReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 095FAA2A29BB471200A447AF /* ReviewTableViewCell.xib */; };
-		095FAA2E29BB52F100A447AF /* ItemListRespose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095FAA2D29BB52F100A447AF /* ItemListRespose.swift */; };
 		095FAA3229BB5D0D00A447AF /* PayOptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095FAA3129BB5D0D00A447AF /* PayOptionViewController.swift */; };
 		09998EF829B85437007F1C45 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09998EF729B85437007F1C45 /* CategoryViewController.swift */; };
 		09998EFA29B85443007F1C45 /* TagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09998EF929B85443007F1C45 /* TagViewController.swift */; };
@@ -46,6 +45,7 @@
 		09A033C629B36DB000F291FF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A033C529B36DB000F291FF /* HomeViewController.swift */; };
 		09A033C829B36FFA00F291FF /* SelfLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A033C729B36FFA00F291FF /* SelfLoginViewController.swift */; };
 		09A1E46929BDF4A8004A59B7 /* DetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A1E46829BDF4A8004A59B7 /* DetailResponse.swift */; };
+		09A1E46B29BDFB95004A59B7 /* ItemListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A1E46A29BDFB95004A59B7 /* ItemListResponse.swift */; };
 		09A26BEC29B49CBB006D44DF /* HomeCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A26BEA29B49CBA006D44DF /* HomeCategoryCollectionViewCell.swift */; };
 		09A26BED29B49CBB006D44DF /* HomeCategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A26BEB29B49CBA006D44DF /* HomeCategoryCollectionViewCell.xib */; };
 		09A26BEF29B4A19B006D44DF /* HomeCategoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A26BEE29B4A19B006D44DF /* HomeCategoryData.swift */; };
@@ -117,7 +117,6 @@
 		0945B58C29B79A300079EAE7 /* SaleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleViewController.swift; sourceTree = "<group>"; };
 		095FAA2929BB471200A447AF /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
 		095FAA2A29BB471200A447AF /* ReviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewTableViewCell.xib; sourceTree = "<group>"; };
-		095FAA2D29BB52F100A447AF /* ItemListRespose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListRespose.swift; sourceTree = "<group>"; };
 		095FAA3129BB5D0D00A447AF /* PayOptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayOptionViewController.swift; sourceTree = "<group>"; };
 		09998EF729B85437007F1C45 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		09998EF929B85443007F1C45 /* TagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +142,7 @@
 		09A033C529B36DB000F291FF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		09A033C729B36FFA00F291FF /* SelfLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfLoginViewController.swift; sourceTree = "<group>"; };
 		09A1E46829BDF4A8004A59B7 /* DetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailResponse.swift; sourceTree = "<group>"; };
+		09A1E46A29BDFB95004A59B7 /* ItemListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListResponse.swift; sourceTree = "<group>"; };
 		09A26BEA29B49CBA006D44DF /* HomeCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		09A26BEB29B49CBA006D44DF /* HomeCategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		09A26BEE29B4A19B006D44DF /* HomeCategoryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCategoryData.swift; sourceTree = "<group>"; };
@@ -343,7 +343,7 @@
 			isa = PBXGroup;
 			children = (
 				09F2C86329B4F07D00CC6B39 /* APIConstants.swift */,
-				095FAA2D29BB52F100A447AF /* ItemListRespose.swift */,
+				09A1E46A29BDFB95004A59B7 /* ItemListResponse.swift */,
 				09A1E46829BDF4A8004A59B7 /* DetailResponse.swift */,
 			);
 			path = Item;
@@ -646,6 +646,7 @@
 				09CB6E3129B5A4D100780ED1 /* CategoryMenuViewController.swift in Sources */,
 				09448C5229B5F91B0072FA73 /* CategoryTableViewCell.swift in Sources */,
 				09A8FDEC29B877E000728CE1 /* SaleCategoryTableViewCell.swift in Sources */,
+				09A1E46B29BDFB95004A59B7 /* ItemListResponse.swift in Sources */,
 				09F2C86429B4F07D00CC6B39 /* APIConstants.swift in Sources */,
 				09A033C629B36DB000F291FF /* HomeViewController.swift in Sources */,
 				09F66BAE29BA3E59008B1FD9 /* DetailItemViewController.swift in Sources */,
@@ -655,7 +656,6 @@
 				093A960129B70778007102BC /* RecentSearchCollectionViewCell.swift in Sources */,
 				09B1140B29BCAC8F00629052 /* PayMethodCollectionViewCell.swift in Sources */,
 				09DC123629BD77ED00EDD90B /* MyReviewViewController.swift in Sources */,
-				095FAA2E29BB52F100A447AF /* ItemListRespose.swift in Sources */,
 				09A0339729B31EF700F291FF /* SceneDelegate.swift in Sources */,
 				09CBF40A29B4D2A200D261B6 /* ItemCollectionViewCell.swift in Sources */,
 				0945B58D29B79A300079EAE7 /* SaleViewController.swift in Sources */,

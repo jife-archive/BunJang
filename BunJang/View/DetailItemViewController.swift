@@ -13,11 +13,23 @@ class DetailItemViewController: UIViewController, UISheetPresentationControllerD
 // "http://dev.rising-bunjang.store:9000"
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var ShopItemCollectionView: UICollectionView!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var locataionLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var shopImg: UIImageView!
+    @IBOutlet weak var shopNameLabel: UILabel!
+    
+    @IBOutlet weak var chatCountLabel: UILabel!
+    @IBOutlet weak var viewCountLabel: UILabel!
+    @IBOutlet weak var heartCountLabel: UILabel!
+    
     let getApi = HomeItemList()
 
+    @IBOutlet weak var itemNameLabel: UILabel!
     func fetch(){
         getApi.getDetail(productIdx: 10) { response in
             print("1")
+            self.priceLabel.text = String(response.result.getProductInfoRes.price) + "원"
         }
     }
    

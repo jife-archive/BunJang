@@ -795,7 +795,7 @@
                                             <constraint firstItem="Ncl-F9-cY6" firstAttribute="top" secondItem="tKc-e8-4B1" secondAttribute="bottom" constant="8" symbolic="YES" id="AcN-il-A5W"/>
                                             <constraint firstItem="Ncl-F9-cY6" firstAttribute="leading" secondItem="oqx-1K-PHq" secondAttribute="leading" constant="9" id="Cy3-xo-1GL"/>
                                             <constraint firstAttribute="trailing" secondItem="F8M-Dt-G75" secondAttribute="trailing" constant="10" id="D6t-cX-LVa"/>
-                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="J11-h0-hq2" secondAttribute="trailing" symbolic="YES" id="DXW-qA-fla"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="J11-h0-hq2" secondAttribute="trailing" constant="20" symbolic="YES" id="DXW-qA-fla"/>
                                             <constraint firstAttribute="trailing" secondItem="siE-g9-jJW" secondAttribute="trailing" constant="9" id="DfI-QA-gn7"/>
                                             <constraint firstItem="J11-h0-hq2" firstAttribute="top" secondItem="OJO-Kb-XNi" secondAttribute="bottom" constant="8" symbolic="YES" id="F3Q-Es-CFs"/>
                                             <constraint firstItem="0pZ-Kn-Jb0" firstAttribute="leading" secondItem="oqx-1K-PHq" secondAttribute="leading" constant="20" symbolic="YES" id="HOW-V4-eoL"/>
@@ -934,7 +934,16 @@
                     <size key="freeformSize" width="393" height="2000"/>
                     <connections>
                         <outlet property="ShopItemCollectionView" destination="pwe-p5-XSO" id="JJm-yW-WRV"/>
+                        <outlet property="chatCountLabel" destination="fsN-QT-DaJ" id="bh0-UL-iIE"/>
+                        <outlet property="heartCountLabel" destination="jHt-YI-68J" id="HfC-lw-q3D"/>
+                        <outlet property="itemNameLabel" destination="p2u-wH-0fP" id="WP9-qN-UcQ"/>
+                        <outlet property="locataionLabel" destination="bV7-gS-Qk0" id="gTi-Up-OcK"/>
+                        <outlet property="priceLabel" destination="J11-h0-hq2" id="Tny-ff-jAT"/>
+                        <outlet property="shopImg" destination="Dkh-sg-vwu" id="UCb-yK-tXX"/>
+                        <outlet property="shopNameLabel" destination="EQm-5B-dQe" id="PUd-ly-Xbs"/>
                         <outlet property="tableView" destination="BKU-Bk-gKl" id="JwF-PQ-GKP"/>
+                        <outlet property="timeLabel" destination="1pm-X7-lZP" id="ZyY-ia-99b"/>
+                        <outlet property="viewCountLabel" destination="oyY-fd-M5U" id="KsJ-a0-H3K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xgh-bk-ZA7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
