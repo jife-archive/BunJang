@@ -9,9 +9,13 @@ import UIKit
 
 class ItemTagCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var tagNameLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.contentView.layer.cornerRadius = 5.0
+        self.contentView.layer.borderWidth = 1.0
+        self.contentView.layer.borderColor = UIColor.lightGray.cgColor
+        self.contentView.layer.masksToBounds = true
     }
 
 }

@@ -117,6 +117,12 @@ extension SearchViewController: UISearchBarDelegate {
         self.searchBar.text = ""
         print("!")
         dismissKeyboard()
+        let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "GoSearchViewController")
+        self.navigationController?.navigationBar.topItem?.title = ""
+        self.navigationController?.navigationBar.tintColor = .black
+
+        pushVC!.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(pushVC!, animated: true)
     }
     
     

@@ -20,6 +20,16 @@ class PayViewController: UIViewController {
     @IBOutlet weak var naviBar: UINavigationBar!
     @IBOutlet weak var AddressView: UIView!
     var Agree = false
+    
+    
+    @IBAction func payCompleteClick(_ sender: Any) {
+        presentedViewController?.dismiss(animated: true, completion: nil)
+
+    }
+    
+    @IBAction func GoBackClick(_ sender: Any) {
+        self.dismiss(animated: false)
+    }
     @IBAction func AgreeClick(_ sender: Any) {
         
         if Agree == true {

@@ -43,6 +43,7 @@ class HomeItemList {
                     onCompletion(data)
                 case .failure(let error):
                     print(error.localizedDescription)
+                    debugPrint(error)
                 }
         }
     }

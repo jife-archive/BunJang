@@ -10,6 +10,9 @@ import ImageSlideshow
 
 class HomeViewController: UIViewController, UIScrollViewDelegate, ImageSlideshowDelegate {
     
+    
+    let DetailView = DetailItemViewController()
+    
     let getApi = HomeItemList()
     var itemList: [ItemListResult] = []
     
@@ -29,8 +32,8 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, ImageSlideshow
     func fetchData(){
         getApi.getData { response in
             self.itemList = response
-            print("11111")
-            print(self.itemList)
+            print("서버온!!!")
+            print(self.itemList.count)
 
             DispatchQueue.main.async {
                 self.RecentItemCollectionView.reloadData()
@@ -61,9 +64,12 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, ImageSlideshow
         self.RecentItemCollectionView.dataSource = self
         self.RecentItemCollectionView.register(UINib(nibName: "ItemCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ItemCollectionViewCell")
         
+        self.RecommandCollectionView.delegate = self
+        self.RecommandCollectionView.dataSource = self
+        self.RecommandCollectionView.register(UINib(nibName: "ItemCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ItemCollectionViewCell")
+        
         let thirdFlowLayout = UICollectionViewFlowLayout()
         thirdFlowLayout.itemSize = CGSize(width: 60, height: 200)
-
         thirdFlowLayout.minimumInteritemSpacing = 0
         thirdFlowLayout.minimumLineSpacing = 0
         thirdFlowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right:0 )
@@ -71,6 +77,16 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, ImageSlideshow
         let height2 = RecentItemCollectionView.frame.height / 2
         thirdFlowLayout.itemSize = CGSize(width: width2, height: height2)
         self.RecentItemCollectionView.collectionViewLayout = thirdFlowLayout
+        
+        let FlowLayout = UICollectionViewFlowLayout()
+        FlowLayout.itemSize = CGSize(width: 60, height: 200)
+        FlowLayout.minimumInteritemSpacing = 0
+        FlowLayout.minimumLineSpacing = 0
+        FlowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right:0 )
+        let width = RecommandCollectionView.frame.width / 3
+        let height = RecommandCollectionView.frame.height / 3
+        FlowLayout.itemSize = CGSize(width: width, height: height)
+        self.RecommandCollectionView.collectionViewLayout = FlowLayout
     }
     private func setCollectionView() {
         self.HomeCategoryCollectionView.delegate = self
@@ -129,7 +145,8 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, ImageSlideshow
         self.setCollectionView()
         self.setItemCollectionView()
         AdIndicatorView.layer.backgroundColor = (UIColor.black.cgColor).copy(alpha: 0.1)
-        
+        self.navigationController?.navigationBar.topItem?.title = ""
+        self.navigationController?.navigationBar.tintColor = .black
     }
     
 }
@@ -141,12 +158,15 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             return 14
         }
         else if collectionView == RecentItemCollectionView {
-            if self.itemList.count != 0 {
-                return self.itemList.count
-
-            }
             return 6
         }
+        else if collectionView == RecommandCollectionView {
+            if self.itemList.count != 0 {
+                return self.itemList.count
+            }
+            return 0
+        }
+
         return 0
     }
     
@@ -167,13 +187,30 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             }
             return cell
         }
+        else if collectionView == RecommandCollectionView{
+            guard let cell = self.RecommandCollectionView.dequeueReusableCell(withReuseIdentifier: "ItemCollectionViewCell", for: indexPath) as? ItemCollectionViewCell else {return UICollectionViewCell()}
+            if self.itemList.count != 0 {
+                cell.ItemNameLabel.text = self.itemList[indexPath.row].productName
+                cell.PriceLabel.text = String(self.itemList[indexPath.row].price)
+            }
+            return cell
+        }
         return UICollectionViewCell()
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView ==  RecentItemCollectionView {
-            let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "DetailItemViewController")
-            pushVC?.hidesBottomBarWhenPushed = true
-            self.navigationController?.pushViewController(pushVC!, animated: true)
+            if self.itemList.count != 0 {
+                guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetailItemViewController") as? DetailItemViewController else {return}
+                vc.getIdx = Int(self.itemList[indexPath.row].productIdx)
+                vc.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            else {
+                guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetailItemViewController") as? DetailItemViewController else {return}
+                vc.hidesBottomBarWhenPushed = true
+                
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
         }
     }
     

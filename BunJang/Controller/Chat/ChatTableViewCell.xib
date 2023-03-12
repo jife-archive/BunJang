@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="ChatTableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatTableViewCell" id="KGk-i7-Jjw" customClass="ChatTableViewCell" customModule="BunJang" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="기본상점이미지" translatesAutoresizingMaskIntoConstraints="NO" id="RmW-WX-de3">
+                        <rect key="frame" x="7" y="10" width="60" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="1bR-0i-DyP"/>
+                            <constraint firstAttribute="height" constant="60" id="Fwq-V7-Ew5"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닉네임닉네임닉네임" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HX7-AV-Ta1">
+                        <rect key="frame" x="68" y="21" width="117" height="18"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="마지막 채팅내용~" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kbt-Wn-npu">
+                        <rect key="frame" x="68" y="41" width="196" height="12"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="196" id="mys-54-U0x"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xe0-dg-PA3">
+                        <rect key="frame" x="277" y="41" width="27" height="12"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="xe0-dg-PA3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="41" id="6hs-z4-Phm"/>
+                    <constraint firstAttribute="bottom" secondItem="xe0-dg-PA3" secondAttribute="bottom" constant="27" id="Kc3-Sj-XKg"/>
+                    <constraint firstItem="RmW-WX-de3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="7" id="SEF-ZI-i8o"/>
+                    <constraint firstAttribute="trailing" secondItem="Kbt-Wn-npu" secondAttribute="trailing" constant="56" id="SPp-CR-IjO"/>
+                    <constraint firstItem="RmW-WX-de3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="dOd-42-RD8"/>
+                    <constraint firstItem="HX7-AV-Ta1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="21" id="efJ-Yi-Kcs"/>
+                    <constraint firstItem="HX7-AV-Ta1" firstAttribute="leading" secondItem="RmW-WX-de3" secondAttribute="trailing" constant="1" id="eua-wX-ub2"/>
+                    <constraint firstAttribute="bottom" secondItem="RmW-WX-de3" secondAttribute="bottom" constant="10" id="fbL-4o-Dkp"/>
+                    <constraint firstItem="Kbt-Wn-npu" firstAttribute="baseline" secondItem="xe0-dg-PA3" secondAttribute="baseline" id="iGF-SD-ZIq"/>
+                    <constraint firstItem="Kbt-Wn-npu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="68" id="o4E-Qg-fg7"/>
+                    <constraint firstAttribute="trailing" secondItem="xe0-dg-PA3" secondAttribute="trailing" constant="16" id="xxR-ad-YMD"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="UserNameLabel" destination="HX7-AV-Ta1" id="8kt-Xc-WSL"/>
+                <outlet property="dateLabel" destination="xe0-dg-PA3" id="MRN-gN-gZR"/>
+                <outlet property="lastChatLabel" destination="Kbt-Wn-npu" id="22J-X6-caq"/>
+            </connections>
+            <point key="canvasLocation" x="131.29770992366412" y="-11.267605633802818"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="기본상점이미지" width="150" height="150"/>
+    </resources>
+</document>

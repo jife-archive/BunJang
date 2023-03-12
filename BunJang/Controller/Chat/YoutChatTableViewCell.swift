@@ -1,18 +1,16 @@
 //
-//  ReviewTableViewCell.swift
+//  YoutChatTableViewCell.swift
 //  BunJang
 //
-//  Created by 최지철 on 2023/03/10.
+//  Created by 최지철 on 2023/03/13.
 //
 
 import UIKit
 
-class ReviewTableViewCell: UITableViewCell {
+class YoutChatTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var rateLabel: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var UserNameLabel: UILabel!
-    @IBOutlet weak var reviewContentLabel: UILabel!
+    @IBOutlet weak var timeLabe: UILabel!
+    @IBOutlet weak var yourChatBtn: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

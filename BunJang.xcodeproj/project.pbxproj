@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0936187C29BE63450086631F /* DetailChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0936187B29BE63450086631F /* DetailChatViewController.swift */; };
+		0936188329BE69B90086631F /* MyChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0936188129BE69B90086631F /* MyChatTableViewCell.swift */; };
+		0936188429BE69B90086631F /* MyChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0936188229BE69B90086631F /* MyChatTableViewCell.xib */; };
+		0936188929BE69DB0086631F /* YoutChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0936188729BE69DB0086631F /* YoutChatTableViewCell.swift */; };
+		0936188A29BE69DB0086631F /* YoutChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0936188829BE69DB0086631F /* YoutChatTableViewCell.xib */; };
 		0938CC8329B38300000BE7CA /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0938CC8229B38300000BE7CA /* TextField.swift */; };
 		0938CC8729B38706000BE7CA /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0938CC8629B38706000BE7CA /* NavigationBar.swift */; };
 		0938CC8929B390DE000BE7CA /* phoneComViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0938CC8829B390DE000BE7CA /* phoneComViewController.swift */; };
@@ -46,6 +51,16 @@
 		09A033C829B36FFA00F291FF /* SelfLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A033C729B36FFA00F291FF /* SelfLoginViewController.swift */; };
 		09A1E46929BDF4A8004A59B7 /* DetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A1E46829BDF4A8004A59B7 /* DetailResponse.swift */; };
 		09A1E46B29BDFB95004A59B7 /* ItemListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A1E46A29BDFB95004A59B7 /* ItemListResponse.swift */; };
+		09A1E46D29BE31B2004A59B7 /* SendLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A1E46C29BE31B2004A59B7 /* SendLogin.swift */; };
+		09A1E46F29BE31E6004A59B7 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A1E46E29BE31E6004A59B7 /* LoginResponse.swift */; };
+		09A1E47229BE36F0004A59B7 /* MyPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A1E47129BE36F0004A59B7 /* MyPage.swift */; };
+		09A1E47429BE3761004A59B7 /* MyPageresponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A1E47329BE3761004A59B7 /* MyPageresponse.swift */; };
+		09A1E47629BE3B7B004A59B7 /* GoSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A1E47529BE3B7B004A59B7 /* GoSearchViewController.swift */; };
+		09A1E47929BE54EB004A59B7 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A1E47829BE54EB004A59B7 /* ChatViewController.swift */; };
+		09A1E47D29BE567D004A59B7 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A1E47B29BE567D004A59B7 /* ChatTableViewCell.swift */; };
+		09A1E47E29BE567D004A59B7 /* ChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A1E47C29BE567D004A59B7 /* ChatTableViewCell.xib */; };
+		09A1E48129BE57E1004A59B7 /* GetChatList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A1E48029BE57E1004A59B7 /* GetChatList.swift */; };
+		09A1E48329BE57F4004A59B7 /* Chatresponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A1E48229BE57F4004A59B7 /* Chatresponse.swift */; };
 		09A26BEC29B49CBB006D44DF /* HomeCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A26BEA29B49CBA006D44DF /* HomeCategoryCollectionViewCell.swift */; };
 		09A26BED29B49CBB006D44DF /* HomeCategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A26BEB29B49CBA006D44DF /* HomeCategoryCollectionViewCell.xib */; };
 		09A26BEF29B4A19B006D44DF /* HomeCategoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A26BEE29B4A19B006D44DF /* HomeCategoryData.swift */; };
@@ -101,6 +116,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0936187B29BE63450086631F /* DetailChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailChatViewController.swift; sourceTree = "<group>"; };
+		0936188129BE69B90086631F /* MyChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChatTableViewCell.swift; sourceTree = "<group>"; };
+		0936188229BE69B90086631F /* MyChatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyChatTableViewCell.xib; sourceTree = "<group>"; };
+		0936188729BE69DB0086631F /* YoutChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutChatTableViewCell.swift; sourceTree = "<group>"; };
+		0936188829BE69DB0086631F /* YoutChatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YoutChatTableViewCell.xib; sourceTree = "<group>"; };
 		0938CC8229B38300000BE7CA /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		0938CC8629B38706000BE7CA /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		0938CC8829B390DE000BE7CA /* phoneComViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = phoneComViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +163,16 @@
 		09A033C729B36FFA00F291FF /* SelfLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfLoginViewController.swift; sourceTree = "<group>"; };
 		09A1E46829BDF4A8004A59B7 /* DetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailResponse.swift; sourceTree = "<group>"; };
 		09A1E46A29BDFB95004A59B7 /* ItemListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListResponse.swift; sourceTree = "<group>"; };
+		09A1E46C29BE31B2004A59B7 /* SendLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendLogin.swift; sourceTree = "<group>"; };
+		09A1E46E29BE31E6004A59B7 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		09A1E47129BE36F0004A59B7 /* MyPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPage.swift; sourceTree = "<group>"; };
+		09A1E47329BE3761004A59B7 /* MyPageresponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageresponse.swift; sourceTree = "<group>"; };
+		09A1E47529BE3B7B004A59B7 /* GoSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoSearchViewController.swift; sourceTree = "<group>"; };
+		09A1E47829BE54EB004A59B7 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		09A1E47B29BE567D004A59B7 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
+		09A1E47C29BE567D004A59B7 /* ChatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatTableViewCell.xib; sourceTree = "<group>"; };
+		09A1E48029BE57E1004A59B7 /* GetChatList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetChatList.swift; sourceTree = "<group>"; };
+		09A1E48229BE57F4004A59B7 /* Chatresponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chatresponse.swift; sourceTree = "<group>"; };
 		09A26BEA29B49CBA006D44DF /* HomeCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		09A26BEB29B49CBA006D44DF /* HomeCategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		09A26BEE29B4A19B006D44DF /* HomeCategoryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCategoryData.swift; sourceTree = "<group>"; };
@@ -218,6 +248,7 @@
 				093A960029B70778007102BC /* RecentSearchCollectionViewCell.xib */,
 				0945B58629B780B20079EAE7 /* FrequencyCollectionViewCell.swift */,
 				0945B58729B780B20079EAE7 /* FrequencyCollectionViewCell.xib */,
+				09A1E47529BE3B7B004A59B7 /* GoSearchViewController.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -289,6 +320,7 @@
 				09448C5429B609290072FA73 /* SearchViewController.swift */,
 				0945B58C29B79A300079EAE7 /* SaleViewController.swift */,
 				09B1141B29BCDF9400629052 /* MyViewController.swift */,
+				09A1E47829BE54EB004A59B7 /* ChatViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -324,6 +356,7 @@
 				09CB6E2829B58EFC00780ED1 /* Login */,
 				09DC123229BD76D900EDD90B /* My */,
 				09DA36FD29B49C5300687F10 /* CategoryCell */,
+				09A1E47A29BE5660004A59B7 /* Chat */,
 				09DA36FE29B49C5F00687F10 /* Util */,
 			);
 			path = Controller;
@@ -347,6 +380,47 @@
 				09A1E46829BDF4A8004A59B7 /* DetailResponse.swift */,
 			);
 			path = Item;
+			sourceTree = "<group>";
+		};
+		09A1E47029BE36DD004A59B7 /* MY */ = {
+			isa = PBXGroup;
+			children = (
+				09A1E47129BE36F0004A59B7 /* MyPage.swift */,
+				09A1E47329BE3761004A59B7 /* MyPageresponse.swift */,
+			);
+			path = MY;
+			sourceTree = "<group>";
+		};
+		09A1E47729BE4C90004A59B7 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				09A1E46C29BE31B2004A59B7 /* SendLogin.swift */,
+				09A1E46E29BE31E6004A59B7 /* LoginResponse.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		09A1E47A29BE5660004A59B7 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				09A1E47B29BE567D004A59B7 /* ChatTableViewCell.swift */,
+				09A1E47C29BE567D004A59B7 /* ChatTableViewCell.xib */,
+				0936187B29BE63450086631F /* DetailChatViewController.swift */,
+				0936188129BE69B90086631F /* MyChatTableViewCell.swift */,
+				0936188229BE69B90086631F /* MyChatTableViewCell.xib */,
+				0936188729BE69DB0086631F /* YoutChatTableViewCell.swift */,
+				0936188829BE69DB0086631F /* YoutChatTableViewCell.xib */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		09A1E47F29BE57D0004A59B7 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				09A1E48029BE57E1004A59B7 /* GetChatList.swift */,
+				09A1E48229BE57F4004A59B7 /* Chatresponse.swift */,
+			);
+			path = Chat;
 			sourceTree = "<group>";
 		};
 		09CB6E2829B58EFC00780ED1 /* Login */ = {
@@ -435,6 +509,9 @@
 		09F2C86029B4F05E00CC6B39 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				09A1E47F29BE57D0004A59B7 /* Chat */,
+				09A1E47729BE4C90004A59B7 /* Login */,
+				09A1E47029BE36DD004A59B7 /* MY */,
 				09A1E46729BDE057004A59B7 /* Item */,
 			);
 			path = Network;
@@ -526,6 +603,7 @@
 				095FAA2C29BB471200A447AF /* ReviewTableViewCell.xib in Resources */,
 				09DA36F829B4668C00687F10 /* 광고배너3.jpg in Resources */,
 				09A033A129B31EF800F291FF /* LaunchScreen.storyboard in Resources */,
+				0936188429BE69B90086631F /* MyChatTableViewCell.xib in Resources */,
 				09A033C129B32B1A00F291FF /* images.png in Resources */,
 				09A26BED29B49CBB006D44DF /* HomeCategoryCollectionViewCell.xib in Resources */,
 				09DA36FA29B4668C00687F10 /* 광고배너1.jpg in Resources */,
@@ -537,11 +615,13 @@
 				09DA36FC29B4668C00687F10 /* 광고배너7.jpg in Resources */,
 				09DA36F529B4668C00687F10 /* 광고배너2.jpg in Resources */,
 				09DA36F729B4668C00687F10 /* 광고배너8.jpg in Resources */,
+				0936188A29BE69DB0086631F /* YoutChatTableViewCell.xib in Resources */,
 				09F2C86A29B4FF7500CC6B39 /* AgreeTableViewCell.xib in Resources */,
 				09448C5329B5F91B0072FA73 /* CategoryTableViewCell.xib in Resources */,
 				09B1140C29BCAC8F00629052 /* PayMethodCollectionViewCell.xib in Resources */,
 				0945B58929B780B20079EAE7 /* FrequencyCollectionViewCell.xib in Resources */,
 				09E81A3229BB359400081A30 /* ItemTagCollectionViewCell.xib in Resources */,
+				09A1E47E29BE567D004A59B7 /* ChatTableViewCell.xib in Resources */,
 				09CBF40B29B4D2A200D261B6 /* ItemCollectionViewCell.xib in Resources */,
 				09DA36F929B4668C00687F10 /* 광고배너4.jpg in Resources */,
 				09A8FDED29B877E000728CE1 /* SaleCategoryTableViewCell.xib in Resources */,
@@ -602,25 +682,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				09A033AA29B31FC400F291FF /* LoginViewController.swift in Sources */,
+				09A1E47629BE3B7B004A59B7 /* GoSearchViewController.swift in Sources */,
 				09E3B59A29BC5E2800DD0F82 /* PayViewController.swift in Sources */,
 				09DC123A29BD92E300EDD90B /* MyTabBarViewController.swift in Sources */,
+				09A1E47429BE3761004A59B7 /* MyPageresponse.swift in Sources */,
 				09A8FDEF29B8833300728CE1 /* SubCategoryViewController.swift in Sources */,
+				09A1E46D29BE31B2004A59B7 /* SendLogin.swift in Sources */,
 				09A26BEC29B49CBB006D44DF /* HomeCategoryCollectionViewCell.swift in Sources */,
 				09A1E46929BDF4A8004A59B7 /* DetailResponse.swift in Sources */,
 				09E81A3129BB359400081A30 /* ItemTagCollectionViewCell.swift in Sources */,
 				09B1140F29BCBB5900629052 /* CardTableViewCell.swift in Sources */,
 				095FAA2B29BB471200A447AF /* ReviewTableViewCell.swift in Sources */,
+				0936188929BE69DB0086631F /* YoutChatTableViewCell.swift in Sources */,
 				09A033C429B36D8000F291FF /* model.swift in Sources */,
 				09A033C829B36FFA00F291FF /* SelfLoginViewController.swift in Sources */,
 				0938CC8929B390DE000BE7CA /* phoneComViewController.swift in Sources */,
 				09A0339929B31EF700F291FF /* ViewController.swift in Sources */,
+				09A1E46F29BE31E6004A59B7 /* LoginResponse.swift in Sources */,
 				09B1141329BCBB6400629052 /* BankTableViewCell.swift in Sources */,
 				09998EFC29B8544E007F1C45 /* OptionViewController.swift in Sources */,
 				0945B58829B780B20079EAE7 /* FrequencyCollectionViewCell.swift in Sources */,
+				09A1E47229BE36F0004A59B7 /* MyPage.swift in Sources */,
 				09998EFE29B85F67007F1C45 /* SaleNavigationController.swift in Sources */,
 				09A033B929B3248300F291FF /* EtcLoginViewController.swift in Sources */,
 				09F2C86629B4FDA600CC6B39 /* AgreeViewController.swift in Sources */,
 				09B1141629BCBB7800629052 /* CardChoiceViewController.swift in Sources */,
+				0936188329BE69B90086631F /* MyChatTableViewCell.swift in Sources */,
 				0938CC8729B38706000BE7CA /* NavigationBar.swift in Sources */,
 				09F66B9E29B9D295008B1FD9 /* MapViewController.swift in Sources */,
 				09B1140829BCA28900629052 /* PayMethodViewController.swift in Sources */,
@@ -633,10 +720,13 @@
 				09998EFA29B85443007F1C45 /* TagViewController.swift in Sources */,
 				093A90D929B9C70700D8D8B5 /* UIButton.swift in Sources */,
 				09A26BEF29B4A19B006D44DF /* HomeCategoryData.swift in Sources */,
+				09A1E47D29BE567D004A59B7 /* ChatTableViewCell.swift in Sources */,
 				09448C5529B609290072FA73 /* SearchViewController.swift in Sources */,
 				09F2C86929B4FF7500CC6B39 /* AgreeTableViewCell.swift in Sources */,
+				09A1E48129BE57E1004A59B7 /* GetChatList.swift in Sources */,
 				09998EF829B85437007F1C45 /* CategoryViewController.swift in Sources */,
 				09F66BA729BA038A008B1FD9 /* SearchAddressTableViewCell.swift in Sources */,
+				0936187C29BE63450086631F /* DetailChatViewController.swift in Sources */,
 				093A90D629B9A7DF00D8D8B5 /* TagCollectionViewCell.swift in Sources */,
 				09CB6E2B29B58F2500780ED1 /* MenuViewController.swift in Sources */,
 				09E81A3829BB35C500081A30 /* UserDetail.swift in Sources */,
@@ -646,6 +736,7 @@
 				09CB6E3129B5A4D100780ED1 /* CategoryMenuViewController.swift in Sources */,
 				09448C5229B5F91B0072FA73 /* CategoryTableViewCell.swift in Sources */,
 				09A8FDEC29B877E000728CE1 /* SaleCategoryTableViewCell.swift in Sources */,
+				09A1E47929BE54EB004A59B7 /* ChatViewController.swift in Sources */,
 				09A1E46B29BDFB95004A59B7 /* ItemListResponse.swift in Sources */,
 				09F2C86429B4F07D00CC6B39 /* APIConstants.swift in Sources */,
 				09A033C629B36DB000F291FF /* HomeViewController.swift in Sources */,
@@ -655,6 +746,7 @@
 				095FAA3229BB5D0D00A447AF /* PayOptionViewController.swift in Sources */,
 				093A960129B70778007102BC /* RecentSearchCollectionViewCell.swift in Sources */,
 				09B1140B29BCAC8F00629052 /* PayMethodCollectionViewCell.swift in Sources */,
+				09A1E48329BE57F4004A59B7 /* Chatresponse.swift in Sources */,
 				09DC123629BD77ED00EDD90B /* MyReviewViewController.swift in Sources */,
 				09A0339729B31EF700F291FF /* SceneDelegate.swift in Sources */,
 				09CBF40A29B4D2A200D261B6 /* ItemCollectionViewCell.swift in Sources */,

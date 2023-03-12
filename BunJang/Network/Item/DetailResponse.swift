@@ -21,18 +21,18 @@ struct Result: Codable  {
 
 // MARK: - GetProductInfoRes
 struct GetProductInfoRes: Codable  {
-    let productIdx, price: Int
-    let productName, date, saleStatus: String
-    let subCategoryIdx: Int
-    let subCategoryName: String
-    let userIdx, chatCount, favoriteCount: Int
-    let productImgs: [String?]
+    let productIdx, price: Int?
+    let productName, date, saleStatus: String?
+    let subCategoryIdx: Int?
+    let subCategoryName: String?
+    let userIdx, chatCount, favoriteCount: Int?
+    let productImgs: [[String: String?]]
     let keywords: [Keyword]
 }
 
 // MARK: - Keyword
 struct Keyword: Codable  {
-    let tag: String
+    let tag: String?
 }
 
 // MARK: - GetShopRes
@@ -44,24 +44,25 @@ struct GetShopRes: Codable  {
 
 // MARK: - GetShopInfo
 struct GetShopInfo: Codable  {
-    let userIdx: Int
+    let userIdx: Int?
     let name: String?
-    let avgStar: Double
-    let followerCount, productCount, reviewCount: Int
+    let avgStar: Double?
+    let followerCount, productCount, reviewCount: Int?
 }
 
 // MARK: - Product
 struct Product: Codable  {
-    let productIdx: Int
+    let productIdx: Int?
     let productImgURL: String?
-    let price: Int
-    let productName: String
+    let price: Int?
+    let productName: String?
 }
 
 // MARK: - Review
 struct Review: Codable  {
-    let reviewIdx, star: Int
-    let content: String
+    let reviewIdx, star: Int?
+    let content: String?
     let reviewImgURL: String?
     let userName, date: String
+    
 }

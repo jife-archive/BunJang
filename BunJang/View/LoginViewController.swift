@@ -13,6 +13,10 @@ import AuthenticationServices
 import Alamofire
 
 class LoginViewController: UIViewController, UIScrollViewDelegate, UISheetPresentationControllerDelegate, ASAuthorizationControllerPresentationContextProviding, ASAuthorizationControllerDelegate {
+    
+    let kakaoLoginPlz = sendLogin()
+
+    
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
         return self.view.window!
     }
@@ -92,7 +96,11 @@ class LoginViewController: UIViewController, UIScrollViewDelegate, UISheetPresen
                 // 어세스토큰 (서버분들 한테 드릴 토큰)
                 let accessToken = oauthToken?.accessToken
                 // accessToken
-                print(accessToken)
+                self.kakaoLoginPlz.sendKakao(token: accessToken!) { LoginResponse in
+                    print("보냈담!")
+                }
+
+                print(accessToken as Any)
                 //카카오 로그인을 통해 사용자 토큰을 발급 받은 후 사용자 관리 API 호출
                 self.kakaoLoginPaser()
             }
