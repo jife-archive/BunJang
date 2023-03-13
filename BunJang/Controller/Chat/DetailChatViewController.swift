@@ -15,10 +15,12 @@ class DetailChatViewController: UIViewController, UITextFieldDelegate, EditViewD
         print("데이터삭제~")
         self.delegate?.sendData(_chat: true)
         self.navigationController?.popViewController(animated: true)
-        
     }
+    
+    let userinfo = getUserInfo.shared
     weak var delegate: DetailChatViewDelegate?
     
+    @IBOutlet weak var nameLabel: UILabel!
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         myNewChat.append(textField.text!)
         textField.text = ""
@@ -31,14 +33,17 @@ class DetailChatViewController: UIViewController, UITextFieldDelegate, EditViewD
     let chatList = MyChat()
     var ChatList:[DetailChat] = []
     var myNewChat:[String] = [""]
+    var getChatRoom: Int?
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var chatBottomView: UIView!
-    
+    var yourrate: Double?
+    var yourname: String?
     
     @IBAction func EditClick(_ sender: Any) {
         
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "EditViewController") as! EditViewController
         vc.delegate = self
+        vc.deleteIdx = getChatRoom
         self.presentPanModal(vc)
     }
     
@@ -55,12 +60,24 @@ class DetailChatViewController: UIViewController, UITextFieldDelegate, EditViewD
         tableView.dataSource = self
         self.tableView.register(UINib(nibName: "YoutChatTableViewCell", bundle: nil), forCellReuseIdentifier: "YoutChatTableViewCell")
         self.tableView.register(UINib(nibName: "MyChatTableViewCell", bundle: nil), forCellReuseIdentifier: "MyChatTableViewCell")
-        chatList.getDetailChat(Chatroom: 2) { DetailChat in
-            print("!!성공!")
+        
+        print(getChatRoom as Any)
+        chatList.getDetailChat(Chatroom: getChatRoom!) { DetailChat in
             self.ChatList = DetailChat
             print(self.ChatList)
+            for i in 0...1 {
+                if(self.ChatList[i].userIdx != self.userinfo.userIdx)
+                {
+                    self.yourname = self.ChatList[i].name
+                    self.yourrate = self.ChatList[i].avgStar
+
+                }
+            }
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+                self.nameLabel.text = self.yourname
+                
+                
             }
         }
 
@@ -105,7 +122,7 @@ extension DetailChatViewController: UITableViewDelegate, UITableViewDataSource {
             }
         }
         else{
-            if(ChatList[indexPath.row].userIdx == 3) {
+            if(ChatList[indexPath.row].userIdx == userinfo.userIdx) {
                 guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "MyChatTableViewCell", for: indexPath) as? MyChatTableViewCell else {return UITableViewCell()}
                 cell.timeLabel.text = ChatList[indexPath.row].updateAt
                 cell.myChatBtn.setTitle(ChatList[indexPath.row].message, for: .normal)
@@ -126,7 +143,6 @@ extension DetailChatViewController: UITableViewDelegate, UITableViewDataSource {
                 return cell
             }
         }
-        return UITableViewCell()
 
     }
     

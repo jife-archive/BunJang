@@ -7,12 +7,13 @@
 
 import UIKit
 import ImageSlideshow
+import Toast_Swift
 
 class HomeViewController: UIViewController, UIScrollViewDelegate, ImageSlideshowDelegate {
     
     
     let DetailView = DetailItemViewController()
-    
+    let userinfo = getUserInfo.shared
     let getApi = HomeItemList()
     var itemList: [ItemListResult] = []
     
@@ -137,6 +138,18 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, ImageSlideshow
             self.searchBar.tintColor = .black
         }
     }
+     override func viewWillAppear(_ animated: Bool) {
+         print(userinfo.Join)
+         print("나와라얍")
+        if userinfo.Join == true {
+            userinfo.Join = false
+            print("메시지가 안나오넹")
+            DispatchQueue.main.async {
+                self.view.makeToast(self.userinfo.UserMessage,duration:4,position: .center)
+                print(UserInfo.jwt)
+            }
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchData()
@@ -147,6 +160,8 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, ImageSlideshow
         AdIndicatorView.layer.backgroundColor = (UIColor.black.cgColor).copy(alpha: 0.1)
         self.navigationController?.navigationBar.topItem?.title = ""
         self.navigationController?.navigationBar.tintColor = .black
+        
+
     }
     
 }

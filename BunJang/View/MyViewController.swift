@@ -19,7 +19,7 @@ class MyViewController: UIViewController {
     @IBOutlet weak var followerLabel: UILabel!
     @IBOutlet weak var tradeLabel: UILabel!
     @IBOutlet weak var rateLabel: UILabel!
-    
+    let useinfo = getUserInfo.shared
     @IBAction func ChagneMyShop(_ sender: Any) {
         let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "MyShopChangeViewController") as! MyShopChangeViewController
         pushVC.hidesBottomBarWhenPushed = true

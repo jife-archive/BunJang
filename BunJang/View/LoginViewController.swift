@@ -16,7 +16,8 @@ class LoginViewController: UIViewController, UIScrollViewDelegate, UISheetPresen
     
     let kakaoLoginPlz = sendLogin()
 
-    
+    let userinfo = getUserInfo.shared
+
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
         return self.view.window!
     }

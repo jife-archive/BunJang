@@ -14,13 +14,16 @@ protocol EditViewDelegate: AnyObject {
 class EditViewController: UIViewController {
 
     weak var delegate: EditViewDelegate?
-    
+    let chatList = MyChat()
+
     var delete = false
-    
+    var deleteIdx: Int?
     @IBAction func GoDelete(_ sender: Any) {
         delete = true
-        self.delegate?.sendData(_edit: delete)
-        self.dismiss(animated: true)
+        chatList.deleteChat(chatRoomIdx: deleteIdx!) { DeleteChat in
+            self.delegate?.sendData(_edit: self.delete)
+            self.dismiss(animated: true)
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()

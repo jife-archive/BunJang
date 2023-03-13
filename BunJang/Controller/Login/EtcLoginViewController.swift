@@ -21,6 +21,7 @@ class EtcLoginViewController: UIViewController,PanModalPresentable {
         return .maxHeightWithTopInset(0)
     }
     let naverLoginInstance = NaverThirdPartyLoginConnection.getSharedInstance()
+    let userinfo = getUserInfo.shared
 
     func naverLoginPaser() {
               guard let accessToken = naverLoginInstance?.isValidAccessTokenExpireTimeNow() else { return }
@@ -88,6 +89,8 @@ class EtcLoginViewController: UIViewController,PanModalPresentable {
     
     @IBAction func facebookClick(_ sender: Any) {
       //  naverLoginInstance?.requestDeleteToken()
+        userinfo.Join = false
+        userinfo.userIdx = 3
         let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "TabBar_ViewController")
         pushVC?.modalPresentationStyle = UIModalPresentationStyle.fullScreen
         self.present(pushVC!, animated: true, completion: nil)

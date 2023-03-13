@@ -24,6 +24,7 @@ PODS:
   - SwiftyJSON (4.3.0)
   - Tabman (3.0.1):
     - Pageboy (~> 4.0.2)
+  - Toast-Swift (5.0.1)
 
 DEPENDENCIES:
   - Alamofire (~> 5.1)
@@ -37,6 +38,7 @@ DEPENDENCIES:
   - PanModal
   - SwiftyJSON (~> 4.0)
   - Tabman (~> 3.0)
+  - Toast-Swift (~> 5.0.1)
 
 SPEC REPOS:
   trunk:
@@ -53,6 +55,7 @@ SPEC REPOS:
     - PanModal
     - SwiftyJSON
     - Tabman
+    - Toast-Swift
 
 SPEC CHECKSUMS:
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
@@ -68,7 +71,8 @@ SPEC CHECKSUMS:
   PanModal: 3e16ead1a907fb06f4df3f13492fd00149fa4974
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
   Tabman: a5880789298f81d3f2cdd6510b54ae637cfd8e09
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: 25d43730e974665a85c3d21747ec3e7d779d9c38
+PODFILE CHECKSUM: e8b88e5ca14e08b3a31f29516393fc81c677ab5d
 
 COCOAPODS: 1.11.3

@@ -7,6 +7,8 @@
 
 import UIKit
 import PanModal
+import Toast_Swift
+
 struct Agree {
     var check: Bool
     var label: String
@@ -14,6 +16,11 @@ struct Agree {
 
 
 class AgreeViewController: UIViewController, PanModalPresentable {
+    
+    let userinfo = getUserInfo.shared
+    
+    var JoinDate: [String] = []
+    let join = Join()
     var agree = [
         Agree(check: false, label: "번개장터 이용약관 (필수)"),
         Agree(check: false, label: "개인정보 수집 이용 동의 (필수)"),
@@ -65,10 +72,39 @@ class AgreeViewController: UIViewController, PanModalPresentable {
             
             self.nextBtn.backgroundColor = .red
         }
+        
         self.tableView.reloadData()
-        let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "TabBar_ViewController")
-        pushVC?.modalPresentationStyle = UIModalPresentationStyle.fullScreen
-        self.present(pushVC!, animated: true, completion: nil)
+        let loginRequest = JoinRequest(name: JoinDate[0], phoneNo: JoinDate[2], birthday: JoinDate[1])
+        do {
+            try self.join.postJoin(parameters: loginRequest, onCompletion: { welcome in
+                print("회원가입 요청완료")
+                self.userinfo.userIdx = welcome.result.userIdx
+                self.userinfo.Join = true
+                self.userinfo.UserMessage = welcome.result.resultMessage
+                self.userinfo.jwt = welcome.result.jwt
+                
+               UserDefaults.standard.set(welcome.result.jwt, forKey: "jwt")
+ 
+                print(welcome.result.jwt)
+                
+                print("이제 홈가요")
+                DispatchQueue.main.async {
+                    
+                    let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "TabBar_ViewController")
+                    pushVC?.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+                    self.present(pushVC!, animated: true, completion: nil)
+                    
+                }
+
+            })
+        } catch {
+            
+            let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "TabBar_ViewController")
+            pushVC?.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+            self.present(pushVC!, animated: true, completion: nil)
+            
+        }
+
     }
     override func viewDidLoad() {
         super.viewDidLoad()

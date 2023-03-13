@@ -12,6 +12,7 @@ struct APIConstants {
     static let baseURL = "http://dev.rising-bunjang.store:9000"
     static let loginURL = baseURL + "/users/:userIdx"
     static let kakaoLogunURL = baseURL + "/kapi.kakao.com/v2/user/me"
+    static let jwt = UserDefaults.standard.string(forKey: "jwt")!
 }
 class HomeItemList {
     

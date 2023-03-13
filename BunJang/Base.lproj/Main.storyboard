@@ -4488,7 +4488,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="지역(읍/면/동)을 입력해주세요" translucent="NO" id="zFM-yw-VbJ">
-                                <rect key="frame" x="36" y="53" width="283" height="44"/>
+                                <rect key="frame" x="34" y="53" width="283" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -4700,14 +4700,14 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="82F-xe-5dK">
-                                <rect key="frame" x="0.0" y="103" width="393" height="635"/>
+                                <rect key="frame" x="0.0" y="122" width="393" height="616"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3HZ-gn-5ze"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="82F-xe-5dK" firstAttribute="top" secondItem="1A7-m2-VLy" secondAttribute="bottom" id="F4E-At-bzm"/>
+                            <constraint firstItem="82F-xe-5dK" firstAttribute="top" secondItem="1A7-m2-VLy" secondAttribute="bottom" constant="19" id="F4E-At-bzm"/>
                             <constraint firstItem="1A7-m2-VLy" firstAttribute="trailing" secondItem="3HZ-gn-5ze" secondAttribute="trailing" id="TIh-Nb-FYe"/>
                             <constraint firstAttribute="bottom" secondItem="X90-wf-X5d" secondAttribute="bottom" id="aZA-P1-xbI"/>
                             <constraint firstItem="1A7-m2-VLy" firstAttribute="leading" secondItem="3HZ-gn-5ze" secondAttribute="leading" id="dEl-jo-CC4"/>
@@ -4724,6 +4724,7 @@
                     </view>
                     <connections>
                         <outlet property="chatBottomView" destination="X90-wf-X5d" id="6M5-ZS-VpH"/>
+                        <outlet property="nameLabel" destination="Zc0-Sp-NiO" id="2ko-bQ-TWU"/>
                         <outlet property="tableView" destination="82F-xe-5dK" id="ZfS-9t-td5"/>
                         <outlet property="textField" destination="eXJ-VQ-wWu" id="AiR-gA-JLS"/>
                     </connections>
@@ -5960,10 +5961,10 @@
             </objects>
             <point key="canvasLocation" x="996" y="1395"/>
         </scene>
-        <!--Tab Bar View Controller-->
+        <!--Tab Bar Controller-->
         <scene sceneID="Qxa-xF-bjs">
             <objects>
-                <tabBarController storyboardIdentifier="TabBar_ViewController" automaticallyAdjustsScrollViewInsets="NO" id="J1B-lJ-17R" customClass="TabBar_ViewController" customModule="BunJang" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBar_ViewController" automaticallyAdjustsScrollViewInsets="NO" id="J1B-lJ-17R" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ful-qg-5Nq">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>

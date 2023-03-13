@@ -169,12 +169,64 @@ class DetailItemViewController: UIViewController, UISheetPresentationControllerD
         print("디테일")
         print(getIdx as Any)
         setCollectionView()
-        if getIdx != 0 {
-            fetch()
+      
+        getApi.getDetail(productIdx: getIdx) { response in
+            print("1")
+            let numberFormatter = NumberFormatter()
+            numberFormatter.numberStyle = .decimal
+            let result = numberFormatter.string(from: NSNumber(value: response.result.getProductInfoRes.price!))! + "원"
+            
+            self.priceLabel.text = result
+            
+            self.imgTotalCount.text = String(response.result.getProductInfoRes.productImgs.count)
+            
+     
+            self.itemImg.setImageInputs(self.imageSlide)
+            self.itemImg.pageIndicator = nil
+            self.itemImg.contentScaleMode = .scaleAspectFill
+            self.itemImg.delegate = self
+            self.itemNameLabel.text = response.result.getProductInfoRes.productName
+            self.chatCountLabel.text = String(response.result.getProductInfoRes.chatCount!)
+            
+            for i in response.result.getProductInfoRes.keywords{
+                self.tags.append(i.tag!)
+            }
+            
+            self.shopNameLabel.text = response.result.getShopRes.getShopInfo.name
+            self.shopStar.text = String(response.result.getShopRes.getShopInfo.avgStar!)
+            self.shopFollowerCount.text = String(response.result.getShopRes.getShopInfo.followerCount!)
+            self.shopItemCountLabel.text = String(response.result.getShopRes.getShopInfo.productCount!)
+            print(response.result.getShopRes.products.count)
+            for i in response.result.getShopRes.products{
+                if let urlString = i.productImgURL, let url = URL(string: urlString), let data = try? Data(contentsOf: url) {
+                    self.anotherItemImg.append(UIImage(data: data)!)
+                } else {
+                    // URL 값이 nil인 경우 또는 데이터를 가져오는 데 실패한 경우 처리할 내용
+                }
+                
+                self.anotherItem.append(i.productName)
+                self.anotherItemIdx.append(i.productIdx)
+                let numberFormatter = NumberFormatter()
+                numberFormatter.numberStyle = .decimal
+                let result = numberFormatter.string(from: NSNumber(value: i.price!))! + "원"
+                self.anotherItemPrice.append(result)
+            }
+            for i in response.result.getShopRes.reviews{
+                self.anotherReview.append(i.content)
+                self.anotherReviewIdx.append(i.reviewIdx)
+                self.anotherReviewDate.append(i.date)
+                self.anotherReviewUser.append(i.userName)
+            }
 
-        }else{
-
+            DispatchQueue.main.async {
+ 
+                self.tagCollectionView.reloadData()
+                self.tableView.reloadData()
+                self.ShopItemCollectionView.reloadData()
+            }
+            
         }
+
     }
     
 

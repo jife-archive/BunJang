@@ -14,6 +14,9 @@ class MyShopChangeViewController: UIViewController, UINavigationControllerDelega
     weak var delegate: MyShopChageViewDelegate?
     var userInfo:[String] = []
     
+    @IBAction func ChangeComplete(_ sender: Any) {
+        NickName = textField.text!
+    }
     let imagePicker = UIImagePickerController()
 
     var NickName = "아무개"
@@ -50,5 +53,9 @@ extension MyShopChangeViewController: UITextFieldDelegate {
     }
 }
 extension MyShopChangeViewController: UIImagePickerControllerDelegate {
-    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let newImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
+
+    }
+
 }

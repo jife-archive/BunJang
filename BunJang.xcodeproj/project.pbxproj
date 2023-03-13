@@ -20,6 +20,11 @@
 		093A90D929B9C70700D8D8B5 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093A90D829B9C70600D8D8B5 /* UIButton.swift */; };
 		093A960129B70778007102BC /* RecentSearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093A95FF29B70778007102BC /* RecentSearchCollectionViewCell.swift */; };
 		093A960229B70778007102BC /* RecentSearchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 093A960029B70778007102BC /* RecentSearchCollectionViewCell.xib */; };
+		0942014A29BF4A9C00FBC425 /* RequestJoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0942014929BF4A9C00FBC425 /* RequestJoin.swift */; };
+		0942014C29BF4ACF00FBC425 /* ResponseJoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0942014B29BF4ACF00FBC425 /* ResponseJoin.swift */; };
+		0942014E29BF4B8100FBC425 /* SendJoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0942014D29BF4B8100FBC425 /* SendJoin.swift */; };
+		0942015029BF6A1700FBC425 /* TabBar_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0942014F29BF6A1600FBC425 /* TabBar_ViewController.swift */; };
+		0942015229BF7DC800FBC425 /* SendChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0942015129BF7DC800FBC425 /* SendChat.swift */; };
 		09448C5229B5F91B0072FA73 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09448C5029B5F91B0072FA73 /* CategoryTableViewCell.swift */; };
 		09448C5329B5F91B0072FA73 /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09448C5129B5F91B0072FA73 /* CategoryTableViewCell.xib */; };
 		09448C5529B609290072FA73 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09448C5429B609290072FA73 /* SearchViewController.swift */; };
@@ -133,6 +138,11 @@
 		093A90D829B9C70600D8D8B5 /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIButton.swift; path = "../../../../Downloads/Bunjang-Clone-main/Bunjang/Util/Extension/UIButton.swift"; sourceTree = "<group>"; };
 		093A95FF29B70778007102BC /* RecentSearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		093A960029B70778007102BC /* RecentSearchCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentSearchCollectionViewCell.xib; sourceTree = "<group>"; };
+		0942014929BF4A9C00FBC425 /* RequestJoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestJoin.swift; sourceTree = "<group>"; };
+		0942014B29BF4ACF00FBC425 /* ResponseJoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseJoin.swift; sourceTree = "<group>"; };
+		0942014D29BF4B8100FBC425 /* SendJoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendJoin.swift; sourceTree = "<group>"; };
+		0942014F29BF6A1600FBC425 /* TabBar_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar_ViewController.swift; sourceTree = "<group>"; };
+		0942015129BF7DC800FBC425 /* SendChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendChat.swift; sourceTree = "<group>"; };
 		09448C5029B5F91B0072FA73 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		09448C5129B5F91B0072FA73 /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
 		09448C5429B609290072FA73 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -262,6 +272,16 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
+		0942014829BF4A7900FBC425 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				0942014929BF4A9C00FBC425 /* RequestJoin.swift */,
+				0942014B29BF4ACF00FBC425 /* ResponseJoin.swift */,
+				0942014D29BF4B8100FBC425 /* SendJoin.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
 		09998EF629B853E7007F1C45 /* Sale */ = {
 			isa = PBXGroup;
 			children = (
@@ -363,10 +383,10 @@
 				093A95FE29B7075A007102BC /* Search */,
 				09CB6E2929B58F0F00780ED1 /* Home */,
 				09CB6E2829B58EFC00780ED1 /* Login */,
-				09DC123229BD76D900EDD90B /* My */,
 				09DA36FD29B49C5300687F10 /* CategoryCell */,
 				09A1E47A29BE5660004A59B7 /* Chat */,
 				09DA36FE29B49C5F00687F10 /* Util */,
+				09DC123229BD76D900EDD90B /* My */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -429,6 +449,7 @@
 			children = (
 				09A1E48029BE57E1004A59B7 /* GetChatList.swift */,
 				09A1E48229BE57F4004A59B7 /* Chatresponse.swift */,
+				0942015129BF7DC800FBC425 /* SendChat.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -452,6 +473,7 @@
 				09CB6E2C29B59D0300780ED1 /* BrandMenuViewController.swift */,
 				09CB6E2E29B59D1000780ED1 /* ServiceMenuViewController.swift */,
 				09D3EBB029BEEBCD00BD577F /* SearchCategoryViewController.swift */,
+				0942014F29BF6A1600FBC425 /* TabBar_ViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -521,6 +543,7 @@
 		09F2C86029B4F05E00CC6B39 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				0942014829BF4A7900FBC425 /* Register */,
 				09A1E47F29BE57D0004A59B7 /* Chat */,
 				09A1E47729BE4C90004A59B7 /* Login */,
 				09A1E47029BE36DD004A59B7 /* MY */,
@@ -695,6 +718,7 @@
 			files = (
 				09A033AA29B31FC400F291FF /* LoginViewController.swift in Sources */,
 				09A1E47629BE3B7B004A59B7 /* GoSearchViewController.swift in Sources */,
+				0942015029BF6A1700FBC425 /* TabBar_ViewController.swift in Sources */,
 				09E3B59A29BC5E2800DD0F82 /* PayViewController.swift in Sources */,
 				09DC123A29BD92E300EDD90B /* MyTabBarViewController.swift in Sources */,
 				09A1E47429BE3761004A59B7 /* MyPageresponse.swift in Sources */,
@@ -704,14 +728,17 @@
 				09A1E46929BDF4A8004A59B7 /* DetailResponse.swift in Sources */,
 				09E81A3129BB359400081A30 /* ItemTagCollectionViewCell.swift in Sources */,
 				09B1140F29BCBB5900629052 /* CardTableViewCell.swift in Sources */,
+				0942015229BF7DC800FBC425 /* SendChat.swift in Sources */,
 				095FAA2B29BB471200A447AF /* ReviewTableViewCell.swift in Sources */,
 				0936188929BE69DB0086631F /* YoutChatTableViewCell.swift in Sources */,
 				09A033C429B36D8000F291FF /* model.swift in Sources */,
 				09A033C829B36FFA00F291FF /* SelfLoginViewController.swift in Sources */,
+				0942014A29BF4A9C00FBC425 /* RequestJoin.swift in Sources */,
 				0938CC8929B390DE000BE7CA /* phoneComViewController.swift in Sources */,
 				09A0339929B31EF700F291FF /* ViewController.swift in Sources */,
 				09A1E46F29BE31E6004A59B7 /* LoginResponse.swift in Sources */,
 				09B1141329BCBB6400629052 /* BankTableViewCell.swift in Sources */,
+				0942014C29BF4ACF00FBC425 /* ResponseJoin.swift in Sources */,
 				09998EFC29B8544E007F1C45 /* OptionViewController.swift in Sources */,
 				0945B58829B780B20079EAE7 /* FrequencyCollectionViewCell.swift in Sources */,
 				09A1E47229BE36F0004A59B7 /* MyPage.swift in Sources */,
@@ -729,6 +756,7 @@
 				09CB6E2D29B59D0300780ED1 /* BrandMenuViewController.swift in Sources */,
 				09F66BA429B9F096008B1FD9 /* SearchAddressViewController.swift in Sources */,
 				09B1141C29BCDF9400629052 /* MyViewController.swift in Sources */,
+				0942014E29BF4B8100FBC425 /* SendJoin.swift in Sources */,
 				09998EFA29B85443007F1C45 /* TagViewController.swift in Sources */,
 				093A90D929B9C70700D8D8B5 /* UIButton.swift in Sources */,
 				09A26BEF29B4A19B006D44DF /* HomeCategoryData.swift in Sources */,

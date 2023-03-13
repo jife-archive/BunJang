@@ -49,4 +49,22 @@ class MyChat{
             }
         }
     }
+    func deleteChat(chatRoomIdx: Int, onCompletion: @escaping (DeletChatResponse) -> Void) {
+        let url = APIConstants.baseURL + "/chats/\(chatRoomIdx)/status"
+        
+        AF.request(url, method: .patch, parameters: [:], headers: nil)
+            .responseDecodable(of: DeletChatResponse.self) { response in
+                switch response.result {
+                case .success(let response):
+                    var updatedResponse = response
+                    print(response)
+                    updatedResponse.result = "대화 내용이 모두 삭제됩니다."
+                    onCompletion(updatedResponse)
+                case .failure(let error):
+                    debugPrint(error)
+                }
+            }
+    }
+
+    
 }

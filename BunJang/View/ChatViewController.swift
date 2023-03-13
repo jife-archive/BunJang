@@ -9,6 +9,7 @@ import UIKit
 
 class ChatViewController: UIViewController, DetailChatViewDelegate {
     func sendData(_chat: Bool) {
+        print("최종")
         self.dummycount = 0
         self.tableView.reloadData()
     }
@@ -36,8 +37,12 @@ class ChatViewController: UIViewController, DetailChatViewDelegate {
         self.tableView.register(UINib(nibName: "ChatTableViewCell", bundle: nil), forCellReuseIdentifier: "ChatTableViewCell")
         navi.shadowImage = UIImage()
         chatList.getChatList(UseIdx: 3) { ChatResult in
-            print("챗리스트완!")
+            print(ChatResult)
+          
                 self.ChatList = ChatResult
+            
+          
+            
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -84,6 +89,7 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "DetailChatViewController") as! DetailChatViewController
+        pushVC.getChatRoom = Int(self.ChatList[indexPath.row].chatRoomIdx)
         pushVC.hidesBottomBarWhenPushed = true
         pushVC.delegate = self
         self.navigationController?.pushViewController(pushVC, animated: true)

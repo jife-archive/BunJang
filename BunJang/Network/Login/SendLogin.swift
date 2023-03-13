@@ -12,7 +12,7 @@ class sendLogin{
     func sendKakao(token: String, onCompletion: @escaping (LoginResponse) -> Void){
         let url = APIConstants.baseURL + "/oauth/kakao/\(token)"
         
-        AF.request(url, method: .get)
+        AF.request(url, method: .post)
             .validate().responseDecodable(of: LoginResponse.self) { response in
                 switch response.result {
                     case .success(let data):

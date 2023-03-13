@@ -6,3 +6,17 @@
 //
 
 import Foundation
+
+struct UserInfo{
+    static let jwt = UserDefaults.standard.string(forKey: "jwt")!
+    static let headerJWT = ["X-ACCESS-TOKEN": jwt]
+    
+}
+class getUserInfo{
+    static let shared = getUserInfo()
+    var userIdx: Int?
+    var Join = false
+    var UserMessage: String?
+    var jwt: String?
+    private init(){}
+}
