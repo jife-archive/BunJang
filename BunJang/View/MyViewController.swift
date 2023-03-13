@@ -20,6 +20,13 @@ class MyViewController: UIViewController {
     @IBOutlet weak var tradeLabel: UILabel!
     @IBOutlet weak var rateLabel: UILabel!
     
+    @IBAction func ChagneMyShop(_ sender: Any) {
+        let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "MyShopChangeViewController") as! MyShopChangeViewController
+        pushVC.hidesBottomBarWhenPushed = true
+        pushVC.NickName = NameLabel.text!
+       // pushVC.delegate = self
+        self.navigationController?.pushViewController(pushVC, animated: true)
+    }
     func fetch(){
         getAPI.getData(userIdx: 3) { MypageResult in
             print("연동성공!!")

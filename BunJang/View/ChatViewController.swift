@@ -7,13 +7,20 @@
 
 import UIKit
 
-class ChatViewController: UIViewController {
+class ChatViewController: UIViewController, DetailChatViewDelegate {
+    func sendData(_chat: Bool) {
+        self.dummycount = 0
+        self.tableView.reloadData()
+    }
+    
+
+    
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var navi: UINavigationBar!
     
     let chatList = MyChat()
-    
+    let editdelegate = EditViewController()
     var ChatList:[ChatResult] = []
     var ChatRoom:[Int?] = []
     var myIdx:[Int?] = []
@@ -21,7 +28,7 @@ class ChatViewController: UIViewController {
     var name:[String?] = []
     var date: [String?] = []
     var lastchat: [String?] = []
-    
+    var dummycount = 1
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -40,26 +47,46 @@ class ChatViewController: UIViewController {
 }
 extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ChatList.count
+        
+        if ChatList.count == 0 {
+            return dummycount
+        }
+        else{
+            return ChatList.count
+
+        }
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "ChatTableViewCell", for: indexPath) as? ChatTableViewCell else {return UITableViewCell()}
         
-        cell.UserNameLabel.text = self.ChatList[indexPath.row].name
-        cell.dateLabel.text = self.ChatList[indexPath.row].updateDate
-        cell.lastChatLabel.text = self.ChatList[indexPath.row].lastMessage
-        let background = UIView()
-           background.backgroundColor = .clear
-           cell.selectedBackgroundView = background
-        return cell
+        if ChatList.count == 0 {
+            cell.UserNameLabel.text = "더미속의 그대"
+            cell.dateLabel.text = "2시간전"
+            cell.lastChatLabel.text = "서버야 열려라~"
+            let background = UIView()
+               background.backgroundColor = .clear
+               cell.selectedBackgroundView = background
+            return cell
+            
+        }
+        else{
+            cell.UserNameLabel.text = self.ChatList[indexPath.row].name
+            cell.dateLabel.text = self.ChatList[indexPath.row].updateDate
+            cell.lastChatLabel.text = self.ChatList[indexPath.row].lastMessage
+            let background = UIView()
+               background.backgroundColor = .clear
+               cell.selectedBackgroundView = background
+            return cell
+        }
 
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "DetailChatViewController")
-        pushVC!.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(pushVC!, animated: true)
+        let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "DetailChatViewController") as! DetailChatViewController
+        pushVC.hidesBottomBarWhenPushed = true
+        pushVC.delegate = self
+        self.navigationController?.pushViewController(pushVC, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

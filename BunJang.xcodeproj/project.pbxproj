@@ -84,6 +84,9 @@
 		09CB6E3129B5A4D100780ED1 /* CategoryMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB6E3029B5A4D100780ED1 /* CategoryMenuViewController.swift */; };
 		09CBF40A29B4D2A200D261B6 /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CBF40829B4D2A200D261B6 /* ItemCollectionViewCell.swift */; };
 		09CBF40B29B4D2A200D261B6 /* ItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09CBF40929B4D2A200D261B6 /* ItemCollectionViewCell.xib */; };
+		09D3EBAD29BED11B00BD577F /* EditSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D3EBAC29BED11B00BD577F /* EditSearchViewController.swift */; };
+		09D3EBB129BEEBCE00BD577F /* SearchCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D3EBB029BEEBCD00BD577F /* SearchCategoryViewController.swift */; };
+		09D3EBB329BF06ED00BD577F /* MyShopChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D3EBB229BF06ED00BD577F /* MyShopChangeViewController.swift */; };
 		09DA36F429B4668C00687F10 /* 광고배너9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09DA36EB29B4668C00687F10 /* 광고배너9.jpg */; };
 		09DA36F529B4668C00687F10 /* 광고배너2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09DA36EC29B4668C00687F10 /* 광고배너2.jpg */; };
 		09DA36F629B4668C00687F10 /* 광고배너5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09DA36ED29B4668C00687F10 /* 광고배너5.jpg */; };
@@ -98,6 +101,7 @@
 		09DC123829BD781400EDD90B /* MyHeartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DC123729BD781400EDD90B /* MyHeartViewController.swift */; };
 		09DC123A29BD92E300EDD90B /* MyTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DC123929BD92E300EDD90B /* MyTabBarViewController.swift */; };
 		09E3B59A29BC5E2800DD0F82 /* PayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E3B59929BC5E2800DD0F82 /* PayViewController.swift */; };
+		09E7C0D529BEBEC400627C3A /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E7C0D429BEBEC400627C3A /* EditViewController.swift */; };
 		09E81A3129BB359400081A30 /* ItemTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E81A2F29BB359400081A30 /* ItemTagCollectionViewCell.swift */; };
 		09E81A3229BB359400081A30 /* ItemTagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09E81A3029BB359400081A30 /* ItemTagCollectionViewCell.xib */; };
 		09E81A3829BB35C500081A30 /* UserDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E81A3729BB35C500081A30 /* UserDetail.swift */; };
@@ -196,6 +200,9 @@
 		09CB6E3029B5A4D100780ED1 /* CategoryMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMenuViewController.swift; sourceTree = "<group>"; };
 		09CBF40829B4D2A200D261B6 /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		09CBF40929B4D2A200D261B6 /* ItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCollectionViewCell.xib; sourceTree = "<group>"; };
+		09D3EBAC29BED11B00BD577F /* EditSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSearchViewController.swift; sourceTree = "<group>"; };
+		09D3EBB029BEEBCD00BD577F /* SearchCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCategoryViewController.swift; sourceTree = "<group>"; };
+		09D3EBB229BF06ED00BD577F /* MyShopChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyShopChangeViewController.swift; sourceTree = "<group>"; };
 		09DA36EB29B4668C00687F10 /* 광고배너9.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "광고배너9.jpg"; path = "../../../../Downloads/광고배너9.jpg"; sourceTree = "<group>"; };
 		09DA36EC29B4668C00687F10 /* 광고배너2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "광고배너2.jpg"; path = "../../../../Downloads/광고배너2.jpg"; sourceTree = "<group>"; };
 		09DA36ED29B4668C00687F10 /* 광고배너5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "광고배너5.jpg"; path = "../../../../Downloads/광고배너5.jpg"; sourceTree = "<group>"; };
@@ -210,6 +217,7 @@
 		09DC123729BD781400EDD90B /* MyHeartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHeartViewController.swift; sourceTree = "<group>"; };
 		09DC123929BD92E300EDD90B /* MyTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarViewController.swift; sourceTree = "<group>"; };
 		09E3B59929BC5E2800DD0F82 /* PayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayViewController.swift; sourceTree = "<group>"; };
+		09E7C0D429BEBEC400627C3A /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		09E81A2F29BB359400081A30 /* ItemTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		09E81A3029BB359400081A30 /* ItemTagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemTagCollectionViewCell.xib; sourceTree = "<group>"; };
 		09E81A3729BB35C500081A30 /* UserDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetail.swift; sourceTree = "<group>"; };
@@ -249,6 +257,7 @@
 				0945B58629B780B20079EAE7 /* FrequencyCollectionViewCell.swift */,
 				0945B58729B780B20079EAE7 /* FrequencyCollectionViewCell.xib */,
 				09A1E47529BE3B7B004A59B7 /* GoSearchViewController.swift */,
+				09D3EBAC29BED11B00BD577F /* EditSearchViewController.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -410,6 +419,7 @@
 				0936188229BE69B90086631F /* MyChatTableViewCell.xib */,
 				0936188729BE69DB0086631F /* YoutChatTableViewCell.swift */,
 				0936188829BE69DB0086631F /* YoutChatTableViewCell.xib */,
+				09E7C0D429BEBEC400627C3A /* EditViewController.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -441,6 +451,7 @@
 				09CB6E3029B5A4D100780ED1 /* CategoryMenuViewController.swift */,
 				09CB6E2C29B59D0300780ED1 /* BrandMenuViewController.swift */,
 				09CB6E2E29B59D1000780ED1 /* ServiceMenuViewController.swift */,
+				09D3EBB029BEEBCD00BD577F /* SearchCategoryViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -502,6 +513,7 @@
 				09DC123329BD77DF00EDD90B /* MySaleViewController.swift */,
 				09DC123529BD77ED00EDD90B /* MyReviewViewController.swift */,
 				09DC123729BD781400EDD90B /* MyHeartViewController.swift */,
+				09D3EBB229BF06ED00BD577F /* MyShopChangeViewController.swift */,
 			);
 			path = My;
 			sourceTree = "<group>";
@@ -725,10 +737,12 @@
 				09F2C86929B4FF7500CC6B39 /* AgreeTableViewCell.swift in Sources */,
 				09A1E48129BE57E1004A59B7 /* GetChatList.swift in Sources */,
 				09998EF829B85437007F1C45 /* CategoryViewController.swift in Sources */,
+				09D3EBB329BF06ED00BD577F /* MyShopChangeViewController.swift in Sources */,
 				09F66BA729BA038A008B1FD9 /* SearchAddressTableViewCell.swift in Sources */,
 				0936187C29BE63450086631F /* DetailChatViewController.swift in Sources */,
 				093A90D629B9A7DF00D8D8B5 /* TagCollectionViewCell.swift in Sources */,
 				09CB6E2B29B58F2500780ED1 /* MenuViewController.swift in Sources */,
+				09D3EBB129BEEBCE00BD577F /* SearchCategoryViewController.swift in Sources */,
 				09E81A3829BB35C500081A30 /* UserDetail.swift in Sources */,
 				09DC123429BD77DF00EDD90B /* MySaleViewController.swift in Sources */,
 				09CB6E2F29B59D1000780ED1 /* ServiceMenuViewController.swift in Sources */,
@@ -748,6 +762,8 @@
 				09B1140B29BCAC8F00629052 /* PayMethodCollectionViewCell.swift in Sources */,
 				09A1E48329BE57F4004A59B7 /* Chatresponse.swift in Sources */,
 				09DC123629BD77ED00EDD90B /* MyReviewViewController.swift in Sources */,
+				09E7C0D529BEBEC400627C3A /* EditViewController.swift in Sources */,
+				09D3EBAD29BED11B00BD577F /* EditSearchViewController.swift in Sources */,
 				09A0339729B31EF700F291FF /* SceneDelegate.swift in Sources */,
 				09CBF40A29B4D2A200D261B6 /* ItemCollectionViewCell.swift in Sources */,
 				0945B58D29B79A300079EAE7 /* SaleViewController.swift in Sources */,

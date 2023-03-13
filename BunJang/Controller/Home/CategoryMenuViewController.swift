@@ -113,6 +113,31 @@ extension CategoryMenuViewController: UICollectionViewDelegate, UICollectionView
         return UICollectionViewCell()
 
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("클릭")
+        if collectionView == lifeCategoryCollectionView {
+            let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "SearchCategoryViewController") as! SearchCategoryViewController
+            pushVC.img = CategoryData.lifeCategory[indexPath.row].imgName
+            pushVC.cateName = CategoryData.lifeCategory[indexPath.row].Name
+            pushVC.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+            self.present(pushVC, animated: false, completion: nil)
+        }
+        else if collectionView == habbitCategoryCollectionView {
+            let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "SearchCategoryViewController") as! SearchCategoryViewController
+            pushVC.img = CategoryData.habbitCategory[indexPath.row].imgName
+            pushVC.cateName = CategoryData.habbitCategory[indexPath.row].Name
+            pushVC.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+            self.present(pushVC, animated: false, completion: nil)
+        }
+        else if collectionView == tradeCategoryCollectionView {
+            let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "SearchCategoryViewController") as! SearchCategoryViewController
+            pushVC.img = CategoryData.tradeCategory[indexPath.row].imgName
+            pushVC.cateName = CategoryData.tradeCategory[indexPath.row].Name
+            pushVC.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+            self.present(pushVC, animated: false, completion: nil)
+        }
+
+    }
     
     
 }
