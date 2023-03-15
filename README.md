@@ -136,6 +136,7 @@ https://user-images.githubusercontent.com/114370871/222976257-1ae6de9c-a591-4102
  느낀점: 오늘 처음 서버분들과 합을 맞추어 API를 연동 했다. 약간 두려웠지만 막상하니 별거없구만!
 </div>
 </details>
+
 <details>
 <summary>3월11일(토)</summary>
 <div markdown="1">
@@ -152,5 +153,62 @@ https://user-images.githubusercontent.com/114370871/222976257-1ae6de9c-a591-4102
  - 없음 
  
  느낀점: 하다보니 12시가 넘어간걸 모르고 진행했다... 이제 커밋을 미리 한번해놓아야겠다.. 내 감점...
+</div>
+</details>
+
+<details>
+<summary>3월12일(일)</summary>
+<div markdown="1">
+
+
+최종목표: 디테일 상품 UI 완료 및 마이페이지 작업 및 API연동
+
+:sunglasses:완료
+  -디테이 상품 UI80%완 및 홈페이지 상품리스트 API작업완료
+
+
+:rage:미구현 목표
+ - 마이페이지.... 
+ 
+ 느낀점: 드디어 서버분께서 API를 올려주셧다 흐어엉 처음연결 감회가 새롭다 가야할길이...태산...
+</div>
+
+</details>
+
+<details>
+<summary>3월13일(월)</summary>
+<div markdown="1">
+
+
+최종목표: 디테일 상품 UI 완료 및 API연동
+
+:sunglasses:완료
+  -디테이 상품 UI8%완 
+
+
+:rage:미구현 목표
+ - API연동...
+ 
+ 느낀점: 흐어어어엉... 서버분들이 서버르 꺼두시고 주무시는 바람에 작업을 못했다... 시차가 안맞다니..
+</div>
+</details>
+
+</details>
+
+<details>
+<summary>3월14일(화)</summary>
+<div markdown="1">
+
+
+최종목표: 마이페이지 UI 및 API 연동
+
+:sunglasses:완료
+  -UI 작업완!
+
+
+:rage:미구현 목표
+ - API연동...
+ 
+ 느낀점:2차 피드백에서 UI는 충분하다는 피드백을 받았다... 금요일 까지지만 학교때문에 목욜으 못하니 오늘, 내일 이 한몸 태우리.. API딱대
 </div>
 </details>
