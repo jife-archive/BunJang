@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		092A186929C1E44A00A866BA /* Typesomethingheader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092A186829C1E44A00A866BA /* Typesomethingheader.swift */; };
+		0936100B29C1F89100D78AAA /* GiveHeart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0936100A29C1F89100D78AAA /* GiveHeart.swift */; };
+		0936100D29C1F8A500D78AAA /* LookHeart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0936100C29C1F8A500D78AAA /* LookHeart.swift */; };
 		0936187C29BE63450086631F /* DetailChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0936187B29BE63450086631F /* DetailChatViewController.swift */; };
 		0936188329BE69B90086631F /* MyChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0936188129BE69B90086631F /* MyChatTableViewCell.swift */; };
 		0936188429BE69B90086631F /* MyChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0936188229BE69B90086631F /* MyChatTableViewCell.xib */; };
@@ -146,6 +148,8 @@
 
 /* Begin PBXFileReference section */
 		092A186829C1E44A00A866BA /* Typesomethingheader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typesomethingheader.swift; sourceTree = "<group>"; };
+		0936100A29C1F89100D78AAA /* GiveHeart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiveHeart.swift; sourceTree = "<group>"; };
+		0936100C29C1F8A500D78AAA /* LookHeart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookHeart.swift; sourceTree = "<group>"; };
 		0936187B29BE63450086631F /* DetailChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailChatViewController.swift; sourceTree = "<group>"; };
 		0936188129BE69B90086631F /* MyChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChatTableViewCell.swift; sourceTree = "<group>"; };
 		0936188229BE69B90086631F /* MyChatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyChatTableViewCell.xib; sourceTree = "<group>"; };
@@ -299,6 +303,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0936100929C1F87A00D78AAA /* Heart */ = {
+			isa = PBXGroup;
+			children = (
+				0936100A29C1F89100D78AAA /* GiveHeart.swift */,
+				0936100C29C1F8A500D78AAA /* LookHeart.swift */,
+			);
+			path = Heart;
+			sourceTree = "<group>";
+		};
 		093A95FE29B7075A007102BC /* Search */ = {
 			isa = PBXGroup;
 			children = (
@@ -610,6 +623,7 @@
 		09F2C86029B4F05E00CC6B39 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				0936100929C1F87A00D78AAA /* Heart */,
 				09C8454C29C1B1D4000A22F8 /* Search */,
 				09B34E9B29C0BAA7003D6C63 /* Sale */,
 				09FAC81329C0793A00DDAF43 /* EditShop */,
@@ -814,6 +828,7 @@
 				09A8FDEF29B8833300728CE1 /* SubCategoryViewController.swift in Sources */,
 				09C8455429C1DD8B000A22F8 /* EveryItemViewController.swift in Sources */,
 				09A1E46D29BE31B2004A59B7 /* SendLogin.swift in Sources */,
+				0936100D29C1F8A500D78AAA /* LookHeart.swift in Sources */,
 				09A26BEC29B49CBB006D44DF /* HomeCategoryCollectionViewCell.swift in Sources */,
 				09B34EB829C10361003D6C63 /* RequestFollower.swift in Sources */,
 				09A1E46929BDF4A8004A59B7 /* DetailResponse.swift in Sources */,
@@ -878,6 +893,7 @@
 				09CB6E2F29B59D1000780ED1 /* ServiceMenuViewController.swift in Sources */,
 				09DC123829BD781400EDD90B /* MyHeartViewController.swift in Sources */,
 				09CB6E3129B5A4D100780ED1 /* CategoryMenuViewController.swift in Sources */,
+				0936100B29C1F89100D78AAA /* GiveHeart.swift in Sources */,
 				09448C5229B5F91B0072FA73 /* CategoryTableViewCell.swift in Sources */,
 				09A8FDEC29B877E000728CE1 /* SaleCategoryTableViewCell.swift in Sources */,
 				09A1E47929BE54EB004A59B7 /* ChatViewController.swift in Sources */,

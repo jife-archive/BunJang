@@ -94,10 +94,14 @@ class EtcLoginViewController: UIViewController,PanModalPresentable {
     let follo = follow()
     let Tag = tagSearch()
     let category = SearchCategory()
-
+    let lookheart = LookHeart()
     
     @IBAction func facebookClick(_ sender: Any) {
       //  naverLoginInstance?.requestDeleteToken()
+        lookheart.SearchTag(userIdx: 16) { LookHeartResult in
+            print("하트조회성공~")
+        }
+        
         let encodedTag = "태그1".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
 
         category.getCategory(categoryIdx: 2) { CategoryResult in
