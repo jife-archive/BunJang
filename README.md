@@ -156,7 +156,8 @@ https://user-images.githubusercontent.com/114370871/222976257-1ae6de9c-a591-4102
 </div>
 </details>
 
-<summary>3월12일(월)</summary>
+<details>
+<summary>3월12일(일)</summary>
 <div markdown="1">
 
 
@@ -175,7 +176,7 @@ https://user-images.githubusercontent.com/114370871/222976257-1ae6de9c-a591-4102
 </details>
 
 <details>
-<summary>3월13일(일)</summary>
+<summary>3월13일(월)</summary>
 <div markdown="1">
 
 
