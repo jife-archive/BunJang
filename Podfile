@@ -18,5 +18,15 @@ pod 'Tabman', '~> 3.0'
 pod 'NMapsMap'
 pod 'SwiftyJSON', '~> 4.0'
 pod 'Toast-Swift', '~> 5.0.1'
+pod 'Kingfisher', '~> 7.0'
+pod 'Firebase/Storage'
+pod 'FirebaseAnalytics'
 
+# For Analytics without IDFA collection capability, use this pod instead
+# pod ‘Firebase/AnalyticsWithoutAdIdSupport’
+
+# Add the pods for any other Firebase products you want to use in your app
+# For example, to use Firebase Authentication and Cloud Firestore
+pod 'FirebaseAuth'
+pod 'FirebaseFirestore'
 end

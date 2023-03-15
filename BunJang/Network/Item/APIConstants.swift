@@ -13,6 +13,8 @@ struct APIConstants {
     static let loginURL = baseURL + "/users/:userIdx"
     static let kakaoLogunURL = baseURL + "/kapi.kakao.com/v2/user/me"
     static let jwt = UserDefaults.standard.string(forKey: "jwt")!
+    static let headerJWT = ["X-ACCESS-TOKEN": jwt]
+
 }
 class HomeItemList {
     
@@ -26,7 +28,6 @@ class HomeItemList {
             switch response.result {
                 
             case .success(let response):
-                //print("\(response) ")
                 onCompletion(response.result)
             case .failure(let error):
                 print("Get Error : \(error.localizedDescription)")

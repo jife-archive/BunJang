@@ -11,11 +11,18 @@ protocol MyShopChageViewDelegate: AnyObject {
 }
 class MyShopChangeViewController: UIViewController, UINavigationControllerDelegate {
     
+    let edit = SendEdit()
+    let userinfo = getUserInfo.shared
     weak var delegate: MyShopChageViewDelegate?
     var userInfo:[String] = []
-    
     @IBAction func ChangeComplete(_ sender: Any) {
+        
         NickName = textField.text!
+        let request = EditRequest(profileImgUrl: "https://www.google.com/aclk?sa=l&ai=DChcSEwiy-bTwkdv9AhWh10wCHQxuCuwYABAHGgJ0bQ&sig=AOD64_0KBpFsMUD2JVFPgz9-fjkqNpaWpQ&adurl&ctype=5&ved=2ahUKEwijxavwkdv9AhXHC94KHUtuC9UQwg96BAgBEHo", shopDescription: "나도", name: "나도")
+            edit.editShop(userIdx: 16 , request: request) { response in
+            print("변호ㅏ 성공")
+        }
+
     }
     let imagePicker = UIImagePickerController()
 

@@ -17,6 +17,7 @@ struct DetailItem: Codable  {
 struct Result: Codable  {
     let getProductInfoRes: GetProductInfoRes
     let getShopRes: GetShopRes
+    let keywords: [Keyword]?
 }
 
 // MARK: - GetProductInfoRes
@@ -27,7 +28,7 @@ struct GetProductInfoRes: Codable  {
     let subCategoryName: String?
     let userIdx, chatCount, favoriteCount: Int?
     let productImgs: [[String: String?]]
-    let keywords: [Keyword]
+    let keywords: [Keyword]?
 }
 
 // MARK: - Keyword

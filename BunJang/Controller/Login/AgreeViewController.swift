@@ -18,7 +18,8 @@ struct Agree {
 class AgreeViewController: UIViewController, PanModalPresentable {
     
     let userinfo = getUserInfo.shared
-    
+    let login = sendLogin()
+
     var JoinDate: [String] = []
     let join = Join()
     var agree = [
@@ -74,20 +75,18 @@ class AgreeViewController: UIViewController, PanModalPresentable {
         }
         
         self.tableView.reloadData()
-        let loginRequest = JoinRequest(name: JoinDate[0], phoneNo: JoinDate[2], birthday: JoinDate[1])
-        do {
-            try self.join.postJoin(parameters: loginRequest, onCompletion: { welcome in
-                print("회원가입 요청완료")
-                self.userinfo.userIdx = welcome.result.userIdx
-                self.userinfo.Join = true
-                self.userinfo.UserMessage = welcome.result.resultMessage
-                self.userinfo.jwt = welcome.result.jwt
-                
-               UserDefaults.standard.set(welcome.result.jwt, forKey: "jwt")
- 
-                print(welcome.result.jwt)
-                
+        let joginRequest = JoinRequest(name: JoinDate[0], phoneNo:JoinDate[2], birthday:JoinDate[1])
+        self.join.postJoin(parameters: joginRequest, onCompletion: { welcome in
+            print("회원가입 요청완료")
+            self.userinfo.userIdx = welcome.result?.userIdx
+            self.userinfo.Join = true
+            self.userinfo.jwt = welcome.result?.jwt
+            
+           //UserDefaults.standard.set(welcome.result?.jwt, forKey: "jwt")
+
+            if welcome.isSuccess == true{
                 print("이제 홈가요")
+                UserDefaults.standard.set(welcome.result?.jwt, forKey: "jwt")
                 DispatchQueue.main.async {
                     
                     let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "TabBar_ViewController")
@@ -95,16 +94,25 @@ class AgreeViewController: UIViewController, PanModalPresentable {
                     self.present(pushVC!, animated: true, completion: nil)
                     
                 }
-
-            })
-        } catch {
+            }else{
+                print(welcome.isSuccess)
+                print(welcome.code)
+                print(welcome.message)
+                let loginRequest = LoginRequest(name: self.JoinDate[0], phoneNo: self.JoinDate[2])
+                    self.login.sendSelfLogin(parameters: loginRequest) { WelcomeLogin in
+                        self.userinfo.userIdx = WelcomeLogin.result.userIdx
+                        self.userinfo.Join = false
+                        UserDefaults.standard.set(WelcomeLogin.result.jwt, forKey: "jwt")
+                        print("로그인 완료")
+                        let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "TabBar_ViewController")
+                        pushVC?.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+                        self.present(pushVC!, animated: true, completion: nil)
+                }
+            }
             
-            let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "TabBar_ViewController")
-            pushVC?.modalPresentationStyle = UIModalPresentationStyle.fullScreen
-            self.present(pushVC!, animated: true, completion: nil)
-            
-        }
 
+
+        })
     }
     override func viewDidLoad() {
         super.viewDidLoad()

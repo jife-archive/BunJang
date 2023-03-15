@@ -38,6 +38,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, ImageSlideshow
 
             DispatchQueue.main.async {
                 self.RecentItemCollectionView.reloadData()
+                self.RecommandCollectionView.reloadData()
             }
         }
     }
@@ -85,7 +86,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, ImageSlideshow
         FlowLayout.minimumLineSpacing = 0
         FlowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right:0 )
         let width = RecommandCollectionView.frame.width / 3
-        let height = RecommandCollectionView.frame.height / 3
+        let height = RecommandCollectionView.frame.height / 4
         FlowLayout.itemSize = CGSize(width: width, height: height)
         self.RecommandCollectionView.collectionViewLayout = FlowLayout
     }
@@ -141,18 +142,18 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, ImageSlideshow
      override func viewWillAppear(_ animated: Bool) {
          print(userinfo.Join)
          print("나와라얍")
+         fetchData()
         if userinfo.Join == true {
             userinfo.Join = false
             print("메시지가 안나오넹")
             DispatchQueue.main.async {
-                self.view.makeToast(self.userinfo.UserMessage,duration:4,position: .center)
+                self.view.makeToast("회원가입을 축하합니다!",duration:4,position: .center)
                 print(UserInfo.jwt)
             }
         }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchData()
         self.tabBarController?.delegate = self
         self.configureView()
         self.setCollectionView()
@@ -186,6 +187,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+
         if collectionView == HomeCategoryCollectionView {
             guard let cell = self.HomeCategoryCollectionView.dequeueReusableCell(withReuseIdentifier: "HomeCategoryCollectionViewCell", for: indexPath) as? HomeCategoryCollectionViewCell else {return UICollectionViewCell()}
             
@@ -197,16 +201,20 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             guard let cell = self.RecentItemCollectionView.dequeueReusableCell(withReuseIdentifier: "ItemCollectionViewCell", for: indexPath) as? ItemCollectionViewCell else {return UICollectionViewCell()}
             
             if self.itemList.count != 0 {
+                let result = numberFormatter.string(from: NSNumber(value: self.itemList[indexPath.row].price))! + "원"
                 cell.ItemNameLabel.text = self.itemList[indexPath.row].productName
-                cell.PriceLabel.text = String(self.itemList[indexPath.row].price)
+
+                cell.PriceLabel.text = result
             }
             return cell
         }
         else if collectionView == RecommandCollectionView{
             guard let cell = self.RecommandCollectionView.dequeueReusableCell(withReuseIdentifier: "ItemCollectionViewCell", for: indexPath) as? ItemCollectionViewCell else {return UICollectionViewCell()}
             if self.itemList.count != 0 {
+                let result = numberFormatter.string(from: NSNumber(value: self.itemList[indexPath.row].price))! + "원"
                 cell.ItemNameLabel.text = self.itemList[indexPath.row].productName
-                cell.PriceLabel.text = String(self.itemList[indexPath.row].price)
+
+                cell.PriceLabel.text = result
             }
             return cell
         }
@@ -226,6 +234,21 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 
                 self.navigationController?.pushViewController(vc, animated: true)
             }
+        }
+        else if collectionView == RecommandCollectionView{
+            if self.itemList.count != 0 {
+                guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetailItemViewController") as? DetailItemViewController else {return}
+                vc.getIdx = Int(self.itemList[indexPath.row].productIdx)
+                vc.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            else {
+                guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetailItemViewController") as? DetailItemViewController else {return}
+                vc.hidesBottomBarWhenPushed = true
+                
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+
         }
     }
     

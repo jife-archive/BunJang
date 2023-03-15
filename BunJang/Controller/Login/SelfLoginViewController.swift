@@ -117,7 +117,6 @@ class SelfLoginViewController: UIViewController, UITextFieldDelegate, UISheetPre
             phoneSV.isHidden = false
         case .complete:
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "AgreeViewController") as! AgreeViewController
-            
             vc.JoinDate.append(nametextfield.text!)
             vc.JoinDate.append(birth1.text!)
             vc.JoinDate.append(phone.text!)

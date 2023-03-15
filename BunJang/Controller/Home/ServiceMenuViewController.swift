@@ -87,7 +87,7 @@ extension ServiceMenuViewController: UITableViewDelegate, UITableViewDataSource 
         return UITableViewCell()
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(60)
+        return CGFloat(50)
     }
 
     

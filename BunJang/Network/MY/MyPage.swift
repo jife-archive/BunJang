@@ -18,12 +18,12 @@ class MyPage{
                    headers: nil)
         .responseDecodable(of: MypageResponse.self) { response in
             switch response.result {
-                
+                 
             case .success(let response):
                  print("\(response) ")
                 onCompletion(response.result)
             case .failure(let error):
-                print("Get Error : \(error.localizedDescription)")
+                print("마이페이지 연동실패!")
                 debugPrint(error)
 
             }

@@ -18,5 +18,6 @@ class getUserInfo{
     var Join = false
     var UserMessage: String?
     var jwt: String?
+    var msg: [String?] = []
     private init(){}
 }

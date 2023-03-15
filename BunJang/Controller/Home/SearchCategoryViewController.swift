@@ -25,6 +25,10 @@ class SearchCategoryViewController: UIViewController {
     @IBOutlet weak var subCategoryMore: UIButton!
 
     
+    @IBAction func GoHome(_ sender: Any) {
+        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+
+    }
     
     @IBAction func EdidClick(_ sender: Any) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "EditSearchViewController") as! EditSearchViewController

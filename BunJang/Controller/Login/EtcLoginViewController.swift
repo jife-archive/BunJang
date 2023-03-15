@@ -11,6 +11,9 @@ import Alamofire
 import PanModal
 
 class EtcLoginViewController: UIViewController,PanModalPresentable {
+
+    let login = sendLogin()
+
     var panScrollable: UIScrollView?{
         return nil
     }
@@ -86,11 +89,43 @@ class EtcLoginViewController: UIViewController,PanModalPresentable {
     @IBOutlet weak var naverBtn: UIButton!
     @IBOutlet weak var facebookBtn: UIButton!
     
+    let sale = SendSale()
+    let rv = getReview()
+    let follo = follow()
+    let Tag = tagSearch()
+    let category = SearchCategory()
+
     
     @IBAction func facebookClick(_ sender: Any) {
       //  naverLoginInstance?.requestDeleteToken()
+        let encodedTag = "태그1".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+
+        category.getCategory(categoryIdx: 2) { CategoryResult in
+            print(CategoryResult)
+
+        }
+        Tag.SearchTag(tag: encodedTag) { tagResult in
+            print(tagResult)
+        }
+        rv.Review(userIdx: 16) { ReviewResult in
+            print("완료")
+        }
+        follo.getfollower(userIdx: 16) { ResponseFollowing in
+            print("팔로워완료")
+
+        }
+        let loginRequest = LoginRequest(name: "나도", phoneNo: "123123123")
+        login.sendSelfLogin(parameters: loginRequest) { WelcomeLogin in
+            print("로그인 성공")
+            UserDefaults.standard.set(WelcomeLogin.result.jwt, forKey: "jwt")
+            print(WelcomeLogin.result.jwt)
+            print(WelcomeLogin.result.userIdx)
+            self.userinfo.userIdx = WelcomeLogin.result.userIdx
+            self.userinfo.jwt = WelcomeLogin.result.jwt
+            self.userinfo.Join = false
+        }
         userinfo.Join = false
-        userinfo.userIdx = 3
+        //userinfo.userIdx = 3
         let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "TabBar_ViewController")
         pushVC?.modalPresentationStyle = UIModalPresentationStyle.fullScreen
         self.present(pushVC!, animated: true, completion: nil)

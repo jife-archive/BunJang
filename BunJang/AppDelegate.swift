@@ -9,7 +9,6 @@ import UIKit
 import NaverThirdPartyLogin
 import KakaoSDKCommon
 import KakaoSDKAuth
-
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -31,6 +30,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 instance?.appName = "rising"
         
         KakaoSDK.initSDK(appKey: "f1e1d77c066b35bc584bd86059cad666")
+    
+
         return true
     }
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {

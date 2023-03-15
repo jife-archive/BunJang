@@ -23,8 +23,8 @@ class PayViewController: UIViewController {
     
     
     @IBAction func payCompleteClick(_ sender: Any) {
-        presentedViewController?.dismiss(animated: true, completion: nil)
-
+        let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "TabBar_ViewController")
+        self.navigationController?.pushViewController(pushVC!, animated: true)
     }
     
     @IBAction func GoBackClick(_ sender: Any) {

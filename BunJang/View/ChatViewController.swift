@@ -8,11 +8,32 @@
 import UIKit
 
 class ChatViewController: UIViewController, DetailChatViewDelegate {
-    func sendData(_chat: Bool) {
-        print("최종")
-        self.dummycount = 0
-        self.tableView.reloadData()
+    func sendData(_chat: Bool, _message: String) {
+        
+        if _chat == true {
+            self.dummycount = 0
+            self.tableView.reloadData()
+        }
+        else
+        {
+            if ChatList.count != 0 {
+                self.dummycount = 0
+                self.tableView.reloadData()
+                print("서버용")
+            }
+            else {
+                self.lastchat.append(_message)
+                self.newdummy = true
+                print("더미용")
+
+                self.tableView.reloadData()
+
+            }
+        }
+
     }
+    
+
     
 
     
@@ -20,6 +41,7 @@ class ChatViewController: UIViewController, DetailChatViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var navi: UINavigationBar!
     
+    var newdummy = false
     let chatList = MyChat()
     let editdelegate = EditViewController()
     var ChatList:[ChatResult] = []
@@ -30,13 +52,17 @@ class ChatViewController: UIViewController, DetailChatViewDelegate {
     var date: [String?] = []
     var lastchat: [String?] = []
     var dummycount = 1
+    let userinfo = getUserInfo.shared
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         self.tableView.register(UINib(nibName: "ChatTableViewCell", bundle: nil), forCellReuseIdentifier: "ChatTableViewCell")
         navi.shadowImage = UIImage()
-        chatList.getChatList(UseIdx: 3) { ChatResult in
+  
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        chatList.getChatList(UseIdx: userinfo.userIdx!) { ChatResult in
             print(ChatResult)
           
                 self.ChatList = ChatResult
@@ -48,7 +74,6 @@ class ChatViewController: UIViewController, DetailChatViewDelegate {
             }
         }
     }
-    
 }
 extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -68,8 +93,16 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
         
         if ChatList.count == 0 {
             cell.UserNameLabel.text = "더미속의 그대"
-            cell.dateLabel.text = "2시간전"
-            cell.lastChatLabel.text = "서버야 열려라~"
+            if newdummy == true {
+                cell.dateLabel.text = "방금"
+                cell.lastChatLabel.text = lastchat[lastchat.count-1]
+
+            }
+            else {
+                cell.dateLabel.text = "2시간전"
+                cell.lastChatLabel.text = "서버야 열려라~"
+
+            }
             let background = UIView()
                background.backgroundColor = .clear
                cell.selectedBackgroundView = background
@@ -89,7 +122,14 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "DetailChatViewController") as! DetailChatViewController
-        pushVC.getChatRoom = Int(self.ChatList[indexPath.row].chatRoomIdx)
+        if ChatList.count == 0 {
+            pushVC.getChatRoom = 0
+        }
+        else
+        {
+            pushVC.getChatRoom = Int(self.ChatList[indexPath.row].chatRoomIdx)!
+
+        }
         pushVC.hidesBottomBarWhenPushed = true
         pushVC.delegate = self
         self.navigationController?.pushViewController(pushVC, animated: true)

@@ -9,19 +9,26 @@ import Foundation
 import Alamofire
 
 class Join{
-    func postJoin(parameters: JoinRequest, onCompletion: @escaping (Welcome)->Void){
+    func postJoin(parameters: JoinRequest, onCompletion: @escaping (Welcome) -> Void) {
         let url = APIConstants.baseURL + "/users"
         let headers: HTTPHeaders = ["Content-Type": "application/json"]
         
-        AF.request(url, method: .post, parameters: parameters.parameters, encoding: JSONEncoding.default, headers: headers)
+        // Create JoinRequest instance using optional binding
+        let joinRequest = JoinRequest(name: parameters.name ?? "",
+                                      phoneNo: parameters.phoneNo ?? "",
+                                      birthday: parameters.birthday ?? "")
+        
+        AF.request(url, method: .post, parameters: joinRequest.parameters, encoding: JSONEncoding.default, headers: headers)
             .responseDecodable(of: Welcome.self) { response in
                 switch response.result {
                 case .success(let data):
                     onCompletion(data)
                 case .failure(let error):
+                    print("에러!회원가입")
                     print("Error: \(error)")
                 }
             }
     }
+
     
 }

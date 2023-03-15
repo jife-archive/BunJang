@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Toast_Swift
 
 class SaleViewController: UIViewController, UISheetPresentationControllerDelegate, UINavigationControllerDelegate {
 
@@ -35,29 +36,32 @@ class SaleViewController: UIViewController, UISheetPresentationControllerDelegat
     @IBOutlet weak var payWaring: UILabel!
     @IBOutlet weak var payCheckImg: UIImageView!
     @IBOutlet weak var imgCountLabel: UILabel!
-    
+
     var imgName: [UIImage] = []
     var tags: [String] = []
     var Index1: Int?
     var Index2: Int?
-
+    
+    var productImgs:[String] = []
+    var productName:String = ""
+    var subCategoryIdx = 0
+    var price = 0
+    var Itemcount = 1
+    var productStatus = ""
+    var isExchange = ""
+    var Itemdescription:String = ""
+    @IBOutlet weak var ItemTextField: UITextField!
+    
+    let sale = SendSale()
+    let userinfo = getUserInfo.shared
+    
     @IBAction func showOption(_ sender: Any) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "OptionViewController") as! OptionViewController
         vc.delegate = self
          if let sheet = vc.sheetPresentationController {
-              //지원할 크기 지정
               sheet.detents = [.medium(), .large()]
-              //크기 변하는거 감지
               sheet.delegate = self
-             
-              //시트 상단에 그래버 표시 (기본 값은 false)
               sheet.prefersGrabberVisible = true
-              
-              //처음 크기 지정 (기본 값은 가장 작은 크기)
-              //sheet.selectedDetentIdentifier = .large
-              
-              //뒤 배경 흐리게 제거 (기본 값은 모든 크기에서 배경 흐리게 됨)
-              //sheet.largestUndimmedDetentIdentifier = .medium
                present(vc, animated: true, completion: nil)
           }
 
@@ -123,9 +127,41 @@ class SaleViewController: UIViewController, UISheetPresentationControllerDelegat
     @IBAction func GoBack(_ sender: Any) {
         self.dismiss(animated: true)
     }
-    
+
     @IBAction func GoSale(_ sender: Any) {
-        self.dismiss(animated: true)
+        if let detailText = DetailTextField.text {
+            if Int(PriceTextField.text ?? "") ?? 0 > 500 && detailText.count > 10 {
+                Itemdescription = DetailTextField.text ?? ""
+                price = Int(PriceTextField.text!)!
+                if tags.count == 0{
+                    self.view.makeToast("태그를 1개 이상 입력해주세요!",duration:2,position: .center)
+
+                }
+                else{
+                    
+                    
+                
+                        productName = ItemTextField.text!
+                        let saleRequest = SaleRequest(userIdx: userinfo.userIdx! , productImgs: productImgs, productName: productName, subCategoryIdx: 6, tags: tags, price: price, description: Itemdescription, count: 1, productStatus: productStatus, isExchange: isExchange)
+                    self.sale.postSale(saleRequest: saleRequest) { SaleResponse in
+                        self.dismiss(animated: true)
+                        print("판매")
+                        
+                    }
+                
+                    
+                }
+            } else {
+                if Int(PriceTextField.text ?? "") ?? 0 < 500{
+                    self.view.makeToast("가격은 500원이상부터 설정이 가능합니다!",duration:2,position: .center)
+                }else{
+                    self.view.makeToast("상세 설명의 글자 수를 10자 이상 설정해주십시오!",duration:2,position: .center)
+                }
+            }
+        } else {
+            // DetailTextField.text가 nil인 경우 처리
+            print("상세 설명이 입력되지 않았습니다!")
+        }
 
     }
     
@@ -139,9 +175,8 @@ class SaleViewController: UIViewController, UISheetPresentationControllerDelegat
         {
             print("배송비 ㄴㄴ")
             self.ShipPriceCheckBtn.tintColor = .lightGray
- 
             isCheck = false
-
+            
         }
         
 
@@ -197,7 +232,7 @@ class SaleViewController: UIViewController, UISheetPresentationControllerDelegat
         payCheckImg.tintColor = .lightGray
         setPay()
     }
-    
+
 
 }
 extension SaleViewController: UITextFieldDelegate {
@@ -231,6 +266,22 @@ extension SaleViewController: TagViewDelegate, OptionViewDelegate {
         usedLabel.text = data[0]
         exchangeLabel.text = data[1]
         addressLabel.text = data[2]
+        if addressLabel.text == "교환불가"
+        {
+            
+        }else
+        {
+            isExchange = "AVAIL"
+        }
+        if usedLabel.text == "중고상품"
+        {
+            productStatus = "SECOND-HAND"
+        }
+        else
+        {
+            
+        }
+    
     }
     
     func sendTags(_ tags: [String]) {
@@ -253,10 +304,22 @@ extension SaleViewController: TagViewDelegate, OptionViewDelegate {
 extension SaleViewController: UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let newImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
+        guard let imageData = newImage!.jpegData(compressionQuality: 0.8) else {
+            return
+        }
+        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let fileURL = documentsDirectory.appendingPathComponent("image.jpg")
+        do {
+            try imageData.write(to: fileURL)
+        } catch {
+            print(error)
+        }
+        
+        print(fileURL)
+
         self.imgName.append(newImage!)
         self.imgCollectionView.reloadData()
         print(imgName)
-        print("이미지저장1")
         self.imgCountLabel.text = String(imgName.count)
         self.imagePicker.dismiss(animated: true)
 
@@ -280,4 +343,5 @@ extension SaleViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     
 }
+
 

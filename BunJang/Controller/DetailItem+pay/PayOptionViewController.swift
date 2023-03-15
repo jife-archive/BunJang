@@ -17,7 +17,7 @@ class PayOptionViewController: UIViewController {
     var GetOption = false
 
     @IBAction func GoPay(_ sender: Any) {
-        let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "PayViewController") as! PayViewController
+        let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "PayViewNavigationController") as! PayViewNavigationController
         pushVC.modalPresentationStyle = UIModalPresentationStyle.fullScreen
         self.present(pushVC, animated: false, completion: nil)
     }

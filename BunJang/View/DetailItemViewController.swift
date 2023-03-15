@@ -68,9 +68,9 @@ class DetailItemViewController: UIViewController, UISheetPresentationControllerD
             self.itemNameLabel.text = response.result.getProductInfoRes.productName
             self.chatCountLabel.text = String(response.result.getProductInfoRes.chatCount!)
             
-            for i in response.result.getProductInfoRes.keywords{
-                self.tags.append(i.tag!)
-            }
+           /* for i in response.result.getProductInfoRes.keywords{
+                self.tags.append((i.tag!))
+            }*/
             
             self.shopNameLabel.text = response.result.getShopRes.getShopInfo.name
             self.shopStar.text = String(response.result.getShopRes.getShopInfo.avgStar!)
@@ -188,9 +188,9 @@ class DetailItemViewController: UIViewController, UISheetPresentationControllerD
             self.itemNameLabel.text = response.result.getProductInfoRes.productName
             self.chatCountLabel.text = String(response.result.getProductInfoRes.chatCount!)
             
-            for i in response.result.getProductInfoRes.keywords{
-                self.tags.append(i.tag!)
-            }
+            /*for i in response.result.getProductInfoRes.keywords{
+                self.tags.append((i.tag!))
+            }*/
             
             self.shopNameLabel.text = response.result.getShopRes.getShopInfo.name
             self.shopStar.text = String(response.result.getShopRes.getShopInfo.avgStar!)

@@ -34,7 +34,7 @@ class OptionViewController: UIViewController {
     }
     @IBAction func UsedClick(_ sender: Any) {
         new = false
-        optionData[0] = "중고상푸"
+        optionData[0] = "중고상품"
         NewBtn.optionDeselected()
         UsedBtn.optionSelected()
     }

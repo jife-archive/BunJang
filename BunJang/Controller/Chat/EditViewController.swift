@@ -20,10 +20,17 @@ class EditViewController: UIViewController {
     var deleteIdx: Int?
     @IBAction func GoDelete(_ sender: Any) {
         delete = true
-        chatList.deleteChat(chatRoomIdx: deleteIdx!) { DeleteChat in
-            self.delegate?.sendData(_edit: self.delete)
+        if deleteIdx != nil {
+            chatList.deleteChat(chatRoomIdx: deleteIdx!) { DeleteChat in
+                self.delegate?.sendData(_edit: self.delete)
+                self.dismiss(animated: true)
+            }
+        }
+        else{
+            self.delegate?.sendData(_edit: true)
             self.dismiss(animated: true)
         }
+
     }
     override func viewDidLoad() {
         super.viewDidLoad()
