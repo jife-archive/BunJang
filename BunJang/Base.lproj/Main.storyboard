@@ -6926,28 +6926,27 @@
                                 <rect key="frame" x="0.0" y="170" width="393" height="648"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7li-k1-uc3">
-                                <rect key="frame" x="115" y="200" width="174" height="177.33333333333337"/>
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="7li-k1-uc3">
+                                <rect key="frame" x="88" y="222" width="235" height="230"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="우는얼굴" translatesAutoresizingMaskIntoConstraints="NO" id="vM3-1U-KBp">
-                                        <rect key="frame" x="0.0" y="0.0" width="174" height="158"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="우는얼굴" id="vM3-1U-KBp">
+                                        <rect key="frame" x="0.0" y="0.0" width="235" height="205"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="174" id="AMf-tz-OF0"/>
-                                            <constraint firstAttribute="height" constant="158" id="isA-ML-kRi"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="MBr-lg-iT3"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="hOC-qd-tYP"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="판매중인 삼품이 없습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iyk-ub-dmo">
-                                        <rect key="frame" x="0.0" y="158" width="174" height="19.333333333333343"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아직 리뷰가 없습니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iyk-ub-dmo">
+                                        <rect key="frame" x="0.0" y="206" width="235" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="vM3-1U-KBp" firstAttribute="leading" secondItem="7li-k1-uc3" secondAttribute="leading" id="Ozv-WM-Mzz"/>
-                                    <constraint firstItem="vM3-1U-KBp" firstAttribute="top" secondItem="7li-k1-uc3" secondAttribute="top" id="WL1-Vd-SbH"/>
-                                    <constraint firstAttribute="trailing" secondItem="vM3-1U-KBp" secondAttribute="trailing" id="lfZ-rx-MHo"/>
-                                    <constraint firstItem="Iyk-ub-dmo" firstAttribute="top" secondItem="vM3-1U-KBp" secondAttribute="bottom" id="pfX-ss-iLd"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="230" id="GlT-jr-3Wb"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="US7-T9-PUk"/>
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M2Y-Ky-Btj">
@@ -6963,23 +6962,27 @@
                         <viewLayoutGuide key="safeArea" id="6lg-iu-cps"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="7li-k1-uc3" firstAttribute="leading" secondItem="6lg-iu-cps" secondAttribute="leading" constant="88" id="0aP-mj-of3"/>
+                            <constraint firstItem="6lg-iu-cps" firstAttribute="trailing" secondItem="7li-k1-uc3" secondAttribute="trailing" constant="70" id="65c-2M-mEi"/>
                             <constraint firstItem="dV0-0X-gBX" firstAttribute="leading" secondItem="6lg-iu-cps" secondAttribute="leading" constant="16" id="7OV-Zb-7hA"/>
                             <constraint firstItem="zIS-XW-Ah2" firstAttribute="top" secondItem="M2Y-Ky-Btj" secondAttribute="bottom" constant="26" id="7RQ-uZ-Quw"/>
-                            <constraint firstItem="7li-k1-uc3" firstAttribute="top" secondItem="M2Y-Ky-Btj" secondAttribute="bottom" constant="56" id="Cxb-YS-hMr"/>
-                            <constraint firstItem="6lg-iu-cps" firstAttribute="trailing" secondItem="7li-k1-uc3" secondAttribute="trailing" constant="104" id="DqJ-nZ-NZl"/>
                             <constraint firstItem="dV0-0X-gBX" firstAttribute="top" secondItem="6lg-iu-cps" secondAttribute="top" constant="56" id="Gkn-Ym-PfF"/>
-                            <constraint firstItem="6lg-iu-cps" firstAttribute="bottom" secondItem="7li-k1-uc3" secondAttribute="bottom" constant="440.67000000000002" id="JfZ-tn-g6H"/>
                             <constraint firstItem="6lg-iu-cps" firstAttribute="bottom" secondItem="zIS-XW-Ah2" secondAttribute="bottom" id="MM3-X6-hYt"/>
                             <constraint firstItem="M2Y-Ky-Btj" firstAttribute="top" secondItem="6lg-iu-cps" secondAttribute="top" constant="55" id="Nx4-GB-ukL"/>
                             <constraint firstItem="M2Y-Ky-Btj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dV0-0X-gBX" secondAttribute="trailing" constant="8" symbolic="YES" id="Ph0-Fz-Ek1"/>
                             <constraint firstItem="M2Y-Ky-Btj" firstAttribute="centerY" secondItem="dV0-0X-gBX" secondAttribute="centerY" id="Qli-jf-ROl"/>
+                            <constraint firstItem="6lg-iu-cps" firstAttribute="bottom" secondItem="7li-k1-uc3" secondAttribute="bottom" constant="366" id="Y7K-tU-30E"/>
                             <constraint firstItem="M2Y-Ky-Btj" firstAttribute="leading" secondItem="6lg-iu-cps" secondAttribute="leading" constant="201" id="ciI-up-6tz"/>
                             <constraint firstItem="zIS-XW-Ah2" firstAttribute="leading" secondItem="6lg-iu-cps" secondAttribute="leading" id="dFf-0V-Mrz"/>
                             <constraint firstItem="zIS-XW-Ah2" firstAttribute="trailing" secondItem="6lg-iu-cps" secondAttribute="trailing" id="fjO-Wy-8b8"/>
                             <constraint firstItem="6lg-iu-cps" firstAttribute="trailing" secondItem="M2Y-Ky-Btj" secondAttribute="trailing" constant="159" id="kYE-vs-44b"/>
-                            <constraint firstItem="7li-k1-uc3" firstAttribute="leading" secondItem="6lg-iu-cps" secondAttribute="leading" constant="115" id="yHx-t6-EbP"/>
+                            <constraint firstItem="7li-k1-uc3" firstAttribute="top" secondItem="M2Y-Ky-Btj" secondAttribute="bottom" constant="78" id="mn0-3Q-bLg"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="CrySV" destination="7li-k1-uc3" id="eao-bK-ltB"/>
+                        <outlet property="ReviewCount" destination="M2Y-Ky-Btj" id="Pyq-6y-2KZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nOG-2d-neQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

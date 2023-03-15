@@ -9,6 +9,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import ImageSlideshow
+import Kingfisher
 
 class DetailItemViewController: UIViewController, UISheetPresentationControllerDelegate {
     @IBOutlet weak var currentPageLabel: UILabel!

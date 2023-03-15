@@ -8,6 +8,7 @@
 import UIKit
 import ImageSlideshow
 import Toast_Swift
+import Kingfisher
 
 class HomeViewController: UIViewController, UIScrollViewDelegate, ImageSlideshowDelegate {
     
@@ -16,6 +17,8 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, ImageSlideshow
     let userinfo = getUserInfo.shared
     let getApi = HomeItemList()
     var itemList: [ItemListResult] = []
+    let lookHeart = LookHeart()
+    var HeartList: [LookHeartResult] = []
     
     @IBAction func GoSearch(_ sender: Any) {
         let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "SearchViewController")
@@ -35,6 +38,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, ImageSlideshow
             self.itemList = response
             print("서버온!!!")
             print(self.itemList.count)
+            print(self.itemList)
 
             DispatchQueue.main.async {
                 self.RecentItemCollectionView.reloadData()
@@ -55,7 +59,10 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, ImageSlideshow
     
     @IBOutlet weak var RecommandCollectionView: UICollectionView!
     @IBOutlet weak var backgroundScrollView: UIScrollView!
+    
     let homeCatregoryData = homeCategorydata()
+    
+    var SearchHeart:[Int?] = []
     
     func imageSlideshow(_ imageSlideshow: ImageSlideshow, didChangeCurrentPageTo page: Int) {
         self.AdCountLabel.text = "\(page+1)"
@@ -151,6 +158,12 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, ImageSlideshow
                 print(UserInfo.jwt)
             }
         }
+         self.lookHeart.SearchTag(userIdx: self.userinfo.userIdx!) { LookHeartResult in
+             print(LookHeartResult)
+             print("하트갯수")
+             self.HeartList = LookHeartResult
+             print(self.HeartList.count)
+         }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -203,7 +216,20 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             if self.itemList.count != 0 {
                 let result = numberFormatter.string(from: NSNumber(value: self.itemList[indexPath.row].price))! + "원"
                 cell.ItemNameLabel.text = self.itemList[indexPath.row].productName
+                if HeartList.count > 0 {
+                    for i in 0...HeartList.count-1 {
+                        if self.itemList[indexPath.row].productIdx == HeartList[i].productIdx {
+                            cell.HeartBtn.Heart()
+                        }
+                    }
+                }
+                let data = self.itemList[indexPath.row].productImgURL
+                let url = URL(string: data ?? APIConstants.dummyimg )
+                cell.ItemImg.kf.indicatorType = .activity
+                cell.ItemImg.kf.setImage(with: url)
 
+                //cell.HeartBtn
+                cell.HeartBtn.tag = self.itemList[indexPath.row].productIdx
                 cell.PriceLabel.text = result
             }
             return cell
@@ -212,8 +238,20 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             guard let cell = self.RecommandCollectionView.dequeueReusableCell(withReuseIdentifier: "ItemCollectionViewCell", for: indexPath) as? ItemCollectionViewCell else {return UICollectionViewCell()}
             if self.itemList.count != 0 {
                 let result = numberFormatter.string(from: NSNumber(value: self.itemList[indexPath.row].price))! + "원"
+                if HeartList.count > 0 {
+                    for i in 0...HeartList.count-1 {
+                        if self.itemList[indexPath.row].productIdx == HeartList[i].productIdx {
+                            cell.HeartBtn.Heart()
+                        }
+                    }
+                }
+                let data = self.itemList[indexPath.row].productImgURL
+                let url = URL(string: data ?? APIConstants.dummyimg )
+                cell.ItemImg.kf.indicatorType = .activity
+                cell.ItemImg.kf.setImage(with: url)
+                
                 cell.ItemNameLabel.text = self.itemList[indexPath.row].productName
-
+                cell.HeartBtn.tag = self.itemList[indexPath.row].productIdx
                 cell.PriceLabel.text = result
             }
             return cell
@@ -221,7 +259,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         return UICollectionViewCell()
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
         if collectionView ==  RecentItemCollectionView {
+
             if self.itemList.count != 0 {
                 guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetailItemViewController") as? DetailItemViewController else {return}
                 vc.getIdx = Int(self.itemList[indexPath.row].productIdx)

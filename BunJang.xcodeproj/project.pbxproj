@@ -10,6 +10,8 @@
 		092A186929C1E44A00A866BA /* Typesomethingheader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092A186829C1E44A00A866BA /* Typesomethingheader.swift */; };
 		0936100B29C1F89100D78AAA /* GiveHeart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0936100A29C1F89100D78AAA /* GiveHeart.swift */; };
 		0936100D29C1F8A500D78AAA /* LookHeart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0936100C29C1F8A500D78AAA /* LookHeart.swift */; };
+		0936100F29C2041F00D78AAA /* CancelHeart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0936100E29C2041F00D78AAA /* CancelHeart.swift */; };
+		0936101129C220D700D78AAA /* KakaoLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0936101029C220D700D78AAA /* KakaoLogin.swift */; };
 		0936187C29BE63450086631F /* DetailChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0936187B29BE63450086631F /* DetailChatViewController.swift */; };
 		0936188329BE69B90086631F /* MyChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0936188129BE69B90086631F /* MyChatTableViewCell.swift */; };
 		0936188429BE69B90086631F /* MyChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0936188229BE69B90086631F /* MyChatTableViewCell.xib */; };
@@ -141,7 +143,6 @@
 		09FAC81029C046A400DDAF43 /* PayViewNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FAC80F29C046A400DDAF43 /* PayViewNavigationController.swift */; };
 		09FAC81229C04BEC00DDAF43 /* RequestLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FAC81129C04BEC00DDAF43 /* RequestLogin.swift */; };
 		09FAC81529C0795600DDAF43 /* EditShopResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FAC81429C0795600DDAF43 /* EditShopResponse.swift */; };
-		09FAC81729C0796F00DDAF43 /* EditShopRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FAC81629C0796F00DDAF43 /* EditShopRequest.swift */; };
 		09FAC81929C0797700DDAF43 /* SendEditShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FAC81829C0797700DDAF43 /* SendEditShop.swift */; };
 		B2C1D2A352BBA183B00EA60E /* Pods_BunJang.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A68A26EDF914E0F82DC7887F /* Pods_BunJang.framework */; };
 /* End PBXBuildFile section */
@@ -150,6 +151,8 @@
 		092A186829C1E44A00A866BA /* Typesomethingheader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typesomethingheader.swift; sourceTree = "<group>"; };
 		0936100A29C1F89100D78AAA /* GiveHeart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiveHeart.swift; sourceTree = "<group>"; };
 		0936100C29C1F8A500D78AAA /* LookHeart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookHeart.swift; sourceTree = "<group>"; };
+		0936100E29C2041F00D78AAA /* CancelHeart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelHeart.swift; sourceTree = "<group>"; };
+		0936101029C220D700D78AAA /* KakaoLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLogin.swift; sourceTree = "<group>"; };
 		0936187B29BE63450086631F /* DetailChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailChatViewController.swift; sourceTree = "<group>"; };
 		0936188129BE69B90086631F /* MyChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChatTableViewCell.swift; sourceTree = "<group>"; };
 		0936188229BE69B90086631F /* MyChatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyChatTableViewCell.xib; sourceTree = "<group>"; };
@@ -280,7 +283,6 @@
 		09FAC80F29C046A400DDAF43 /* PayViewNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayViewNavigationController.swift; sourceTree = "<group>"; };
 		09FAC81129C04BEC00DDAF43 /* RequestLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestLogin.swift; sourceTree = "<group>"; };
 		09FAC81429C0795600DDAF43 /* EditShopResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditShopResponse.swift; sourceTree = "<group>"; };
-		09FAC81629C0796F00DDAF43 /* EditShopRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditShopRequest.swift; sourceTree = "<group>"; };
 		09FAC81829C0797700DDAF43 /* SendEditShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendEditShop.swift; sourceTree = "<group>"; };
 		A349ADF302BAC63A7B6941C0 /* Pods-BunJang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BunJang.debug.xcconfig"; path = "Target Support Files/Pods-BunJang/Pods-BunJang.debug.xcconfig"; sourceTree = "<group>"; };
 		A68A26EDF914E0F82DC7887F /* Pods_BunJang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BunJang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -308,6 +310,7 @@
 			children = (
 				0936100A29C1F89100D78AAA /* GiveHeart.swift */,
 				0936100C29C1F8A500D78AAA /* LookHeart.swift */,
+				0936100E29C2041F00D78AAA /* CancelHeart.swift */,
 			);
 			path = Heart;
 			sourceTree = "<group>";
@@ -484,6 +487,7 @@
 				09A1E46C29BE31B2004A59B7 /* SendLogin.swift */,
 				09A1E46E29BE31E6004A59B7 /* LoginResponse.swift */,
 				09FAC81129C04BEC00DDAF43 /* RequestLogin.swift */,
+				0936101029C220D700D78AAA /* KakaoLogin.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -640,7 +644,6 @@
 			isa = PBXGroup;
 			children = (
 				09FAC81429C0795600DDAF43 /* EditShopResponse.swift */,
-				09FAC81629C0796F00DDAF43 /* EditShopRequest.swift */,
 				09FAC81829C0797700DDAF43 /* SendEditShop.swift */,
 			);
 			path = EditShop;
@@ -870,6 +873,7 @@
 				09F66BA429B9F096008B1FD9 /* SearchAddressViewController.swift in Sources */,
 				09B1141C29BCDF9400629052 /* MyViewController.swift in Sources */,
 				0942014E29BF4B8100FBC425 /* SendJoin.swift in Sources */,
+				0936101129C220D700D78AAA /* KakaoLogin.swift in Sources */,
 				09998EFA29B85443007F1C45 /* TagViewController.swift in Sources */,
 				093A90D929B9C70700D8D8B5 /* UIButton.swift in Sources */,
 				09B34EB629C0FE0B003D6C63 /* ResponseReview.swift in Sources */,
@@ -888,6 +892,7 @@
 				09CB6E2B29B58F2500780ED1 /* MenuViewController.swift in Sources */,
 				09D3EBB129BEEBCE00BD577F /* SearchCategoryViewController.swift in Sources */,
 				09E81A3829BB35C500081A30 /* UserDetail.swift in Sources */,
+				0936100F29C2041F00D78AAA /* CancelHeart.swift in Sources */,
 				09DC123429BD77DF00EDD90B /* MySaleViewController.swift in Sources */,
 				09FAC81929C0797700DDAF43 /* SendEditShop.swift in Sources */,
 				09CB6E2F29B59D1000780ED1 /* ServiceMenuViewController.swift in Sources */,
@@ -904,7 +909,6 @@
 				09F66BAB29BA293B008B1FD9 /* SetImgCollectionViewCell.swift in Sources */,
 				09B1141A29BCD86200629052 /* DeliveryOptViewController.swift in Sources */,
 				095FAA3229BB5D0D00A447AF /* PayOptionViewController.swift in Sources */,
-				09FAC81729C0796F00DDAF43 /* EditShopRequest.swift in Sources */,
 				093A960129B70778007102BC /* RecentSearchCollectionViewCell.swift in Sources */,
 				09B1140B29BCAC8F00629052 /* PayMethodCollectionViewCell.swift in Sources */,
 				09A1E48329BE57F4004A59B7 /* Chatresponse.swift in Sources */,

@@ -25,18 +25,20 @@ struct LookHeartResult: Codable {
 }
 
 class LookHeart {
+    let headers: HTTPHeaders = ["X-ACCESS-TOKEN": APIConstants.jwt]
+
     func SearchTag(userIdx: Int, onCompletion: @escaping ([LookHeartResult])->Void)
     {
         let url = APIConstants.baseURL + "/favorites?userIdx=\(userIdx)"
         AF.request(url,
                    method: .get,
                    parameters: nil,
-                   headers: nil)
+                   headers: headers)
         .responseDecodable(of: LookHeartResponse.self) { response in
             switch response.result {
                 
             case .success(let response):
-                onCompletion(response.result!)
+                onCompletion(response.result ?? [])
             case .failure(let error):
                 print("하트조회에러! : \(error.localizedDescription)")
                 debugPrint(error)

@@ -62,8 +62,8 @@
             filePath = "BunJang/View/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "HomeViewController"
             landmarkType = "3">
             <Locations>
@@ -125,8 +125,8 @@
             filePath = "BunJang/View/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "HomeViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -141,8 +141,8 @@
             filePath = "BunJang/View/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "HomeViewController"
             landmarkType = "3">
             <Locations>
@@ -409,6 +409,98 @@
             endingLineNumber = "13"
             landmarkName = "MyChatTableViewCell"
             landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "ABED1B5F-EA63-4286-922D-9A7093399FB1 - 494e229385476709"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BunJang.MyChatTableViewCell.myChatBtn.getter : Swift.Optional&lt;__C.UIButton&gt;"
+                  moduleName = "BunJang"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/choejicheol/Desktop/BunJang/BunJang/Controller/Chat/MyChatTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "85">
+               </Location>
+               <Location
+                  uuid = "ABED1B5F-EA63-4286-922D-9A7093399FB1 - 55270314be59773d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BunJang.MyChatTableViewCell.myChatBtn.setter : Swift.Optional&lt;__C.UIButton&gt;"
+                  moduleName = "BunJang"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/choejicheol/Desktop/BunJang/BunJang/Controller/Chat/MyChatTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "136">
+               </Location>
+               <Location
+                  uuid = "ABED1B5F-EA63-4286-922D-9A7093399FB1 - 9f0c362dbe5eeb0c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BunJang.MyChatTableViewCell.myChatBtn.modify : Swift.Optional&lt;__C.UIButton&gt;"
+                  moduleName = "BunJang"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/choejicheol/Desktop/BunJang/BunJang/Controller/Chat/MyChatTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "ABED1B5F-EA63-4286-922D-9A7093399FB1 - f0149a5ff8c5057e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BunJang.MyChatTableViewCell.myChatBtn.modify : Swift.Optional&lt;__C.UIButton&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "BunJang"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/choejicheol/Desktop/BunJang/BunJang/Controller/Chat/MyChatTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "26">
+               </Location>
+               <Location
+                  uuid = "ABED1B5F-EA63-4286-922D-9A7093399FB1 - e46e303a6355f8eb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BunJang.MyChatTableViewCell.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; BunJang.MyChatTableViewCell"
+                  moduleName = "BunJang"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/choejicheol/Desktop/BunJang/BunJang/Controller/Chat/MyChatTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "170">
+               </Location>
+               <Location
+                  uuid = "ABED1B5F-EA63-4286-922D-9A7093399FB1 - ccd7bf6b3ddee7c7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BunJang.MyChatTableViewCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;BunJang.MyChatTableViewCell&gt;"
+                  moduleName = "BunJang"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/choejicheol/Desktop/BunJang/BunJang/Controller/Chat/MyChatTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "127">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

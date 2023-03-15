@@ -10,23 +10,23 @@ struct ReponseReview: Codable {
     let isSuccess: Bool
     let code: Int
     let message: String
-    let result: ReviewResult
+    let result: ReviewResult?
         
 }
 
 // MARK: - Result
 struct ReviewResult: Codable {
-    let reviewCount: Int
-    let getReviewsList: [GetReviewsList]
+    let reviewCount: Int?
+    let getReviewsList: [GetReviewsList]?
 }
 
 // MARK: - GetReviewsList
 struct GetReviewsList: Codable {
-    let userIdx: Int
-    let star: Double
-    let userName, content, reviewImgURL: String
-    let reviewCount: Int
-    let date: String
-    let productIdx: Int
-    let productName: String
+    let userIdx: Int?
+    let star: Double?
+    let userName, content, reviewImgURL: String?
+    let reviewCount: Int?
+    let date: String?
+    let productIdx: Int?
+    let productName: String?
 }

@@ -95,13 +95,12 @@ class EtcLoginViewController: UIViewController,PanModalPresentable {
     let Tag = tagSearch()
     let category = SearchCategory()
     let lookheart = LookHeart()
-    
+    let giveheart = giveHeart()
+    let cancel = cancelHeart()
     @IBAction func facebookClick(_ sender: Any) {
       //  naverLoginInstance?.requestDeleteToken()
-        lookheart.SearchTag(userIdx: 16) { LookHeartResult in
-            print("하트조회성공~")
-        }
         
+
         let encodedTag = "태그1".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
 
         category.getCategory(categoryIdx: 2) { CategoryResult in
@@ -127,12 +126,13 @@ class EtcLoginViewController: UIViewController,PanModalPresentable {
             self.userinfo.userIdx = WelcomeLogin.result.userIdx
             self.userinfo.jwt = WelcomeLogin.result.jwt
             self.userinfo.Join = false
+            self.userinfo.Join = false
+            //userinfo.userIdx = 3
+            let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "TabBar_ViewController")
+            pushVC?.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+            self.present(pushVC!, animated: true, completion: nil)
         }
-        userinfo.Join = false
-        //userinfo.userIdx = 3
-        let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "TabBar_ViewController")
-        pushVC?.modalPresentationStyle = UIModalPresentationStyle.fullScreen
-        self.present(pushVC!, animated: true, completion: nil)
+
     }
     @IBAction func selfClick(_ sender: Any) {
         let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "SelfLoginViewController")

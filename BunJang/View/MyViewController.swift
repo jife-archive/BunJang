@@ -28,7 +28,7 @@ class MyViewController: UIViewController {
         self.navigationController?.pushViewController(pushVC, animated: true)
     }
     func fetch(){
-        getAPI.getData(userIdx: 16) { MypageResult in
+        getAPI.getData(userIdx: useinfo.userIdx!) { MypageResult in
             print("연동성공!!")
             self.rateLabel.text = String(MypageResult.avgStar!)
             self.followerLabel.text = String(MypageResult.followerCount!)

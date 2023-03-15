@@ -12,9 +12,11 @@ class GoSearchViewController: UIViewController, EditSearchViewDelegate {
         self.methodBtn.titleLabel?.text = method
     
     }
-    
+    var Searchtag: String?
+    var tagresult:[tagResult]?
     @IBOutlet weak var methodBtn: UIButton!
-    
+    let Tag = tagSearch()
+
     @IBOutlet weak var ItemCollectionView: UICollectionView!
     
     
@@ -39,15 +41,39 @@ class GoSearchViewController: UIViewController, EditSearchViewDelegate {
         let height = ItemCollectionView.frame.height / 3.3
         secondFlowLayout.itemSize = CGSize(width: width, height: height)
         ItemCollectionView.collectionViewLayout = secondFlowLayout
+        
+        let encodedTag = Searchtag!.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+
+        Tag.SearchTag(tag: encodedTag) { tagResult in
+                self.tagresult = tagResult
+            print(tagResult)
+            self.ItemCollectionView.reloadData()
+        }
     }
 }
 extension GoSearchViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 12
+        return tagresult?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = self.ItemCollectionView.dequeueReusableCell(withReuseIdentifier: "ItemCollectionViewCell", for: indexPath) as? ItemCollectionViewCell else {return UICollectionViewCell()}
-        return cell
+        if(tagresult!.count > 0) {
+            guard let cell = self.ItemCollectionView.dequeueReusableCell(withReuseIdentifier: "ItemCollectionViewCell", for: indexPath) as? ItemCollectionViewCell else {return UICollectionViewCell()}
+            let numberFormatter = NumberFormatter()
+            numberFormatter.numberStyle = .decimal
+            let result = numberFormatter.string(from: NSNumber(value: self.tagresult![indexPath.row].price!))! + "원"
+            let data = self.tagresult![indexPath.row].productImgURL
+            let url = URL(string: data ?? APIConstants.dummyimg )
+            cell.ItemImg.kf.indicatorType = .activity
+            cell.ItemImg.kf.setImage(with: url)
+            cell.PriceLabel.text = result
+            cell.ItemNameLabel.text = self.tagresult![indexPath.row].productName
+            return cell
+        }else
+        {
+            guard let cell = self.ItemCollectionView.dequeueReusableCell(withReuseIdentifier: "ItemCollectionViewCell", for: indexPath) as? ItemCollectionViewCell else {return UICollectionViewCell()}
+            return cell
+        }
+        
     }
 }

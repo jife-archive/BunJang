@@ -13,6 +13,7 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var freSearch: UICollectionView!
     @IBOutlet weak var CategoryCollectionVIew: UICollectionView!
     let CategoryData = habbitCategorydata()
+    let Tag = tagSearch()
 
     //   var recentSearchList: [String] = []
     
@@ -114,15 +115,16 @@ extension SearchViewController: UISearchBarDelegate {
         reascherData.shared.recentSearchList.append(searchText)
         print( reascherData.shared.recentSearchList)
         RecentSearch.reloadData()
-        self.searchBar.text = ""
         print("!")
         dismissKeyboard()
-        let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "GoSearchViewController")
+        let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "GoSearchViewController") as! GoSearchViewController
+        pushVC.Searchtag = self.searchBar.text!
         self.navigationController?.navigationBar.topItem?.title = ""
         self.navigationController?.navigationBar.tintColor = .black
+        pushVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(pushVC, animated: true)
+        self.searchBar.text = ""
 
-        pushVC!.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(pushVC!, animated: true)
     }
     
     

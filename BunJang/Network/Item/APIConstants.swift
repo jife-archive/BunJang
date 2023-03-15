@@ -14,7 +14,7 @@ struct APIConstants {
     static let kakaoLogunURL = baseURL + "/kapi.kakao.com/v2/user/me"
     static let jwt = UserDefaults.standard.string(forKey: "jwt")!
     static let headerJWT = ["X-ACCESS-TOKEN": jwt]
-
+    static let dummyimg = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSq4WraOaqlo5HYbIdDzVTSbcSpQOjaNPcpTw&usqp=CAU"
 }
 class HomeItemList {
     

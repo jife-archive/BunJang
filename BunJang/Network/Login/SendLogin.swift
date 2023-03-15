@@ -8,30 +8,29 @@
 import Foundation
 import Alamofire
 
-class sendLogin{
-    func sendKakao(token: String, onCompletion: @escaping (KakaoLoginResponse) -> Void){
-        let url = APIConstants.baseURL + "/oauth/kakao/\(token)"
-        
-        AF.request(url, method: .post)
-            .validate().responseDecodable(of: KakaoLoginResponse.self) { response in
-                switch response.result {
-                    case .success(let data):
-                        onCompletion(data)
-                    case .failure(let error):
-                        print(error)
-                        debugPrint(error)
-                        print("에러!카카오")
+struct WelecomLogin: Codable {
+    let isSuccess: Bool
+    let code: Int
+    let message: String
+    let result: LoginResult
+}
 
-                }
-            }
-    }
+// MARK: - Result
+struct LoginResult: Codable {
+    let userIdx: Int
+    let jwt: String
+}
+
+
+class sendLogin{
+
     
-    func sendSelfLogin(parameters: LoginRequest, onCompletion: @escaping (WelcomeLogin)->Void){
+    func sendSelfLogin(parameters: LoginRequest, onCompletion: @escaping (WelecomLogin)->Void){
         let url = APIConstants.baseURL + "/users/logIn"
         let headers: HTTPHeaders = ["Content-Type": "application/json"]
         
         AF.request(url, method: .post, parameters: parameters.parameters, encoding: JSONEncoding.default, headers: headers)
-            .responseDecodable(of: WelcomeLogin.self) { response in
+            .responseDecodable(of: WelecomLogin.self) { response in
                 switch response.result {
                 case .success(let data):
                     print(data)

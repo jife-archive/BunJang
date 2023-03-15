@@ -21,7 +21,7 @@ class getReview {
             switch response.result {
                 
             case .success(let response):
-                onCompletion(response.result)
+                onCompletion(response.result!)
             case .failure(let error):
                 print("리뷰에러 : \(error.localizedDescription)")
                 debugPrint(error)
