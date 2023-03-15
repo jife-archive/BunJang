@@ -170,9 +170,10 @@ https://user-images.githubusercontent.com/114370871/222976257-1ae6de9c-a591-4102
  
  느낀점: 드디어 서버분께서 API를 올려주셧다 흐어엉 처음연결 감회가 새롭다 가야할길이...태산...
 </div>
+
 </details>
 
-<summary>3월13일(월)</summary>
+<summary>3월13일(일)</summary>
 <div markdown="1">
 
 
