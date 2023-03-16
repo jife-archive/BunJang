@@ -19,7 +19,7 @@ class DeliveryOptViewController: UIViewController {
     
     
     @IBAction func door(_ sender: Any) {
-        opt = "문앞"
+        opt = "직접입력"
         self.delegate?.sendOpt(opt)
         self.dismiss(animated: true)
 
@@ -46,7 +46,7 @@ class DeliveryOptViewController: UIViewController {
     }
     
     @IBAction func `self`(_ sender: Any) {
-        opt = "직접입력"
+        opt = "문앞"
         self.delegate?.sendOpt(opt)
         self.dismiss(animated: true)
 

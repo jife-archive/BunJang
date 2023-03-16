@@ -20,6 +20,7 @@
 			<string>kakaoLogin</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
+                <string>fb933293071035809</string>
 				<string>kakaof1e1d77c066b35bc584bd86059cad666</string>
 			</array>
 		</dict>
@@ -34,6 +35,12 @@
 			</array>
 		</dict>
 	</array>
+    <key>FacebookAppID</key>
+    <string>933293071035809</string>
+    <key>FacebookClientToken</key>
+    <string>9eb2d1f5573a8a45cdb2bf86c792b600</string>
+    <key>FacebookDisplayName</key>
+    <string>rising</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

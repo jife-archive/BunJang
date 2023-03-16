@@ -11,18 +11,20 @@ import Alamofire
 
 class MyChat{
     func getChatList(UseIdx: Int, onCompletion: @escaping ([ChatResult])->Void)
-    {
+    {        let headers: HTTPHeaders = ["X-ACCESS-TOKEN": APIConstants.jwt]
+
         let url = APIConstants.baseURL + "/chats/chatList?userIdx=\(UseIdx)"
         AF.request(url,
                    method: .get,
                    parameters: nil,
-                   headers: nil)
+                   headers: headers)
         .responseDecodable(of: MychatResponse.self) { response in
             switch response.result {
                 
             case .success(let response):
-                //print("\(response) ")
-                onCompletion(response.result)
+
+
+                onCompletion(response.result!)
             case .failure(let error):
                 print("Get Error : \(error.localizedDescription)")
                 debugPrint(error)
@@ -30,8 +32,8 @@ class MyChat{
             }
         }
     }
-    func getDetailChat(Chatroom:Int,onCompletion: @escaping ([DetailChat])->Void){
-        let url = APIConstants.baseURL + "/chats/\(Chatroom)"
+    func getDetailChat(chatRoomIdx:Int, userIdx:Int, onCompletion: @escaping ([DetailChat])->Void){
+        let url = APIConstants.baseURL + "/chats/\(chatRoomIdx)?userIdx=\(userIdx)"
         AF.request(url,
                    method: .get,
                    parameters: nil,
@@ -40,7 +42,7 @@ class MyChat{
             switch response.result {
                 
             case .success(let response):
-                //print("\(response) ")
+                 print("\(response) ")
                 onCompletion(response.result)
             case .failure(let error):
                 print("Get Error : \(error.localizedDescription)")

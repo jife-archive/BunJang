@@ -8,6 +8,7 @@
 import UIKit
 
 class PayViewNavigationController: UINavigationController {
+    var Productinfo: [String?] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()

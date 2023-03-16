@@ -146,6 +146,17 @@ class HomeViewController: UIViewController, UIScrollViewDelegate, ImageSlideshow
             self.searchBar.tintColor = .black
         }
     }
+    
+    
+    
+    @IBAction func SeeAll(_ sender: Any) {
+        let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "EveryItemViewController") as! EveryItemViewController
+        pushVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(pushVC, animated: true)
+
+    }
+    
+    
      override func viewWillAppear(_ animated: Bool) {
          print(userinfo.Join)
          print("나와라얍")
@@ -226,6 +237,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 let data = self.itemList[indexPath.row].productImgURL
                 let url = URL(string: data ?? APIConstants.dummyimg )
                 cell.ItemImg.kf.indicatorType = .activity
+                
                 cell.ItemImg.kf.setImage(with: url)
 
                 //cell.HeartBtn

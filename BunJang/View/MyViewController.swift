@@ -14,7 +14,6 @@ class MyViewController: UIViewController {
     @IBOutlet weak var NameLabel: UILabel!
     @IBOutlet weak var floatBtn: UIButton!
     @IBOutlet weak var pointLabel: UILabel!
-    @IBOutlet weak var paidLabel: UILabel!
     @IBOutlet weak var followingLabel: UILabel!
     @IBOutlet weak var followerLabel: UILabel!
     @IBOutlet weak var tradeLabel: UILabel!
@@ -24,16 +23,18 @@ class MyViewController: UIViewController {
         let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "MyShopChangeViewController") as! MyShopChangeViewController
         pushVC.hidesBottomBarWhenPushed = true
         pushVC.NickName = NameLabel.text!
+        pushVC.modalPresentationStyle = .fullScreen
+        self.present(pushVC, animated: false, completion: nil)
        // pushVC.delegate = self
-        self.navigationController?.pushViewController(pushVC, animated: true)
     }
     func fetch(){
-        getAPI.getData(userIdx: useinfo.userIdx!) { MypageResult in
+        getAPI.getData(userIdx: useinfo.userIdx!) { MyResponseResult in
             print("연동성공!!")
-            self.rateLabel.text = String(MypageResult.avgStar!)
-            self.followerLabel.text = String(MypageResult.followerCount!)
-            self.followingLabel.text = String(MypageResult.followingCount!)
-            self.NameLabel.text = MypageResult.name!
+            self.rateLabel.text = String(MyResponseResult.avgStar)
+            self.followerLabel.text = String(MyResponseResult.followerCount)
+            self.followingLabel.text = String(MyResponseResult.followingCount)
+            self.NameLabel.text = MyResponseResult.name
+            self.pointLabel.text = String(MyResponseResult.point)
         }
     }
     
@@ -48,6 +49,10 @@ class MyViewController: UIViewController {
         super.viewDidLoad()
         setUI()
         fetch()
+
+    }
+    override func viewWillAppear(_ animated: Bool) {
+
     }
     
 

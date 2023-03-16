@@ -15,6 +15,8 @@ class SearchViewController: UIViewController {
     let CategoryData = habbitCategorydata()
     let Tag = tagSearch()
 
+    var brandList = ["브랜드이미지1","브랜드이미지2","브랜드이미지3","브랜드이미지4","브랜드이미지5"]
+    @IBOutlet weak var tableView: UITableView!
     //   var recentSearchList: [String] = []
     
     let searchList = reascherData()
@@ -92,6 +94,9 @@ class SearchViewController: UIViewController {
             setCollectionView()
             configureSearchBar()
            setupHideKeyboardOnTap()
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UINib(nibName: "BrandTableViewCell", bundle: nil), forCellReuseIdentifier: "BrandTableViewCell")
         }
     
     private func configureSearchBar() {
@@ -220,5 +225,25 @@ extension SearchViewController: UIScrollViewDelegate {
         if scrollView.contentOffset.y > 0 {
             dismissKeyboard()
         }
+    }
+}
+extension SearchViewController : UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "BrandTableViewCell", for: indexPath) as? BrandTableViewCell else {return UITableViewCell()}
+        
+        
+        let background = UIView()
+           background.backgroundColor = .clear
+           cell.selectedBackgroundView = background
+        cell.imgView.image = UIImage(named: self.brandList[indexPath.row])
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(70)
     }
 }

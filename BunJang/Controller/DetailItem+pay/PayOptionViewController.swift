@@ -7,19 +7,27 @@
 
 import UIKit
 import PanModal
-
+protocol PayOptionViewDelegate: AnyObject{
+    func sendInfo(_ data:[String?])
+}
 class PayOptionViewController: UIViewController {
 
+    weak var delegate:PayOptionViewDelegate?
     @IBOutlet weak var DeliveryTradeBtn: UIButton!
     @IBOutlet weak var OptionSV: UIStackView!
     @IBOutlet weak var OptionBtn: UIButton!
     @IBOutlet weak var MeetTradeBtn: UIButton!
     var GetOption = false
-
+    @IBOutlet weak var priceLabel: UILabel!
+    
+    var Productinfo: [String?] = []
     @IBAction func GoPay(_ sender: Any) {
         let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "PayViewNavigationController") as! PayViewNavigationController
+        pushVC.Productinfo = self.Productinfo
         pushVC.modalPresentationStyle = UIModalPresentationStyle.fullScreen
         self.present(pushVC, animated: false, completion: nil)
+        self.delegate?.sendInfo(Productinfo)
+
     }
     @IBAction func ChooseOpt(_ sender: Any) {
         GetOption = false
@@ -33,6 +41,11 @@ class PayOptionViewController: UIViewController {
         DeliveryTradeBtn.isHidden = true
         MeetTradeBtn.isHidden = true
         OptionBtn.setTitle("직거래", for: .normal)
+        if( self.Productinfo.count < 4){
+            self.Productinfo.append("직거래")
+        }else{
+            self.Productinfo[3] = "직거래"
+        }
         setSV()
         self.panModalSetNeedsLayoutUpdate()
     }
@@ -41,6 +54,13 @@ class PayOptionViewController: UIViewController {
         DeliveryTradeBtn.isHidden = true
         MeetTradeBtn.isHidden = true
         OptionBtn.setTitle("택배거래", for: .normal)
+        if( self.Productinfo.count < 4){
+            self.Productinfo.append("택배거래")
+        }else{
+            self.Productinfo[3] = "택배거래"
+        }
+
+
         setSV()
     }
     func setSV() {
@@ -60,6 +80,8 @@ class PayOptionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setSV()
+        print(Productinfo)
+        priceLabel.text = Productinfo[1]
     }
     
 

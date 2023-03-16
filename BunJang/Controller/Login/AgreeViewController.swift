@@ -81,8 +81,7 @@ class AgreeViewController: UIViewController, PanModalPresentable {
             self.userinfo.userIdx = welcome.result?.userIdx
             self.userinfo.Join = true
             self.userinfo.jwt = welcome.result?.jwt
-            
-           //UserDefaults.standard.set(welcome.result?.jwt, forKey: "jwt")
+            UserDefaults.standard.set(welcome.result?.jwt, forKey: "jwt")
 
             if welcome.isSuccess == true{
                 print("이제 홈가요")

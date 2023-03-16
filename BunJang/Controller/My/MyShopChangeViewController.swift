@@ -14,10 +14,17 @@ class MyShopChangeViewController: UIViewController, UINavigationControllerDelega
     let userinfo = getUserInfo.shared
     weak var delegate: MyShopChageViewDelegate?
     var userInfo:[String] = []
+    let edit = Edit()
+
     @IBAction func ChangeComplete(_ sender: Any) {
         
         NickName = textField.text!
- 
+        let para = RequestEdit(profileImgUrl: "", shopDescription: "", name: NickName)
+
+        edit.sendEdit(userIdx: userinfo.userIdx!, parameters: para) { EditResponse in
+            print("편집성공")
+        }
+        self.dismiss(animated: true)
 
     }
     let imagePicker = UIImagePickerController()

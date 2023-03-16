@@ -13,7 +13,9 @@ import AuthenticationServices
 import Alamofire
 
 class LoginViewController: UIViewController, UIScrollViewDelegate, UISheetPresentationControllerDelegate, ASAuthorizationControllerPresentationContextProviding, ASAuthorizationControllerDelegate {
-    
+    let login = sendLogin()
+    let follo = follow()
+
     let kakao = LoginKakao()
     let userinfo = getUserInfo.shared
 
@@ -33,8 +35,6 @@ class LoginViewController: UIViewController, UIScrollViewDelegate, UISheetPresen
             print("User ID : \(userIdentifier)")
             print("User Email : \(email ?? "")")
             print("User Name : \((fullName?.givenName ?? "") + (fullName?.familyName ?? ""))")
-            let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "TabBar_ViewController")
-            self.navigationController?.pushViewController(pushVC!, animated: true)
             
         default:
             break
@@ -99,10 +99,28 @@ class LoginViewController: UIViewController, UIScrollViewDelegate, UISheetPresen
    
                 self.kakao.sendKakao(code: accessToken!) { WelecomeKakaoLogin in
                     print("카카오로그인성공~!")
-                    print(WelecomeKakaoLogin)
-                    self.userinfo.userIdx = 3
+                    //self.userinfo.userIdx = 3
 
                 }
+                let loginRequest = LoginRequest(name: "갈릭상점", phoneNo: "01033333333")
+                self.login.sendSelfLogin(parameters: loginRequest) { WelcomeLogin in
+                     print("로그인 성공")
+                     UserDefaults.standard.set(WelcomeLogin.result.jwt, forKey: "jwt")
+                     print(WelcomeLogin.result.jwt)
+                     print(WelcomeLogin.result.userIdx)
+                     self.userinfo.userIdx = WelcomeLogin.result.userIdx
+                     self.userinfo.jwt = WelcomeLogin.result.jwt
+                     self.userinfo.Join = false
+                     self.userinfo.Join = false
+                     self.follo.getfollower(userIdx: WelcomeLogin.result.userIdx) { ResponseFollowing in
+                         print(self.userinfo.jwt)
+
+                     }
+                     //userinfo.userIdx = 3
+                     let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "TabBar_ViewController")
+                     pushVC?.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+                     self.present(pushVC!, animated: true, completion: nil)
+                 }
                 print(accessToken as Any)
                 //카카오 로그인을 통해 사용자 토큰을 발급 받은 후 사용자 관리 API 호출
                 self.kakaoLoginPaser()

@@ -14,7 +14,7 @@ struct APIConstants {
     static let kakaoLogunURL = baseURL + "/kapi.kakao.com/v2/user/me"
     static let jwt = UserDefaults.standard.string(forKey: "jwt")!
     static let headerJWT = ["X-ACCESS-TOKEN": jwt]
-    static let dummyimg = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSq4WraOaqlo5HYbIdDzVTSbcSpQOjaNPcpTw&usqp=CAU"
+    static let dummyimg = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKM-HmC5GK0-l6OxCAD37mKJ-2d28QRgRQxA&usqp=CAU"
 }
 class HomeItemList {
     
@@ -41,7 +41,6 @@ class HomeItemList {
             .responseDecodable(of: DetailItem.self) { response in
                 switch response.result {
                 case .success(let data):
-                    print(data)
                     onCompletion(data)
                 case .failure(let error):
                     print(error.localizedDescription)

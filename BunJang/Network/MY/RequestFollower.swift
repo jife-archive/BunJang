@@ -17,10 +17,9 @@ class follow {
                    method: .get,
                    parameters: nil,
                    headers: headers)
-        .responseDecodable(of: FollowingResult.self) { response in
+        .responseDecodable(of: ResponseFollowing.self) { response in
             switch response.result {
-            case .success(let followingResult):
-                let response = ResponseFollowing(isSuccess: true, code: 1000, message: "요청에 성공하였습니다.", result: [followingResult])
+            case .success(let response):
                 onCompletion(response)
             case .failure(let error):
                 print("팔로우에러 : \(error.localizedDescription)")

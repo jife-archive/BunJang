@@ -21,14 +21,15 @@ class MySaleViewController: UIViewController {
     var itemPrice:[Int?] = []
     var itemIdx:[Int?] = []
     var ItemList:[ProductList?] = []
-
+    let userinfo = getUserInfo.shared
     
     
     @IBAction func GoAll(_ sender: Any) {
-        let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "EveryItemViewController")
-        pushVC?.hidesBottomBarWhenPushed = true
-        pushVC?.modalPresentationStyle = .fullScreen
-        self.present(pushVC!, animated: false, completion: nil)
+        let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "EveryItemViewController") as! EveryItemViewController
+        pushVC.hidesBottomBarWhenPushed = true
+        pushVC.all = false
+        pushVC.modalPresentationStyle = .fullScreen
+        self.present(pushVC, animated: false, completion: nil)
 
     }
     
@@ -50,28 +51,22 @@ class MySaleViewController: UIViewController {
           self.collectionView.collectionViewLayout = thirdFlowLayout
         
         super.viewDidLoad()
-        getAPI.getData(userIdx: 16) { MypageResult in
+        getAPI.getData(userIdx: userinfo.userIdx!) { MyResponseResult in
             print("연동성공!!")
-            self.ItemList = MypageResult.productList
+            self.ItemList = MyResponseResult.productList
            // self.itemList.append(MypageResult)
             self.collectionView.reloadData()
 
-            if MypageResult.productList.count == 0 {
+            if MyResponseResult.productList.count == 0 {
                 self.zeroSV.isHidden = false
-              /*  thirdFlowLayout.itemSize = CGSize(width: 60, height: 200)
-                thirdFlowLayout.minimumInteritemSpacing = 0
-                thirdFlowLayout.minimumLineSpacing = 0
-                thirdFlowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right:0 )
-                let width2 = self.collectionView.frame.width / 2
-                let height2 = self.collectionView.frame.height / 2
-                thirdFlowLayout.itemSize = CGSize(width: width2, height: height2)
-                self.collectionView.collectionViewLayout = thirdFlowLayout*/
+ 
             }
             else{
                 self.zeroSV.isHidden = true
             }
-            self.SaleCountLabel.text = String(MypageResult.productList.count) + "개"
+            self.SaleCountLabel.text = String(MyResponseResult.productList.count) + "개"
         }
+
         if salecount == 0{
             zeroSV.isHidden = false
         }

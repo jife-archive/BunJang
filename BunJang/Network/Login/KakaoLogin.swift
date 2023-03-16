@@ -22,6 +22,7 @@ class LoginKakao {
             .responseDecodable(of: WelecomeKakaoLogin.self) { response in
                 switch response.result {
                 case .success(let data):
+                    print("카카오 전송완료!: \(data)")
                     onCompletion(data)
                 case .failure(let error):
                     print("카카오 전송에러!: \(error)")

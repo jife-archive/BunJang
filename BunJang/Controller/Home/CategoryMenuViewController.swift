@@ -10,7 +10,8 @@ import UIKit
 class CategoryMenuViewController: UIViewController {
 
     let CategoryData = habbitCategorydata()
-    
+    let category = SearchCategory()
+
     private func setCollectionView() {
         self.habbitCategoryCollectionView.delegate = self
         self.habbitCategoryCollectionView.dataSource = self
@@ -119,6 +120,7 @@ extension CategoryMenuViewController: UICollectionViewDelegate, UICollectionView
             let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "SearchCategoryViewController") as! SearchCategoryViewController
             pushVC.img = CategoryData.lifeCategory[indexPath.row].imgName
             pushVC.cateName = CategoryData.lifeCategory[indexPath.row].Name
+            pushVC.cateIdx = 3
             pushVC.modalPresentationStyle = UIModalPresentationStyle.fullScreen
             self.present(pushVC, animated: false, completion: nil)
         }
@@ -126,6 +128,7 @@ extension CategoryMenuViewController: UICollectionViewDelegate, UICollectionView
             let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "SearchCategoryViewController") as! SearchCategoryViewController
             pushVC.img = CategoryData.habbitCategory[indexPath.row].imgName
             pushVC.cateName = CategoryData.habbitCategory[indexPath.row].Name
+            pushVC.cateIdx = 3
             pushVC.modalPresentationStyle = UIModalPresentationStyle.fullScreen
             self.present(pushVC, animated: false, completion: nil)
         }
@@ -133,6 +136,7 @@ extension CategoryMenuViewController: UICollectionViewDelegate, UICollectionView
             let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "SearchCategoryViewController") as! SearchCategoryViewController
             pushVC.img = CategoryData.tradeCategory[indexPath.row].imgName
             pushVC.cateName = CategoryData.tradeCategory[indexPath.row].Name
+            pushVC.cateIdx = 3
             pushVC.modalPresentationStyle = UIModalPresentationStyle.fullScreen
             self.present(pushVC, animated: false, completion: nil)
         }

@@ -42,7 +42,7 @@ class SaleViewController: UIViewController, UISheetPresentationControllerDelegat
     var Index1: Int?
     var Index2: Int?
     
-    var productImgs:[String] = []
+    var productImgs:[String] = ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnWIY_8WTySTxjubFpctwRYq_mvJxGVYYzHA&usqp=CAU"]
     var productName:String = ""
     var subCategoryIdx = 0
     var price = 0
@@ -72,6 +72,7 @@ class SaleViewController: UIViewController, UISheetPresentationControllerDelegat
         
         if Index1 != nil {
             CategoryLabel.text = categoryData.saleCate[Index1!].Name + " > " + categoryData.subCate[Index2!]
+            CategoryLabel.tintColor = .black
         }
         
     }
@@ -86,6 +87,8 @@ class SaleViewController: UIViewController, UISheetPresentationControllerDelegat
     @objc func tapCategoryView() {
         print("!")
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "CategoryViewController") as! CategoryViewController
+        self.navigationController?.navigationBar.topItem?.title = ""
+        self.navigationController?.navigationBar.tintColor = .black
         self.navigationController?.pushViewController(vc, animated: true)
     }
     func setTap() {
@@ -95,7 +98,10 @@ class SaleViewController: UIViewController, UISheetPresentationControllerDelegat
     @objc func tapTagView() {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "TagViewController") as! TagViewController
         vc.delegate = self
+        self.navigationController?.navigationBar.topItem?.title = ""
+        self.navigationController?.navigationBar.tintColor = .black
         self.navigationController?.pushViewController(vc, animated: true)
+        
     }
     func setTag() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapTagView))
@@ -114,6 +120,8 @@ class SaleViewController: UIViewController, UISheetPresentationControllerDelegat
             self.payView.layer.borderColor = UIColor.red.cgColor
             payCheckImg.tintColor = .red
             payWaring.text = "⛔︎안전결제를 거부하면 주의 안내가 표시돼요"
+            self.navigationController?.navigationBar.topItem?.title = ""
+            self.navigationController?.navigationBar.tintColor = .black
             payWaring.textColor = .red
         }
     }
@@ -231,6 +239,8 @@ class SaleViewController: UIViewController, UISheetPresentationControllerDelegat
         self.payView.layer.cornerRadius = 8
         payCheckImg.tintColor = .lightGray
         setPay()
+        self.navigationController?.navigationBar.topItem?.title = ""
+        self.navigationController?.navigationBar.tintColor = .black
     }
 
 

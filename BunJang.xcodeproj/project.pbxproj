@@ -64,7 +64,6 @@
 		09A1E46D29BE31B2004A59B7 /* SendLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A1E46C29BE31B2004A59B7 /* SendLogin.swift */; };
 		09A1E46F29BE31E6004A59B7 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A1E46E29BE31E6004A59B7 /* LoginResponse.swift */; };
 		09A1E47229BE36F0004A59B7 /* MyPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A1E47129BE36F0004A59B7 /* MyPage.swift */; };
-		09A1E47429BE3761004A59B7 /* MyPageresponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A1E47329BE3761004A59B7 /* MyPageresponse.swift */; };
 		09A1E47629BE3B7B004A59B7 /* GoSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A1E47529BE3B7B004A59B7 /* GoSearchViewController.swift */; };
 		09A1E47929BE54EB004A59B7 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A1E47829BE54EB004A59B7 /* ChatViewController.swift */; };
 		09A1E47D29BE567D004A59B7 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A1E47B29BE567D004A59B7 /* ChatTableViewCell.swift */; };
@@ -124,6 +123,10 @@
 		09DC123629BD77ED00EDD90B /* MyReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DC123529BD77ED00EDD90B /* MyReviewViewController.swift */; };
 		09DC123829BD781400EDD90B /* MyHeartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DC123729BD781400EDD90B /* MyHeartViewController.swift */; };
 		09DC123A29BD92E300EDD90B /* MyTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DC123929BD92E300EDD90B /* MyTabBarViewController.swift */; };
+		09E382BA29C2FB6E00ED0ED3 /* BrandTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E382B829C2FB6E00ED0ED3 /* BrandTableViewCell.swift */; };
+		09E382BB29C2FB6E00ED0ED3 /* BrandTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09E382B929C2FB6E00ED0ED3 /* BrandTableViewCell.xib */; };
+		09E382BD29C30CBF00ED0ED3 /* EditShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E382BC29C30CBF00ED0ED3 /* EditShop.swift */; };
+		09E382BF29C318F700ED0ED3 /* Follow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E382BE29C318F700ED0ED3 /* Follow.swift */; };
 		09E3B59A29BC5E2800DD0F82 /* PayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E3B59929BC5E2800DD0F82 /* PayViewController.swift */; };
 		09E7C0D529BEBEC400627C3A /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E7C0D429BEBEC400627C3A /* EditViewController.swift */; };
 		09E81A3129BB359400081A30 /* ItemTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E81A2F29BB359400081A30 /* ItemTagCollectionViewCell.swift */; };
@@ -208,7 +211,6 @@
 		09A1E46C29BE31B2004A59B7 /* SendLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendLogin.swift; sourceTree = "<group>"; };
 		09A1E46E29BE31E6004A59B7 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		09A1E47129BE36F0004A59B7 /* MyPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPage.swift; sourceTree = "<group>"; };
-		09A1E47329BE3761004A59B7 /* MyPageresponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageresponse.swift; sourceTree = "<group>"; };
 		09A1E47529BE3B7B004A59B7 /* GoSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoSearchViewController.swift; sourceTree = "<group>"; };
 		09A1E47829BE54EB004A59B7 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		09A1E47B29BE567D004A59B7 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
@@ -264,6 +266,10 @@
 		09DC123529BD77ED00EDD90B /* MyReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReviewViewController.swift; sourceTree = "<group>"; };
 		09DC123729BD781400EDD90B /* MyHeartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHeartViewController.swift; sourceTree = "<group>"; };
 		09DC123929BD92E300EDD90B /* MyTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarViewController.swift; sourceTree = "<group>"; };
+		09E382B829C2FB6E00ED0ED3 /* BrandTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandTableViewCell.swift; sourceTree = "<group>"; };
+		09E382B929C2FB6E00ED0ED3 /* BrandTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BrandTableViewCell.xib; sourceTree = "<group>"; };
+		09E382BC29C30CBF00ED0ED3 /* EditShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditShop.swift; sourceTree = "<group>"; };
+		09E382BE29C318F700ED0ED3 /* Follow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follow.swift; sourceTree = "<group>"; };
 		09E3B59929BC5E2800DD0F82 /* PayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayViewController.swift; sourceTree = "<group>"; };
 		09E7C0D429BEBEC400627C3A /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		09E81A2F29BB359400081A30 /* ItemTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTagCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -400,11 +406,11 @@
 			isa = PBXGroup;
 			children = (
 				09A033A929B31FC400F291FF /* LoginViewController.swift */,
-				09A033C529B36DB000F291FF /* HomeViewController.swift */,
 				09F66BAD29BA3E59008B1FD9 /* DetailItemViewController.swift */,
 				09448C5429B609290072FA73 /* SearchViewController.swift */,
 				0945B58C29B79A300079EAE7 /* SaleViewController.swift */,
 				09B1141B29BCDF9400629052 /* MyViewController.swift */,
+				09A033C529B36DB000F291FF /* HomeViewController.swift */,
 				09C8455329C1DD8B000A22F8 /* EveryItemViewController.swift */,
 				09A1E47829BE54EB004A59B7 /* ChatViewController.swift */,
 			);
@@ -461,8 +467,8 @@
 		09A1E46729BDE057004A59B7 /* Item */ = {
 			isa = PBXGroup;
 			children = (
-				09F2C86329B4F07D00CC6B39 /* APIConstants.swift */,
 				09A1E46A29BDFB95004A59B7 /* ItemListResponse.swift */,
+				09F2C86329B4F07D00CC6B39 /* APIConstants.swift */,
 				09A1E46829BDF4A8004A59B7 /* DetailResponse.swift */,
 			);
 			path = Item;
@@ -472,11 +478,12 @@
 			isa = PBXGroup;
 			children = (
 				09A1E47129BE36F0004A59B7 /* MyPage.swift */,
-				09A1E47329BE3761004A59B7 /* MyPageresponse.swift */,
 				09B34EB329C0FD2D003D6C63 /* ReviewRequest.swift */,
 				09B34EB529C0FE0B003D6C63 /* ResponseReview.swift */,
 				09B34EB729C10361003D6C63 /* RequestFollower.swift */,
 				09B34EB929C1046D003D6C63 /* ResponseFollow.swift */,
+				09E382BC29C30CBF00ED0ED3 /* EditShop.swift */,
+				09E382BE29C318F700ED0ED3 /* Follow.swift */,
 			);
 			path = MY;
 			sourceTree = "<group>";
@@ -595,6 +602,8 @@
 				09448C5129B5F91B0072FA73 /* CategoryTableViewCell.xib */,
 				09A8FDEA29B877E000728CE1 /* SaleCategoryTableViewCell.swift */,
 				09A8FDEB29B877E000728CE1 /* SaleCategoryTableViewCell.xib */,
+				09E382B829C2FB6E00ED0ED3 /* BrandTableViewCell.swift */,
+				09E382B929C2FB6E00ED0ED3 /* BrandTableViewCell.xib */,
 			);
 			path = CategoryCell;
 			sourceTree = "<group>";
@@ -764,6 +773,7 @@
 				09E81A3229BB359400081A30 /* ItemTagCollectionViewCell.xib in Resources */,
 				09A1E47E29BE567D004A59B7 /* ChatTableViewCell.xib in Resources */,
 				09CBF40B29B4D2A200D261B6 /* ItemCollectionViewCell.xib in Resources */,
+				09E382BB29C2FB6E00ED0ED3 /* BrandTableViewCell.xib in Resources */,
 				09DA36F929B4668C00687F10 /* 광고배너4.jpg in Resources */,
 				09A8FDED29B877E000728CE1 /* SaleCategoryTableViewCell.xib in Resources */,
 				09A0339E29B31EF800F291FF /* Assets.xcassets in Resources */,
@@ -827,7 +837,6 @@
 				0942015029BF6A1700FBC425 /* TabBar_ViewController.swift in Sources */,
 				09E3B59A29BC5E2800DD0F82 /* PayViewController.swift in Sources */,
 				09DC123A29BD92E300EDD90B /* MyTabBarViewController.swift in Sources */,
-				09A1E47429BE3761004A59B7 /* MyPageresponse.swift in Sources */,
 				09A8FDEF29B8833300728CE1 /* SubCategoryViewController.swift in Sources */,
 				09C8455429C1DD8B000A22F8 /* EveryItemViewController.swift in Sources */,
 				09A1E46D29BE31B2004A59B7 /* SendLogin.swift in Sources */,
@@ -843,6 +852,7 @@
 				09FAC81029C046A400DDAF43 /* PayViewNavigationController.swift in Sources */,
 				09B34E9F29C0BAE5003D6C63 /* SendSale.swift in Sources */,
 				09A033C429B36D8000F291FF /* model.swift in Sources */,
+				09E382BD29C30CBF00ED0ED3 /* EditShop.swift in Sources */,
 				09A033C829B36FFA00F291FF /* SelfLoginViewController.swift in Sources */,
 				0942014A29BF4A9C00FBC425 /* RequestJoin.swift in Sources */,
 				0938CC8929B390DE000BE7CA /* phoneComViewController.swift in Sources */,
@@ -862,6 +872,7 @@
 				09B1141629BCBB7800629052 /* CardChoiceViewController.swift in Sources */,
 				0936188329BE69B90086631F /* MyChatTableViewCell.swift in Sources */,
 				0938CC8729B38706000BE7CA /* NavigationBar.swift in Sources */,
+				09E382BA29C2FB6E00ED0ED3 /* BrandTableViewCell.swift in Sources */,
 				09F66B9E29B9D295008B1FD9 /* MapViewController.swift in Sources */,
 				09B1140829BCA28900629052 /* PayMethodViewController.swift in Sources */,
 				09C8455029C1B82E000A22F8 /* CategorySearch.swift in Sources */,
@@ -899,6 +910,7 @@
 				09DC123829BD781400EDD90B /* MyHeartViewController.swift in Sources */,
 				09CB6E3129B5A4D100780ED1 /* CategoryMenuViewController.swift in Sources */,
 				0936100B29C1F89100D78AAA /* GiveHeart.swift in Sources */,
+				09E382BF29C318F700ED0ED3 /* Follow.swift in Sources */,
 				09448C5229B5F91B0072FA73 /* CategoryTableViewCell.swift in Sources */,
 				09A8FDEC29B877E000728CE1 /* SaleCategoryTableViewCell.swift in Sources */,
 				09A1E47929BE54EB004A59B7 /* ChatViewController.swift in Sources */,

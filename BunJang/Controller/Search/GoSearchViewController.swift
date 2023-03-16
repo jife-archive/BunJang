@@ -31,7 +31,8 @@ class GoSearchViewController: UIViewController, EditSearchViewDelegate {
         ItemCollectionView.delegate = self
         ItemCollectionView.dataSource = self
         ItemCollectionView.register(UINib(nibName: "ItemCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ItemCollectionViewCell")
-        
+        self.navigationController?.navigationBar.topItem?.title = ""
+        self.navigationController?.navigationBar.tintColor = .black
         let secondFlowLayout = UICollectionViewFlowLayout()
         secondFlowLayout.scrollDirection = .vertical
         secondFlowLayout.minimumInteritemSpacing = 0
@@ -75,5 +76,14 @@ extension GoSearchViewController: UICollectionViewDelegate, UICollectionViewData
             return cell
         }
         
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetailItemViewController") as? DetailItemViewController else {return}
+        vc.getIdx = Int(self.tagresult![indexPath.row].productIdx!)
+        vc.hidesBottomBarWhenPushed = true
+        self.navigationController?.navigationBar.topItem?.title = ""
+        self.navigationController?.navigationBar.tintColor = .black
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

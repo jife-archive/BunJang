@@ -24,24 +24,29 @@ struct CategoryResult: Codable {
 }
 
 class SearchCategory {
-    func getCategory(categoryIdx: Int, onCompletion: @escaping ([CategoryResult])->Void)
-    {
-        let url = APIConstants.baseURL + "/products/category/\(categoryIdx)"
-        AF.request(url,
-                   method: .get,
-                   parameters: nil,
-                   headers: nil)
-        .responseDecodable(of: CategoryResponse.self) { response in
-            switch response.result {
-                
-            case .success(let response):
-                onCompletion(response.result!)
-            case .failure(let error):
-                print("카테고리검색에러! : \(error.localizedDescription)")
-                debugPrint(error)
+    func getCategory(categoryIdx: Int, sort: String, onCompletion: @escaping ([CategoryResult])->Void)
+        {
+            let url = APIConstants.baseURL + "/products/category/\(categoryIdx)?sort=\(sort)"
+            AF.request(url,
+                       method: .get,
+                       parameters: nil,
+                       headers: nil)
+            .responseDecodable(of: CategoryResponse.self) { response in
+                switch response.result {
+                    
+                case .success(let response):
+                    print(response.isSuccess)
+                    print(response.code)
+                    print(response.message)
 
+                    onCompletion(response.result!)
+                    
+                case .failure(let error):
+                    print("카테고리검색에러! : \(error.localizedDescription)")
+                    debugPrint(error)
+
+                }
             }
         }
-    }
 }
 

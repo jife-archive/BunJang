@@ -9,6 +9,7 @@ import UIKit
 import NaverThirdPartyLogin
 import Alamofire
 import PanModal
+import FacebookLogin
 
 class EtcLoginViewController: UIViewController,PanModalPresentable {
 
@@ -60,7 +61,7 @@ class EtcLoginViewController: UIViewController,PanModalPresentable {
                         let profile = resultJson["profile_image"] as? String ?? ""
                         let email = resultJson["email"] as? String ?? ""
                         let nickName = resultJson["nickname"] as? String ?? ""
-
+                        self.userinfo.userIdx = 3
                         print("네이버 로그인 이름 ",name)
                         print("네이버 로그인 아이디 ",id)
                         print("네이버 로그인 핸드폰 ",phone)
@@ -71,9 +72,27 @@ class EtcLoginViewController: UIViewController,PanModalPresentable {
                         print("네이버 로그인 이메일 ",email)
                         print("네이버 로그인 닉네임 ",nickName)
     
-                        let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "TabBar_ViewController")
-                        pushVC?.modalPresentationStyle = UIModalPresentationStyle.fullScreen
-                        self.present(pushVC!, animated: true, completion: nil)
+                        let loginRequest = LoginRequest(name: "갈릭상점", phoneNo: "01033333333")
+                        self.login.sendSelfLogin(parameters: loginRequest) { WelcomeLogin in
+                            print("로그인 성공")
+                            UserDefaults.standard.set(WelcomeLogin.result.jwt, forKey: "jwt")
+                            print(WelcomeLogin.result.jwt)
+                            print(WelcomeLogin.result.userIdx)
+                            self.userinfo.userIdx = WelcomeLogin.result.userIdx
+                            self.userinfo.jwt = WelcomeLogin.result.jwt
+                            self.userinfo.Join = false
+                            self.userinfo.Join = false
+                            self.follo.getfollower(userIdx: WelcomeLogin.result.userIdx) { ResponseFollowing in
+                                print(ResponseFollowing)
+                                print(self.userinfo.jwt)
+                                print(WelcomeLogin.result.jwt)
+                                let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "TabBar_ViewController")
+                                pushVC?.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+                                self.present(pushVC!, animated: true, completion: nil)
+                            }
+                            //userinfo.userIdx = 3
+  
+                        }
                         
                     } else {
                         // handle failure response
@@ -97,47 +116,37 @@ class EtcLoginViewController: UIViewController,PanModalPresentable {
     let lookheart = LookHeart()
     let giveheart = giveHeart()
     let cancel = cancelHeart()
+    let edit = Edit()
+    let sendfollow = following()
     @IBAction func facebookClick(_ sender: Any) {
       //  naverLoginInstance?.requestDeleteToken()
         
+   
+        let loginRequest = LoginRequest(name: "갈릭상점", phoneNo: "01033333333")
+        self.login.sendSelfLogin(parameters: loginRequest) { WelcomeLogin in
+             print("로그인 성공")
+             UserDefaults.standard.set(WelcomeLogin.result.jwt, forKey: "jwt")
+             print(WelcomeLogin.result.jwt)
+             print(WelcomeLogin.result.userIdx)
+             self.userinfo.userIdx = WelcomeLogin.result.userIdx
+             self.userinfo.jwt = WelcomeLogin.result.jwt
+             self.userinfo.Join = false
+             self.userinfo.Join = false
+             self.follo.getfollower(userIdx: WelcomeLogin.result.userIdx) { ResponseFollowing in
 
-        let encodedTag = "태그1".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+             }
+             //userinfo.userIdx = 3
+             let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "TabBar_ViewController")
+             pushVC?.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+             self.present(pushVC!, animated: true, completion: nil)
+         }
 
-        category.getCategory(categoryIdx: 2) { CategoryResult in
-            print(CategoryResult)
-
-        }
-        Tag.SearchTag(tag: encodedTag) { tagResult in
-            print(tagResult)
-        }
-        rv.Review(userIdx: 16) { ReviewResult in
-            print("완료")
-        }
-        follo.getfollower(userIdx: 16) { ResponseFollowing in
-            print("팔로워완료")
-
-        }
-        let loginRequest = LoginRequest(name: "나도", phoneNo: "123123123")
-        login.sendSelfLogin(parameters: loginRequest) { WelcomeLogin in
-            print("로그인 성공")
-            UserDefaults.standard.set(WelcomeLogin.result.jwt, forKey: "jwt")
-            print(WelcomeLogin.result.jwt)
-            print(WelcomeLogin.result.userIdx)
-            self.userinfo.userIdx = WelcomeLogin.result.userIdx
-            self.userinfo.jwt = WelcomeLogin.result.jwt
-            self.userinfo.Join = false
-            self.userinfo.Join = false
-            //userinfo.userIdx = 3
-            let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "TabBar_ViewController")
-            pushVC?.modalPresentationStyle = UIModalPresentationStyle.fullScreen
-            self.present(pushVC!, animated: true, completion: nil)
-        }
 
     }
     @IBAction func selfClick(_ sender: Any) {
         let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "SelfLoginViewController")
-        pushVC?.modalPresentationStyle = UIModalPresentationStyle.fullScreen
-        self.present(pushVC!, animated: true, completion: nil)
+        pushVC!.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+        self.present(pushVC!, animated: false)
     }
     
     
@@ -147,6 +156,7 @@ class EtcLoginViewController: UIViewController,PanModalPresentable {
         naverBtn.contentHorizontalAlignment = .left
         selfBtn.contentHorizontalAlignment = .left
         naverLoginInstance?.delegate = self
+       // naverLoginInstance?.requestDeleteToken()
 
     }
     

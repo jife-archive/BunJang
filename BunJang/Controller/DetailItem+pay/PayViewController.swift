@@ -8,8 +8,28 @@
 import UIKit
 import DLRadioButton
 
-class PayViewController: UIViewController {
-
+class PayViewController: UIViewController, PayOptionViewDelegate {
+    func sendInfo(_ data: [String?]) {
+        self.Productinfo = data
+        self.NameLabel.text = data[0]
+        self.priceLabel.text = data[1]
+        self.methodLabel.text = data[3]
+        self.firstPriceLabel.text = data[1]
+    }
+    @IBAction func usePoint(_ sender: Any) {
+        
+        
+    }
+    
+    @IBOutlet weak var pointLabel: UILabel!
+    @IBOutlet weak var lastPriceLabel: UILabel!
+    @IBOutlet weak var firstPriceLabel: UILabel!
+    @IBOutlet weak var payLabel: UILabel!
+    @IBOutlet weak var methodLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var NameLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    let useinfo = getUserInfo.shared
     @IBOutlet weak var TextField: UITextField!
     @IBOutlet weak var DelivertMethodBtn: UIButton!
     @IBOutlet weak var methodImg: UIImageView!
@@ -20,7 +40,10 @@ class PayViewController: UIViewController {
     @IBOutlet weak var naviBar: UINavigationBar!
     @IBOutlet weak var AddressView: UIView!
     var Agree = false
-    
+    let getAPI = MyPage()
+    let paydelegate = PayOptionViewController()
+    var Productinfo: [String?] = []
+
     
     @IBAction func payCompleteClick(_ sender: Any) {
         let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "TabBar_ViewController")
@@ -58,6 +81,7 @@ class PayViewController: UIViewController {
         self.present(pushVC, animated: false, completion: nil)
     }
     @IBAction func PayMethodClick(_ sender: Any) {
+        self.methodImg.image = UIImage(named: "")
         let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "PayMethodViewController") as! PayMethodViewController
         pushVC.delegate = self
         pushVC.modalPresentationStyle = UIModalPresentationStyle.fullScreen
@@ -89,6 +113,14 @@ class PayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
+        self.priceLabel.text = useinfo.PayInfo[1]
+        self.NameLabel.text = useinfo.PayInfo[0]
+        self.firstPriceLabel.text = useinfo.PayInfo[1]
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        let result = numberFormatter.string(from: NSNumber(value: useinfo.price! + 1234))! + "원"
+        self.lastPriceLabel.text = result
+     
     }
 }
 extension PayViewController: PayMethodViewDelegate, DeliveryOptDelegate {

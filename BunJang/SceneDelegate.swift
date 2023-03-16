@@ -9,14 +9,23 @@ import UIKit
 import NaverThirdPartyLogin
 import KakaoSDKCommon
 import KakaoSDKAuth
+import FacebookCore
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    
-    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+   func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
         NaverThirdPartyLoginConnection.getSharedInstance()?.receiveAccessToken(URLContexts.first?.url)
-    
+       guard let url = URLContexts.first?.url else {
+           return
+       }
+
+       ApplicationDelegate.shared.application(
+           UIApplication.shared,
+           open: url,
+           sourceApplication: nil,
+           annotation: [UIApplication.OpenURLOptionsKey.annotation]
+       )
         if let url = URLContexts.first?.url {
             if (AuthApi.isKakaoTalkLoginUrl(url)) {
                 _ = AuthController.handleOpenUrl(url: url)

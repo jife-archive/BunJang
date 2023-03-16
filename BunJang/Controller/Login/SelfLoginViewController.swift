@@ -17,6 +17,7 @@ enum Text{
 class SelfLoginViewController: UIViewController, UITextFieldDelegate, UISheetPresentationControllerDelegate {
     var state: Text = .name
     let modalViewController = phoneComViewController()
+    let follo = follow()
 
     @IBOutlet weak var nabiBar: NavigationBar!
     @IBOutlet weak var nametextfield: UITextField!

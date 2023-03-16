@@ -89,7 +89,7 @@ class DetailChatViewController: UIViewController, UITextFieldDelegate, EditViewD
         print(myNewChat)
         print(getChatRoom as Any)
         if getChatRoom != 0 {
-            chatList.getDetailChat(Chatroom: getChatRoom!) { DetailChat in
+            chatList.getDetailChat(chatRoomIdx: getChatRoom!,userIdx: userinfo.userIdx!) { DetailChat in
                 self.ChatList = DetailChat
                 print(self.ChatList)
                 for i in 0...1 {

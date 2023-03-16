@@ -19,5 +19,7 @@ class getUserInfo{
     var UserMessage: String?
     var jwt: String?
     var msg: [String?] = []
+    var PayInfo: [String?] = []
+    var price: Int?
     private init(){}
 }
