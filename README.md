@@ -1,4 +1,10 @@
 # RC  14기 갈릭 번개장터 클론 코딩 3/4 ~ 3/17
+---------------
+시연영상 : https://drive.google.com/drive/folders/1B3vrp-f-FGkaZnzP88Ht0erU59bCO82u?usp=sharing
+
+---------------
+
+
 
 :dog2:개발일지
 
